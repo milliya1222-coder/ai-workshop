@@ -154,6 +154,21 @@
   }
   .whyme p{text-align:center;color:var(--muted);max-width:580px;margin:0 auto 14px}
 
+  /* WORKS */
+  .works .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .work-card{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:26px;backdrop-filter:blur(10px);transition:border-color .3s,transform .3s}
+  .work-card:hover{border-color:var(--panel-line);transform:translateY(-3px)}
+  .work-card .flag{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.16em;color:var(--violet);margin-bottom:12px}
+  .work-card h3{font-size:1.12rem;font-weight:600;margin-bottom:8px}
+  .work-card p{color:var(--muted);font-size:.94rem;margin-bottom:18px;min-height:48px}
+  .work-card .links{display:flex;flex-direction:column;gap:10px}
+  .work-card a.wl{display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none;font-size:.96rem;padding:11px 16px;border-radius:10px;border:1px solid var(--panel-line);color:var(--text);transition:background .2s,transform .2s}
+  .work-card a.wl:hover{background:rgba(226,155,134,.12);transform:translateX(3px)}
+  .work-card a.wl.primary{background:var(--grad);color:#241320;font-weight:600;border:none}
+  .work-card a.wl .ar{color:var(--rose-bright)}
+  .work-card a.wl.primary .ar{color:#241320}
+  @media(max-width:560px){.works .grid{grid-template-columns:1fr}.work-card p{min-height:0}}
+
   /* INFO CARD */
   .card{
     max-width:560px;margin:0 auto;
@@ -301,6 +316,35 @@
     <p class="quote grad-text">「我是陪產員。<br>我陪女人把孩子生出來，<br>也想陪妳，把妳的點子生出來。」</p>
     <p>我不是科技人，我是一個做孕產身心靈的女性教練。我也曾經對著螢幕完全不知道從何開始。</p>
     <p>但我用 AI，從零做出了活動網頁、PDF、報名表單。我走過妳即將走的每一步 —— 所以我知道妳會卡在哪，也知道怎麼接住妳。</p>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section class="works">
+  <div class="wrap">
+    <p class="sec-label">WORKS</p>
+    <h2>這些，都是我用 AI 做出來的</h2>
+    <p class="lead">我自己的阿育吠陀按摩服務 —— 中文、日文的宣傳網頁與線上預約表單，<br>全是我用 Claude 一手做出來的。妳學會後，也能為自己的工作做出這些。</p>
+    <div class="grid">
+      <div class="work-card">
+        <div class="flag">🇹🇼 中文 ・ TAIWAN</div>
+        <h3>阿育吠陀產後按摩・宣傳網頁</h3>
+        <p>服務介紹、方案價格、品牌故事，一頁式網頁；搭配線上預約表單。</p>
+        <div class="links">
+          <a class="wl primary" href="https://milliya1222-coder.github.io/Birth-with-milliya/" target="_blank" rel="noopener"><span>看網頁</span><span class="ar">→</span></a>
+          <a class="wl" href="https://forms.gle/MCZ38b8pf2ByGyBk8" target="_blank" rel="noopener"><span>線上預約表單</span><span class="ar">→</span></a>
+        </div>
+      </div>
+      <div class="work-card">
+        <div class="flag">🇯🇵 日本語 ・ JAPAN</div>
+        <h3>アーユルヴェーダ産後ケア・サイト</h3>
+        <p>日本のママ向けのサービス紹介・料金・予約まで、すべて AI で制作しました。</p>
+        <div class="links">
+          <a class="wl primary" href="https://milliya1222-coder.github.io/Birth-with-milliya/index-ja.html" target="_blank" rel="noopener"><span>サイトを見る</span><span class="ar">→</span></a>
+          <a class="wl" href="https://forms.gle/SQSEFrzTZygifxpH7" target="_blank" rel="noopener"><span>予約フォーム</span><span class="ar">→</span></a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
