@@ -3,76 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>課前準備｜把 Claude Code 裝起來 ・ 使命落地 AI 陪跑工作坊</title>
+<title>課前準備｜一起把工具裝起來 ・ 使命落地 AI 陪跑工作坊</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lesson.css">
 <style>
-  :root{
-    --rose:#E29B86; --rose-bright:#F2BCA8; --violet:#B79CE8; --violet-deep:#8A6FD0;
-    --bg:#241C30; --panel:rgba(255,255,255,.04); --panel-line:rgba(226,155,134,.22);
-    --text:#EDE6E2; --muted:#A89B95;
-    --grad:linear-gradient(120deg,#E29B86 0%,#B79CE8 100%);
-    --code-bg:#fdf6f2; --code-ink:#3a2e28;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:"Noto Sans TC",sans-serif;color:var(--text);background:var(--bg);line-height:1.95;font-weight:300;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{font-family:"Noto Serif TC",serif}
-  .mono{font-family:"Space Mono",monospace}
-  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .wrap{max-width:720px;margin:0 auto;padding:0 26px}
-
-  /* header */
-  .top{text-align:center;padding:54px 0 30px;background:linear-gradient(160deg,rgba(226,155,134,.12),rgba(183,156,232,.10))}
-  .top img{height:46px;margin-bottom:24px;filter:drop-shadow(0 0 14px rgba(226,155,134,.35))}
-  .top .badge{display:inline-block;font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.3em;color:var(--rose-bright);border:1px solid var(--panel-line);border-radius:999px;padding:7px 18px;margin-bottom:20px}
-  .top h1{font-size:2.1rem;font-weight:600;line-height:1.4;margin-bottom:14px}
-  .top p{color:var(--muted);max-width:520px;margin:0 auto;font-size:1.02rem}
-
-  section{padding:34px 0}
-  .intro{background:var(--panel);border-radius:16px;padding:24px 28px;margin:28px 0;border-left:3px solid var(--rose)}
-  .intro p{color:var(--text)}
-  .intro strong{color:var(--rose-bright)}
-
-  h2{font-size:1.15rem;color:var(--violet);margin:40px 0 6px;font-family:"Space Mono",monospace;letter-spacing:.04em}
-
-  /* step */
-  .step{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:24px 26px;margin-bottom:18px}
-  .step .h{display:flex;align-items:center;gap:14px;margin-bottom:12px}
-  .step .n{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:var(--grad);color:#241320;font-family:"Space Mono",monospace;font-weight:700;font-size:1.15rem;display:flex;align-items:center;justify-content:center}
-  .step .h h3{font-size:1.18rem;font-weight:600}
-  .step ol,.step ul{margin:6px 0 0 4px;padding-left:22px}
-  .step li{margin-bottom:9px;color:var(--text)}
-  .step li .muted{color:var(--muted);font-size:.92rem}
-
-  code.inl{font-family:"Space Mono",monospace;background:rgba(255,255,255,.10);color:var(--rose-bright);padding:2px 8px;border-radius:6px;font-size:.92em}
-
-  .cmd{position:relative;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:16px 18px;margin:12px 0;font-family:"Space Mono",monospace;font-size:.95rem;word-break:break-all;border:1px solid var(--panel-line)}
-  .cmd .tag{position:absolute;top:-10px;left:14px;background:var(--violet-deep);color:#fff;font-family:"Noto Sans TC";font-size:.7rem;padding:2px 10px;border-radius:999px;letter-spacing:.05em}
-
-  .warn{background:rgba(226,155,134,.12);border:1px solid var(--panel-line);border-radius:12px;padding:16px 20px;margin:14px 0}
-  .warn b{color:var(--rose-bright)}
-  .tip{background:rgba(183,156,232,.12);border:1px solid rgba(183,156,232,.3);border-radius:12px;padding:16px 20px;margin:14px 0}
-  .tip b{color:var(--violet)}
-
-  /* checklist */
-  .check{background:var(--panel);border:1px solid var(--panel-line);border-radius:16px;padding:26px 28px;margin:20px 0}
-  .check h3{font-size:1.15rem;margin-bottom:14px;color:var(--rose-bright)}
-  .check label{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);cursor:pointer}
+  /* 終端機「見識一下」區塊 + 三分頁卡片 + 檢查清單（本頁專用，沿用品牌色） */
+  .term{background:#15101e;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:16px 18px;margin:12px 0;font-family:"Space Mono",monospace;font-size:.9rem;color:#cfc4e8;word-break:break-all;position:relative}
+  .term .dots{display:flex;gap:6px;margin-bottom:10px}
+  .term .dots i{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .term .dots i:nth-child(1){background:#E27A6A}.term .dots i:nth-child(2){background:#E2B36A}.term .dots i:nth-child(3){background:#7EC489}
+  .term .ln{color:#8a7fb0}.term .cmd{color:#F2BCA8}
+  .switch{text-align:center;margin:30px 0 6px}
+  .switch .arrow{font-size:1.6rem;color:var(--violet)}
+  .tabs{display:grid;gap:14px;margin:14px 0}
+  .tab{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 20px;border-left:3px solid var(--violet)}
+  .tab.code{border-left-color:var(--rose);box-shadow:0 0 24px rgba(226,155,134,.12)}
+  .tab .nm{font-family:"Space Mono",monospace;font-weight:700;color:var(--rose-bright);font-size:1.05rem;margin-bottom:4px}
+  .tab .nm .zh{font-family:"Noto Sans TC";color:var(--text);font-weight:500;font-size:.92rem;margin-left:8px}
+  .tab p{color:var(--muted);font-size:.95rem;margin:0}
+  .check{background:var(--panel);border:1px solid var(--panel-line);border-radius:16px;padding:24px 26px;margin:20px 0}
+  .check h3{font-size:1.15rem;margin-bottom:12px;color:var(--rose-bright)}
+  .check label{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);cursor:pointer;color:var(--text)}
   .check label:last-child{border-bottom:none}
   .check input{margin-top:6px;width:18px;height:18px;accent-color:var(--rose)}
-
-  .help{background:linear-gradient(160deg,rgba(226,155,134,.14),rgba(183,156,232,.12));border-radius:16px;padding:26px 28px;margin:28px 0;text-align:center}
-  .help h3{font-size:1.25rem;margin-bottom:10px}
-  .help p{color:var(--text);max-width:520px;margin:0 auto 6px}
-  .help .line{margin-top:14px}
-  .help a{color:var(--rose-bright);text-decoration:none;font-weight:500}
-
-  footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:.85rem;border-top:1px solid rgba(255,255,255,.06);margin-top:30px}
-  footer img{height:54px;margin-bottom:12px;filter:drop-shadow(0 0 14px rgba(226,155,134,.3))}
-
-  @media(max-width:560px){.top h1{font-size:1.6rem}.step{padding:20px}}
 </style>
 </head>
 <body>
@@ -81,90 +36,134 @@
   <div class="wrap">
     <img src="logo.png" alt="欣妙在陪你 ・ Birth with Milliya">
     <div class="badge">課前準備 ・ SETUP</div>
-    <h1 class="grad-text">把 Claude Code 裝起來</h1>
-    <p>第 1 次課之前，找個安靜的 20 分鐘，照著下面一步步做就好。<br>卡住了別緊張 —— 上課我們會一起把它弄順 💛</p>
+    <h1 class="grad-text">一起把工具裝起來</h1>
+    <p>等一下妳會看到兩種「打開 AI」的樣子 ——<br>一種很專業、一種很友善。別緊張：<b>妳只要裝友善的那個就好</b> 💛</p>
   </div>
 </header>
 
 <div class="wrap">
 
   <div class="intro">
-    <p>這份是給<strong>完全沒碰過程式</strong>的妳。每一步都拆得很細，看到英文也不用怕，照著點、照著貼就好。<br>準備一杯茶 🍵，我們開始。</p>
+    <p>這份是給<strong>完全沒碰過程式</strong>的妳。先帶妳<strong>見識一下</strong>工程師在用的「終端機版」（看看就好、不用裝），<br>再一步步帶妳裝我們課堂真正要用的<strong>桌面 App</strong>。準備一杯茶 🍵，我們開始。</p>
   </div>
 
+  <!-- PART 1：見識終端機 -->
+  <h2>// 先見識一下：終端機版（看看就好，不用照做）</h2>
+  <div class="step">
+    <p>AI 工具最原始、最強的樣子，是一個<b>黑黑的視窗</b>，工程師在裡面打指令叫它做事 —— 大概長這樣：</p>
+    <div class="term">
+      <div class="dots"><i></i><i></i><i></i></div>
+      <div><span class="ln">PS C:\Users\you&gt;</span> <span class="cmd">irm https://claude.ai/install.ps1 | iex</span></div>
+      <div style="opacity:.6;margin-top:8px">…安裝中，跑出一堆文字…</div>
+      <div><span class="ln">PS C:\Users\you&gt;</span> <span class="cmd">claude</span></div>
+      <div style="opacity:.6">Welcome to Claude Code 🎉</div>
+    </div>
+    <div class="tip"><b>💡 看起來有點硬齁？</b>它真的很強，但對剛開始的我們來說，這個黑視窗容易讓人緊張。<br><b>好消息是 —— 妳完全不用碰它。</b>同樣的能力，有一個用滑鼠點、看得懂的版本。</div>
+  </div>
+
+  <div class="switch">
+    <div class="arrow">↓</div>
+    <h2 style="margin-top:6px">// 我們課堂用這個就好：桌面 App</h2>
+    <p style="color:var(--muted);max-width:520px;margin:6px auto 0">一樣的 AI、一樣的強，只是換成<b>看得懂、用滑鼠點</b>的樣子。跟著下面裝這一個就好。</p>
+  </div>
+
+  <!-- PART 2：開始前準備 -->
   <h2>// 開始前，先準備這些</h2>
   <div class="step">
     <ul>
-      <li>一台 <b>Windows 電腦</b>（不是手機或平板）</li>
+      <li>一台 <b>電腦</b>（Windows 或 Mac 都可以，不是手機或平板）</li>
       <li>一個 <b>Google（Gmail）帳號</b></li>
-      <li>一張 <b>信用卡</b>（用來訂閱 Claude）</li>
+      <li>一張 <b>信用卡</b>（用來訂閱 Claude Pro）</li>
       <li>大約 <b>20 分鐘</b>、不被打擾的時間</li>
     </ul>
   </div>
 
+  <!-- PART 3：四步驟 -->
   <h2>// 四個步驟</h2>
 
   <div class="step">
-    <div class="h"><div class="n">1</div><h3>註冊 Claude 帳號</h3></div>
+    <div class="h"><div class="n">1</div><h3>下載並安裝 Claude 桌面 App</h3></div>
     <ol>
-      <li>打開瀏覽器（Chrome 或 Edge），在網址列輸入 <code class="inl">claude.ai</code> 按 Enter</li>
-      <li>點 <b>Sign up（註冊）</b>，選 <b>「用 Google 繼續」</b> —— 這樣不用記新密碼</li>
-      <li>進到聊天畫面後，試著打一句「你好」，看它有沒有回妳</li>
+      <li>打開瀏覽器（Chrome 或 Edge），在網址列輸入 <code class="inl">claude.com/download</code> 按 Enter</li>
+      <li>它會自動認出妳的電腦，點 <b>下載（Download）</b> 那顆按鈕</li>
+      <li>下載完打開那個安裝檔，照指示一路「下一步／同意」裝好</li>
+      <li>裝好後：<b>Windows</b> 從左下角開始功能表找「Claude」打開；<b>Mac</b> 從「應用程式」資料夾打開</li>
+    </ol>
+    <div class="tip"><b>💡 小提醒：</b>這是「桌面 App」，跟瀏覽器網頁版的 Claude 長得有點像、但功能更多 —— 我們課堂要用的是這個 App。</div>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">2</div><h3>用 Google 登入</h3></div>
+    <ol>
+      <li>App 打開後，點 <b>登入（Sign in）</b></li>
+      <li>選 <b>「用 Google 繼續」</b> —— 這樣不用記新密碼</li>
+      <li>選妳的 Gmail、按同意，回到 App 看到聊天畫面就成功了</li>
     </ol>
   </div>
 
   <div class="step">
-    <div class="h"><div class="n">2</div><h3>升級成 Pro 方案</h3></div>
+    <div class="h"><div class="n">3</div><h3>升級成 Pro 方案</h3></div>
     <ol>
       <li>點左下角妳的<b>頭像</b> → <b>Settings（設定）</b> → <b>Billing（帳單）</b></li>
       <li>選 <b>Upgrade（升級）</b>，挑 <b>Pro 方案</b>（約 US$20／月，台幣約 650）</li>
       <li>用信用卡完成付款</li>
     </ol>
-    <div class="warn"><b>⚠️ 一定要升級：</b>免費版<b>不能</b>使用 Claude Code，所以這一步不能跳過。<br><span class="muted">💡 上完課想省錢，可以隨時回到這裡取消，不會被綁約。</span></div>
+    <div class="warn"><b>⚠️ 一定要升級：</b>免費版<b>不能</b>用我們課堂要學的 Cowork 和 Code，所以這步不能跳過。<br><span style="color:var(--muted);font-size:.92rem">💡 上完課想省錢，隨時回來這裡取消，不會被綁約。已經升級過的可以跳過這步。</span></div>
   </div>
 
   <div class="step">
-    <div class="h"><div class="n">3</div><h3>安裝 Claude Code</h3></div>
-    <ol>
-      <li>按鍵盤左下角的 <b>Windows 鍵</b>，直接打字輸入 <b>PowerShell</b>，按 Enter 打開它（會跳出一個深藍色視窗）</li>
-      <li>確認視窗左邊開頭是 <code class="inl">PS C:\…</code>（有 <b>PS</b> 就對了，代表妳在 PowerShell）</li>
-      <li>把下面這行<b>複製起來</b>，在藍色視窗裡<b>按滑鼠右鍵</b>就會貼上，然後按 Enter：</li>
-    </ol>
-    <div class="cmd"><span class="tag">在 PowerShell 貼上</span>irm https://claude.ai/install.ps1 | iex</div>
-    <p class="muted">畫面會跑出一些文字、停頓一下，這都正常 —— 等它跑完出現完成訊息就好。</p>
-    <div class="warn"><b>🆘 卡住了怎麼辦：</b>回到網頁版 <code class="inl">claude.ai</code>，把這句貼給它：<br>「我是 Windows 使用者、完全不懂程式，請一步步教我安裝 Claude Code，用繁體中文。」<br>照它說的做，出錯就<b>截圖貼回去</b>問它。它會很有耐心。</div>
+    <div class="h"><div class="n">4</div><h3>認識三個分頁（這是重點）</h3></div>
+    <p>桌面 App 上方有三個分頁，先認得它們在做什麼就好：</p>
+    <div class="tabs">
+      <div class="tab">
+        <div class="nm">Chat<span class="zh">・聊天</span></div>
+        <p>就是純聊天、問問題、請它幫妳寫東西。<b>不會碰到妳電腦裡的檔案</b> —— 最安全、最熟悉的那一個。</p>
+      </div>
+      <div class="tab">
+        <div class="nm">Cowork<span class="zh">・交辦</span></div>
+        <p>像把一件事「交辦」給它：它在雲端自己默默做，<b>妳可以去忙別的</b>，做完回來看成果。適合比較大、要花時間的任務。</p>
+      </div>
+      <div class="tab code">
+        <div class="nm">Code<span class="zh">・會動手（我們主要用這個）</span></div>
+        <p>這是「會動手」的那一個 —— 它<b>看得到、也改得到妳電腦裡的檔案</b>（幫妳建資料夾、改文件、做網頁）。<b>每一步動手前都會先問過妳</b>，妳同意它才動。我們課堂大部分時間在這裡。</p>
+      </div>
+    </div>
   </div>
 
+  <!-- PART 4：Ask 權限 -->
+  <h2>// 一個會讓妳安心的設計：Ask 權限</h2>
   <div class="step">
-    <div class="h"><div class="n">4</div><h3>第一次啟動・登入</h3></div>
-    <ol>
-      <li>在同一個 PowerShell 視窗，輸入 <code class="inl">claude</code> 按 Enter</li>
-      <li>出現選單時，用<b>方向鍵</b>選「<b>Claude account with subscription</b>」按 Enter</li>
-      <li>瀏覽器會自動打開登入頁 → 點 <b>同意／授權</b></li>
-      <li>回到視窗看到 <b>「Welcome to Claude Code」</b> 就成功了 🎉</li>
-      <li>打第一句話：「你好，我是第一次使用」，確認它會回應</li>
-    </ol>
-    <p class="muted">想離開時，輸入 <code class="inl">/exit</code> 按 Enter 就好。</p>
+    <p>在 <b>Code 分頁</b>，當 AI 要動手做事（建檔案、改東西）之前，它會<b>先跳出來問妳「可以嗎？」</b>，等妳按同意，它才會動。</p>
+    <ul>
+      <li>看得懂、是妳要的 → 按 <b>同意 / Yes</b></li>
+      <li>不確定、看不懂 → 先按 <b>不要 / No</b>，問我或在群組問，不會壞</li>
+      <li>想停下來 → 按鍵盤 <b>Esc</b> 就停得下來</li>
+    </ul>
+    <div class="warn"><b>🛡 所以妳不會把電腦弄壞。</b>它不會偷偷亂動，每一步都先問過妳。剛開始看不懂就先按 No，這是最安全的習慣。</div>
   </div>
 
   <div class="check">
     <h3>✅ 完成檢查清單（都打勾就大功告成）</h3>
-    <label><input type="checkbox">我能用 Google 登入 claude.ai</label>
+    <label><input type="checkbox">我裝好了 Claude 桌面 App，打得開</label>
+    <label><input type="checkbox">我用 Google 登入成功，看得到聊天畫面</label>
     <label><input type="checkbox">我已經升級到 Pro（左下角看得到方案）</label>
-    <label><input type="checkbox">在 PowerShell 打 <code class="inl">claude --version</code> 有出現版本號</label>
-    <label><input type="checkbox">打 <code class="inl">claude</code> 能進到 Claude Code</label>
-    <label><input type="checkbox">我跟它說話，它會回我</label>
+    <label><input type="checkbox">我找得到上面三個分頁：Chat、Cowork、Code</label>
+    <label><input type="checkbox">我知道 Code 分頁動手前會先問我、不確定就按 No</label>
   </div>
 
-  <div class="tip"><b>💡 小提醒：</b>聽說有「電腦版 App」可以不用打字介面？是真的，但我們課堂統一用<b>終端機版（上面這個）</b>，請先照上面裝好，比較不會混亂。App 之後想玩再說 😊</div>
+  <div class="tip"><b>💡 那終端機版到底要不要學？</b>不急。等妳用桌面 App 上手、有底氣了，想更進階再玩它完全沒問題 —— 但這幾週，我們專心用桌面 App 就好 😊</div>
 
   <div class="help">
-    <h3>真的卡住了，別一個人硬撐 💛</h3>
+    <h3>卡住了，別一個人硬撐 💛</h3>
     <p>裝設定是新手最容易卡的一關，卡住<b>非常正常</b>，不是妳的問題。</p>
-    <p>把錯誤訊息「整段」複製、或直接截圖，丟到我們的 LINE 群組，或私訊我。</p>
+    <p>把畫面截圖、或把卡住的地方拍下來，丟到 LINE 群組或私訊我。</p>
     <p>第 1 次上課，我會帶大家一起把卡關的地方弄好 —— 妳不孤單。</p>
-    <p class="line">私訊我 LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a></p>
+    <p style="margin-top:10px">私訊我 LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a></p>
   </div>
+
+  <nav class="lnav">
+    <a href="lesson1.html">▶ 回到第 1 次教材</a>
+  </nav>
 
 </div>
 
