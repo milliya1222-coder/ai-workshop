@@ -120,6 +120,21 @@
     content:"▹";position:absolute;left:6px;top:15px;
     color:var(--rose);font-size:1.1rem;
   }
+  .who .notfor{
+    text-align:center;color:var(--muted);font-size:.92rem;
+    max-width:560px;margin:30px auto 0;
+  }
+
+  /* TWO KINDS */
+  .tk-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:640px;margin:0 auto}
+  .tk-card{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:26px;backdrop-filter:blur(10px)}
+  .tk-card .tk-tag{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.16em;margin-bottom:12px;color:var(--muted)}
+  .tk-card h3{font-size:1.14rem;font-weight:600;margin-bottom:10px}
+  .tk-card p{color:var(--muted);font-size:.95rem}
+  .tk-card.lit{border-color:var(--panel-line);box-shadow:0 0 30px rgba(226,155,134,.12)}
+  .tk-card.lit .tk-tag{color:var(--rose-bright)}
+  .tk-card.dim{opacity:.72}
+  @media(max-width:560px){.tk-grid{grid-template-columns:1fr}}
 
   /* TIMELINE */
   .week{
@@ -261,6 +276,28 @@
       <li>不想花大錢外包，想要自己也能一個人完成</li>
       <li>看過別人用 AI 做出漂亮的成果，心裡想著「我也好想會」</li>
     </ul>
+    <p class="notfor">這堂課可能還不適合現在的妳，如果妳想要的是一套看完就好的影片、或希望有人全程幫妳代做 —— 這是「做中學」的陪跑，需要妳自己的手。</p>
+  </div>
+</section>
+
+<!-- TWO KINDS -->
+<section class="twokinds">
+  <div class="wrap">
+    <p class="sec-label">TWO_WAYS</p>
+    <h2>我看過兩種用 AI 的人</h2>
+    <p class="lead">妳是哪一種？沒有對錯 —— 但這堂課，是為第二種妳開的。</p>
+    <div class="tk-grid">
+      <div class="tk-card dim">
+        <div class="tk-tag">第一種</div>
+        <h3>一直在追工具</h3>
+        <p>手機裡存了十幾個 AI，每個都試過一點，卻沒有一樣真的幫到手上的工作 —— 追得很累，產出很少。</p>
+      </div>
+      <div class="tk-card lit">
+        <div class="tk-tag">第二種</div>
+        <h3>把 AI 變成自己的幫手</h3>
+        <p>不追新工具，把每週在做的事一件一件交給它，省下時間，把人留給真正重要的事。</p>
+      </div>
+    </div>
   </div>
 </section>
 
