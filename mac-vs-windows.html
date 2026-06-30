@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>蘋果電腦（Mac）用戶看這裡 ・ 使命落地 AI 陪跑工作坊</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rose:#E29B86;--rose-bright:#F2BCA8;--violet:#B79CE8;--violet-deep:#8A6FD0;
+    --bg:#241C30;--panel:rgba(255,255,255,.04);--panel-line:rgba(226,155,134,.22);
+    --text:#EDE6E2;--muted:#A89B95;--grad:linear-gradient(120deg,#E29B86 0%,#B79CE8 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC",sans-serif;color:var(--text);background:var(--bg);line-height:1.95;font-weight:300;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Noto Serif TC",serif}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .wrap{max-width:720px;margin:0 auto;padding:0 26px}
+  .top{text-align:center;padding:50px 0 26px;background:linear-gradient(160deg,rgba(226,155,134,.12),rgba(183,156,232,.10))}
+  .top .badge{display:inline-block;font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.26em;color:var(--rose-bright);border:1px solid var(--panel-line);border-radius:999px;padding:7px 18px;margin-bottom:18px}
+  .top h1{font-size:2rem;font-weight:600;line-height:1.4;margin-bottom:12px}
+  .top p{color:var(--muted);max-width:540px;margin:0 auto;font-size:1.02rem}
+  h2{font-size:1.12rem;color:var(--violet);margin:38px 0 6px;font-family:"Space Mono",monospace;letter-spacing:.03em}
+  .intro{background:var(--panel);border-radius:16px;padding:22px 26px;margin:26px 0;border-left:3px solid var(--rose)}
+  .intro strong{color:var(--rose-bright)}
+  .card{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:22px 24px;margin-bottom:16px}
+  .card .h{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .card .ic{flex-shrink:0;width:40px;height:40px;border-radius:11px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+  .card h3{font-size:1.12rem;font-weight:600}
+  .card p{color:var(--text);margin:6px 0}
+  .card .muted{color:var(--muted);font-size:.93rem}
+  .card ol,.card ul{margin:6px 0 0 20px}
+  .card li{margin-bottom:7px}
+  code{font-family:"Space Mono",monospace;background:rgba(255,255,255,.10);color:var(--rose-bright);padding:2px 8px;border-radius:6px;font-size:.9em}
+  kbd{font-family:"Space Mono",monospace;background:#fdf6f2;color:#3a2e28;border-radius:6px;padding:2px 9px;font-size:.86em;border:1px solid var(--panel-line);font-weight:700}
+  .star{background:rgba(226,155,134,.12);border:1px solid var(--panel-line)}
+  .star .ic{background:linear-gradient(135deg,#E29B86,#C97B63)}
+  .warn{background:rgba(226,155,134,.12);border:1px solid var(--panel-line);border-radius:12px;padding:14px 18px;margin:12px 0}
+  .warn b{color:var(--rose-bright)}
+  .tip{background:rgba(183,156,232,.12);border:1px solid rgba(183,156,232,.3);border-radius:12px;padding:14px 18px;margin:12px 0}
+  .tip b{color:var(--violet)}
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.95rem}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.08)}
+  th{font-family:"Space Mono",monospace;font-size:.78rem;letter-spacing:.04em;color:var(--violet)}
+  td:first-child{color:var(--muted);width:30%}
+  .help{background:linear-gradient(160deg,rgba(226,155,134,.14),rgba(183,156,232,.12));border-radius:16px;padding:24px 26px;margin:28px 0;text-align:center}
+  .help h3{font-size:1.18rem;margin-bottom:8px}
+  .help p{color:var(--text);max-width:520px;margin:0 auto 6px}
+  .help a{color:var(--rose-bright);text-decoration:none;font-weight:500}
+  footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:.85rem;border-top:1px solid rgba(255,255,255,.06);margin-top:28px}
+  @media(max-width:560px){.top h1{font-size:1.55rem}.card{padding:18px}td:first-child{width:38%}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="badge"> ・ MAC 用戶補充</div>
+    <h1 class="grad-text">蘋果電腦（Mac）<br>用戶看這裡</h1>
+    <p>課程裡 95% 的操作，Mac 和 Windows 一模一樣。<br>只有下面幾個小地方不一樣，先知道，就不會慌 🍎</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>這份是給用 <strong>Mac（蘋果電腦）</strong> 的妳。<br>跟 Windows 比起來，Mac 多了一個「<strong>會先問妳要不要允許</strong>」的安全機制 —— 聽起來嚴格，其實是 Mac 在保護妳。看懂下面這幾點，妳就能順順地跟上課堂。</p>
+  </div>
+
+  <h2>// 1. 安裝時：Mac 可能會說「打不開」</h2>
+  <div class="card">
+    <div class="h"><div class="ic">📥</div><h3>下載後第一次打開，被擋住怎麼辦</h3></div>
+    <p>從 <code>claude.com/download</code> 下載後，打開檔案把 <b>Claude 圖示拖進「應用程式（Applications）」</b>資料夾。</p>
+    <p>第一次打開時，Mac 可能跳出「<b>無法打開，因為來自未識別的開發者</b>」——這很正常，照下面做就好：</p>
+    <ol>
+      <li>在「應用程式」裡找到 Claude，<b>按住 Control 鍵＋點一下</b>（或用兩指點觸控板）</li>
+      <li>選 <b>「打開」</b> → 再按一次 <b>「打開」</b></li>
+      <li>之後就能正常使用了</li>
+    </ol>
+    <div class="muted">💡 這一步只要做一次。Windows 通常沒有這個提示，是 Mac 特有的把關。</div>
+  </div>
+
+  <h2>// 2. 打開 App：用 Spotlight 最快</h2>
+  <div class="card">
+    <div class="h"><div class="ic">🔍</div><h3>不用每次去資料夾找</h3></div>
+    <p>按 <kbd>Cmd</kbd> + <kbd>空白鍵</kbd> 叫出搜尋框，打「<b>Claude</b>」按 Enter，就打開了。</p>
+    <p class="muted">（Windows 是按左下角開始功能表打字找；Mac 用 Spotlight 搜尋。）</p>
+  </div>
+
+  <h2>// 3. ⭐ 最重要：Mac 會問「可以存取資料夾嗎」</h2>
+  <div class="card star">
+    <div class="h"><div class="ic">🔐</div><h3>跳出來問權限，按「允許」就好</h3></div>
+    <p>當妳請 AI 在 <b>Code 分頁</b>動手（建資料夾、改文件）時，Mac 會跳出一個視窗問：</p>
+    <p style="font-style:italic;color:var(--rose-bright)">「Claude 想要取用你儲存在『桌面』中的檔案」</p>
+    <p>→ 按 <b>「好」／「允許」</b>，它才碰得到妳的檔案。這是 Mac 在替妳把關，不是出問題。</p>
+    <div class="warn"><b>不小心按到「不允許」了？</b>不用緊張，去開：<br><b>左上角  → 系統設定 → 隱私權與安全性 → 檔案與資料夾（或「完整磁碟取用權」）</b> → 找到 <b>Claude</b> 把開關打開，重開 App 就好。</div>
+    <div class="muted">💡 Windows 通常不會這樣一個一個問資料夾權限 —— 這是 Mac 跟 Windows 最大的不同，也是 Mac 用戶最常卡的地方。先知道就不會慌。</div>
+  </div>
+
+  <h2>// 4. 鍵盤：Mac 用 Cmd，不是 Ctrl</h2>
+  <div class="card">
+    <div class="h"><div class="ic">⌨️</div><h3>複製貼上的按鍵不一樣</h3></div>
+    <ul>
+      <li>複製：<kbd>Cmd</kbd> + <kbd>C</kbd>（Windows 是 Ctrl+C）</li>
+      <li>貼上：<kbd>Cmd</kbd> + <kbd>V</kbd></li>
+      <li>全選：<kbd>Cmd</kbd> + <kbd>A</kbd></li>
+    </ul>
+    <p class="muted">課堂上我說「Ctrl+C」的時候，Mac 的妳就用 <b>Cmd</b> 那顆（⌘，在空白鍵旁邊）。</p>
+  </div>
+
+  <h2>// 5. 卡住要傳畫面給我：Mac 的截圖鍵</h2>
+  <div class="card">
+    <div class="h"><div class="ic">📸</div><h3>截圖丟群組，我才看得到妳卡在哪</h3></div>
+    <ul>
+      <li>截一塊區域：<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>4</kbd>，再拖出範圍</li>
+      <li>截整個螢幕：<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>3</kbd></li>
+    </ul>
+    <p class="muted">截好的圖會出現在<b>桌面</b>，直接拖進 LINE 傳給我就好。（Windows 是 Win+Shift+S。）</p>
+  </div>
+
+  <h2>// 6. 懶得打字？Mac 內建「用講的」</h2>
+  <div class="card">
+    <div class="h"><div class="ic">🎙️</div><h3>對著電腦說，它幫妳打字</h3></div>
+    <ol>
+      <li>到 <b> → 系統設定 → 鍵盤 → 聽寫</b>，把它打開</li>
+      <li>之後在打字的地方，<b>按兩下地球鍵 🌐（或 Fn 鍵）</b>就開始聽寫</li>
+      <li>對著麥克風講，講完再按一次結束</li>
+    </ol>
+    <p class="muted">跟 AI 溝通用「說」的比打字快很多，尤其中文。</p>
+  </div>
+
+  <h2>// 快速對照表</h2>
+  <div class="card">
+    <table>
+      <tr><th>動作</th><th>🍎 Mac</th><th>🪟 Windows</th></tr>
+      <tr><td>安裝 App</td><td>拖進「應用程式」</td><td>跑安裝檔</td></tr>
+      <tr><td>打開 App</td><td>Cmd+空白 搜尋</td><td>開始功能表</td></tr>
+      <tr><td>檔案權限</td><td><b>會跳出來問 → 按允許</b></td><td>通常不會問</td></tr>
+      <tr><td>複製／貼上</td><td>Cmd+C／Cmd+V</td><td>Ctrl+C／Ctrl+V</td></tr>
+      <tr><td>截圖</td><td>Cmd+Shift+4</td><td>Win+Shift+S</td></tr>
+      <tr><td>語音輸入</td><td>按兩下 🌐／Fn</td><td>Win+H</td></tr>
+    </table>
+    <div class="tip"><b>💡 一句話總結：</b>Mac 跟 Windows 用起來九成都一樣，只要記得 ——<b>Mac 會多問妳「可以存取檔案嗎」，按允許就好。</b>其他都是換顆按鍵的小事。</div>
+  </div>
+
+  <div class="help">
+    <h3>還是卡住了？沒關係 💛</h3>
+    <p>不管 Mac 還是 Windows，卡住都很正常，不是妳的問題。</p>
+    <p>截圖丟 LINE 群組或私訊我，我帶妳一起弄好。</p>
+    <p style="margin-top:10px">私訊我 LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a></p>
+  </div>
+
+</div>
+
+<footer>使命落地・AI 陪跑工作坊　|　蘋果電腦補充　|　欣妙在陪你 💛</footer>
+
+</body>
+</html>
