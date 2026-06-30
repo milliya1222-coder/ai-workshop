@@ -1,0 +1,72 @@
+/* 使命落地・AI 陪跑工作坊 — 每堂課學員教材共用樣式 */
+:root{
+  --rose:#E29B86; --rose-bright:#F2BCA8; --violet:#B79CE8; --violet-deep:#8A6FD0;
+  --bg:#241C30; --panel:rgba(255,255,255,.04); --panel-line:rgba(226,155,134,.22);
+  --text:#EDE6E2; --muted:#A89B95;
+  --grad:linear-gradient(120deg,#E29B86 0%,#B79CE8 100%);
+  --code-bg:#fdf6f2; --code-ink:#3a2e28;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans TC",sans-serif;color:var(--text);background:var(--bg);line-height:1.95;font-weight:300;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Noto Serif TC",serif}
+.mono{font-family:"Space Mono",monospace}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.wrap{max-width:720px;margin:0 auto;padding:0 26px}
+
+/* header */
+.top{text-align:center;padding:54px 0 30px;background:linear-gradient(160deg,rgba(226,155,134,.12),rgba(183,156,232,.10))}
+.top img{height:46px;margin-bottom:24px;filter:drop-shadow(0 0 14px rgba(226,155,134,.35))}
+.top .badge{display:inline-block;font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.28em;color:var(--rose-bright);border:1px solid var(--panel-line);border-radius:999px;padding:7px 18px;margin-bottom:20px}
+.top h1{font-size:2.1rem;font-weight:600;line-height:1.4;margin-bottom:14px}
+.top p{color:var(--muted);max-width:540px;margin:0 auto;font-size:1.02rem}
+
+section{padding:34px 0}
+.intro{background:var(--panel);border-radius:16px;padding:24px 28px;margin:28px 0;border-left:3px solid var(--rose)}
+.intro p{color:var(--text)}
+.intro strong{color:var(--rose-bright)}
+
+h2{font-size:1.15rem;color:var(--violet);margin:40px 0 6px;font-family:"Space Mono",monospace;letter-spacing:.04em}
+
+/* step / do-this block */
+.step{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:24px 26px;margin-bottom:18px}
+.step .h{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.step .n{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:var(--grad);color:#241320;font-family:"Space Mono",monospace;font-weight:700;font-size:1.15rem;display:flex;align-items:center;justify-content:center}
+.step .h h3{font-size:1.18rem;font-weight:600}
+.step ol,.step ul{margin:6px 0 0 4px;padding-left:22px}
+.step li{margin-bottom:9px;color:var(--text)}
+.step li .muted{color:var(--muted);font-size:.92rem}
+.step p{color:var(--text);margin-top:4px}
+
+code.inl{font-family:"Space Mono",monospace;background:rgba(255,255,255,.10);color:var(--rose-bright);padding:2px 8px;border-radius:6px;font-size:.92em}
+
+/* copy-this prompt block */
+.prompt{position:relative;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:18px 18px 16px;margin:12px 0;font-family:"Noto Sans TC",sans-serif;font-size:.97rem;line-height:1.8;white-space:pre-wrap;border:1px solid var(--panel-line)}
+.prompt .tag{position:absolute;top:-10px;left:14px;background:var(--violet-deep);color:#fff;font-size:.7rem;padding:2px 10px;border-radius:999px;letter-spacing:.05em}
+
+.warn{background:rgba(226,155,134,.12);border:1px solid var(--panel-line);border-radius:12px;padding:16px 20px;margin:14px 0}
+.warn b{color:var(--rose-bright)}
+.tip{background:rgba(183,156,232,.12);border:1px solid rgba(183,156,232,.3);border-radius:12px;padding:16px 20px;margin:14px 0}
+.tip b{color:var(--violet)}
+
+/* homework */
+.hw{background:linear-gradient(160deg,rgba(226,155,134,.14),rgba(183,156,232,.12));border-radius:16px;padding:26px 28px;margin:28px 0}
+.hw h3{font-size:1.2rem;margin-bottom:10px;color:var(--rose-bright)}
+.hw p,.hw li{color:var(--text)}
+.hw ul{margin:8px 0 0 4px;padding-left:22px}
+
+.help{background:linear-gradient(160deg,rgba(226,155,134,.14),rgba(183,156,232,.12));border-radius:16px;padding:26px 28px;margin:28px 0;text-align:center}
+.help h3{font-size:1.22rem;margin-bottom:10px}
+.help p{color:var(--text);max-width:520px;margin:0 auto 6px}
+.help a{color:var(--rose-bright);text-decoration:none;font-weight:500}
+
+/* lesson nav */
+.lnav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:30px 0 0}
+.lnav a{font-family:"Space Mono",monospace;font-size:.78rem;letter-spacing:.04em;text-decoration:none;color:var(--muted);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:7px 14px;transition:all .2s}
+.lnav a:hover{color:var(--rose-bright);border-color:var(--panel-line)}
+.lnav a.now{background:var(--grad);color:#241320;border:none;font-weight:700}
+
+footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:.85rem;border-top:1px solid rgba(255,255,255,.06);margin-top:30px}
+footer img{height:54px;margin-bottom:12px;filter:drop-shadow(0 0 14px rgba(226,155,134,.3))}
+
+@media(max-width:560px){.top h1{font-size:1.6rem}.step{padding:20px}}
