@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>認識 CLAUDE.md ・ 讓 AI 記住妳是誰 ・ 使命落地 AI 陪跑工作坊</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rose:#E29B86;--rose-bright:#F2BCA8;--violet:#B79CE8;--violet-deep:#8A6FD0;
+    --bg:#241C30;--panel:rgba(255,255,255,.04);--panel-line:rgba(226,155,134,.22);
+    --text:#EDE6E2;--muted:#A89B95;--grad:linear-gradient(120deg,#E29B86 0%,#B79CE8 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC",sans-serif;color:var(--text);background:var(--bg);line-height:1.95;font-weight:300;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Noto Serif TC",serif}
+  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .wrap{max-width:720px;margin:0 auto;padding:0 26px}
+  .top{text-align:center;padding:54px 0 28px;background:linear-gradient(160deg,rgba(226,155,134,.12),rgba(183,156,232,.10))}
+  .top .badge{display:inline-block;font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.26em;color:var(--rose-bright);border:1px solid var(--panel-line);border-radius:999px;padding:7px 18px;margin-bottom:18px}
+  .top h1{font-size:2rem;font-weight:600;line-height:1.4;margin-bottom:12px}
+  .top p{color:var(--muted);max-width:520px;margin:0 auto;font-size:1.02rem}
+  h2{font-size:1.15rem;color:var(--violet);margin:38px 0 6px;font-family:"Space Mono",monospace;letter-spacing:.03em}
+  .intro{background:var(--panel);border-radius:16px;padding:22px 26px;margin:26px 0;border-left:3px solid var(--rose)}
+  .intro strong{color:var(--rose-bright)}
+  .card{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:22px 24px;margin-bottom:16px}
+  .card p{margin:6px 0}
+  .card .muted{color:var(--muted);font-size:.93rem}
+  code{font-family:"Space Mono",monospace;background:rgba(255,255,255,.10);color:var(--rose-bright);padding:2px 8px;border-radius:6px;font-size:.9em}
+
+  /* 白板 vs 牆 */
+  .vs{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin:14px 0}
+  .vs .box{border-radius:14px;padding:20px;text-align:center}
+  .vs .board{background:rgba(255,255,255,.05);border:1px dashed rgba(255,255,255,.2)}
+  .vs .wall{background:rgba(226,155,134,.12);border:1px solid var(--panel-line)}
+  .vs .box .t{font-size:1.5rem;margin-bottom:6px}
+  .vs .box b{display:block;margin-bottom:4px}
+  .vs .box p{color:var(--muted);font-size:.9rem;margin:0}
+  .vs .mid{color:var(--muted);font-family:"Noto Serif TC";font-style:italic}
+  @media(max-width:560px){.vs{grid-template-columns:1fr}.vs .mid{padding:4px 0}}
+
+  .prompt{position:relative;background:#fdf6f2;color:#3a2e28;border-radius:10px;padding:18px 18px 16px;margin:12px 0;font-family:"Noto Sans TC";font-size:.97rem;line-height:1.8;white-space:pre-wrap;border:1px solid var(--panel-line)}
+  .prompt .tag{position:absolute;top:-10px;left:14px;background:var(--violet-deep);color:#fff;font-size:.7rem;padding:2px 10px;border-radius:999px}
+  .ex{background:rgba(183,156,232,.1);border-left:3px solid var(--violet);border-radius:0 10px 10px 0;padding:12px 16px;margin:10px 0;font-size:.95rem}
+  .ex b{color:var(--violet)}
+  .tip{background:rgba(226,155,134,.12);border:1px solid var(--panel-line);border-radius:12px;padding:16px 20px;margin:14px 0}
+  .tip b{color:var(--rose-bright)}
+  ul{margin:6px 0 6px 20px}
+  li{margin-bottom:8px}
+  .help{background:linear-gradient(160deg,rgba(226,155,134,.14),rgba(183,156,232,.12));border-radius:16px;padding:24px 26px;margin:28px 0;text-align:center}
+  .help h3{font-size:1.15rem;margin-bottom:8px}
+  .help p{color:var(--text);max-width:520px;margin:0 auto 6px}
+  .help a{color:var(--rose-bright);text-decoration:none;font-weight:500}
+  footer{text-align:center;padding:40px 20px;color:var(--muted);font-size:.85rem;border-top:1px solid rgba(255,255,255,.06);margin-top:28px}
+  @media(max-width:560px){.top h1{font-size:1.6rem}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="badge">第 1 堂 ・ 裝好之後了解一下</div>
+    <h1 class="grad-text">認識 CLAUDE.md<br>讓 AI 記住妳是誰</h1>
+    <p>裝好工具之後，先認識一個小東西 ——<br>它會讓 AI 每次都記得妳的味道，不用每次重講 🌿</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>妳有沒有發現：跟 AI 聊完、把視窗一關，<strong>它就把妳教它的事忘光了</strong>？<br>下次開新對話，又要從頭跟它說一次「我是誰、我要什麼語氣」……有點累齁。<br><strong>CLAUDE.md 就是來解決這件事的。</strong></p>
+  </div>
+
+  <h2>// 一個比喻就懂</h2>
+  <div class="card">
+    <div class="vs">
+      <div class="box board">
+        <div class="t">🧽</div>
+        <b>跟 AI 聊天 ＝ 白板</b>
+        <p>寫得再多，對話一關、擦掉就忘光了</p>
+      </div>
+      <div class="mid">vs</div>
+      <div class="box wall">
+        <div class="t">📌</div>
+        <b>CLAUDE.md ＝ 牆上公告</b>
+        <p>貼在牆上，AI 每次工作前都先看一眼，永遠記得</p>
+      </div>
+    </div>
+    <p class="muted">CLAUDE.md 就是一個放在妳資料夾裡的小文字檔。AI 每次啟動，第一件事就是去讀它 —— 不管妳關過幾次視窗，它都在。</p>
+  </div>
+
+  <h2>// 它跟資料夾綁在一起</h2>
+  <div class="card">
+    <p><strong>妳在哪個資料夾打開 AI，它就讀那個資料夾的 CLAUDE.md。</strong></p>
+    <p class="muted">所以不同的工作，可以放不同資料夾、各有一份說明書 —— 做品牌的事在「我的品牌」資料夾、寫貼文在「貼文」資料夾，AI 自動知道「現在在做哪件事」，不會搞混。</p>
+    <div class="tip"><b>💡 現在不用記細節。</b>妳只要先有個印象：<b>資料夾 ＝ 工作邊界，CLAUDE.md ＝ 那個工作的說明書。</b></div>
+  </div>
+
+  <h2>// 裡面寫什麼？用妳自己的話就好</h2>
+  <div class="card">
+    <p>不用寫得像技術文件。就把「妳希望 AI 每次都記得的事」講清楚：</p>
+    <ul>
+      <li><b>妳是誰、在做什麼</b></li>
+      <li><b>妳的語氣偏好、規則</b></li>
+      <li><b>常用的東西放在哪</b></li>
+    </ul>
+    <div class="ex"><b>妳是誰：</b>「我是做孕產身心靈的陪產員，客群是 25–45 歲的媽媽。」</div>
+    <div class="ex"><b>語氣規則：</b>「回覆用溫暖但有骨的語氣，不浮誇、不誇大療效。梵文專有名詞第一次出現時附中譯。」</div>
+    <div class="ex"><b>常用檔案：</b>「我的禁用詞清單在 寫作禁用詞清單.md，黃金範例貼文在 完稿資料夾。」</div>
+  </div>
+
+  <h2>// 怎麼建一個？用講的就好</h2>
+  <div class="card">
+    <p>妳不用自己開檔案打字。就跟 AI 說一句：</p>
+    <div class="prompt"><span class="tag">貼這句</span>幫我在這個資料夾建一個 CLAUDE.md，記住我是做孕產身心靈的陪產員、客群是 25–45 歲媽媽，語氣溫暖但有骨、不誇大療效。以後做東西都照這個調性。</div>
+    <p class="muted">建好之後，之後它幫妳寫貼文、做網頁，都會自動記得妳的味道 —— 這就是那個「它終於懂我」的時刻 ✨</p>
+  </div>
+
+  <h2>// 一個小原則</h2>
+  <div class="card">
+    <p><strong>寫少，但寫對。</strong></p>
+    <p class="muted">CLAUDE.md 不是倉庫，是牆上那張最重要的公告。100 行以內就很好 —— 只寫「拿掉它 AI 就會做錯」的事。落落長反而會讓它記不清。</p>
+    <div class="tip"><b>💡 小訣竅：</b>哪天 AI 做錯了、妳糾正它，可以順口說一句「<b>把這個記進 CLAUDE.md，以後別再犯</b>」，它會自己更新。</div>
+  </div>
+
+  <div class="help">
+    <h3>現在「了解一下」就夠了 💛</h3>
+    <p>不用背、不用馬上做完美。今天先認得它、建一個簡單的就好。</p>
+    <p>之後第 3 堂做網頁時，我們會再一起把妳的品牌調性寫進去；更進階的用法，後面幾堂慢慢帶。</p>
+    <p style="margin-top:10px">卡住都可以問我 ・ LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a></p>
+  </div>
+
+</div>
+
+<footer>使命落地・AI 陪跑工作坊　|　認識 CLAUDE.md　|　欣妙在陪你 💛</footer>
+
+</body>
+</html>
