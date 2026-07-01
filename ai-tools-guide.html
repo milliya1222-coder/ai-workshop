@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 工具全景・一次看懂 ・ 使命落地 AI 陪跑工作坊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#23272e; --ink-soft:#5b6470; --bg:#F7F8FA; --card:#fff; --line:#E7EAEF;
+    --rose:#E29B86; --rose-deep:#C97B63;
+    --term:#7C6BD6;      /* 終端機 紫 */
+    --desk:#3E92CC;      /* 桌面 藍 */
+    --auto:#2BAE8A;      /* 自動化 綠 */
+    --codex:#444b55;     /* codex 深灰 */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Noto Sans TC",sans-serif;color:var(--ink);background:var(--bg);line-height:1.85;font-weight:300;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Noto Serif TC",serif;line-height:1.4}
+  .mono{font-family:"Space Mono",monospace}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+  /* hero */
+  .hero{background:linear-gradient(135deg,#2B2F3A 0%,#3A3550 60%,#5B4A6B 100%);color:#fff;padding:70px 0 60px;text-align:center}
+  .hero .eyebrow{font-family:"Space Mono",monospace;font-size:.78rem;letter-spacing:.3em;color:#E2B8A8;margin-bottom:18px}
+  .hero h1{font-size:2.7rem;font-weight:700;letter-spacing:.03em;margin-bottom:14px}
+  .hero p{color:#cdd2db;max-width:560px;margin:0 auto;font-size:1.02rem}
+  .hero .meta{margin-top:22px;font-size:.82rem;color:#9aa2b1;letter-spacing:.05em}
+
+  /* nav chips */
+  .nav{position:sticky;top:0;z-index:10;background:rgba(247,248,250,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 0}
+  .nav .wrap{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+  .nav a{font-size:.82rem;text-decoration:none;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:5px 14px;background:#fff;transition:.2s}
+  .nav a:hover{color:var(--ink);border-color:var(--ink-soft)}
+
+  section{padding:50px 0}
+  .sec-tag{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.28em;margin-bottom:8px}
+  h2{font-size:1.7rem;font-weight:600;margin-bottom:8px}
+  .lead{color:var(--ink-soft);margin-bottom:26px;max-width:680px}
+  p{margin-bottom:12px}
+  strong{font-weight:500;color:var(--ink)}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 30px;box-shadow:0 6px 24px rgba(40,50,70,.05)}
+  .card + .card{margin-top:18px}
+
+  /* category accent bar */
+  .accent{border-left:5px solid var(--line)}
+  .a-term{border-left-color:var(--term)} .a-desk{border-left-color:var(--desk)}
+  .a-auto{border-left-color:var(--auto)} .a-rose{border-left-color:var(--rose)} .a-codex{border-left-color:var(--codex)}
+  .chip{display:inline-block;font-size:.72rem;font-weight:500;color:#fff;padding:3px 11px;border-radius:999px;margin-bottom:12px;letter-spacing:.05em}
+  .c-term{background:var(--term)} .c-desk{background:var(--desk)} .c-auto{background:var(--auto)} .c-rose{background:var(--rose-deep)} .c-codex{background:var(--codex)}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.92rem;background:#fff;border-radius:12px;overflow:hidden}
+  th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#F0F2F6;font-weight:500;font-size:.82rem;color:var(--ink-soft)}
+  tr:last-child td{border-bottom:none}
+  td .mono{font-size:.85em}
+  .star{color:var(--rose-deep);white-space:nowrap}
+
+  .callout{border-radius:14px;padding:20px 24px;margin:16px 0}
+  .callout h3{font-size:1.1rem;margin-bottom:8px}
+  .callout.key{background:#FBEEE9;border:1px solid #EFD3C8}
+  .callout.key h3{color:var(--rose-deep)}
+  .callout.warn{background:#FFF6E6;border:1px solid #F3E2BC}
+  .callout.warn h3{color:#B8860B}
+  .callout.info{background:#EAF3FA;border:1px solid #CFE3F1}
+  .callout.info h3{color:var(--desk)}
+
+  ul.clean{list-style:none;margin:6px 0}
+  ul.clean li{padding:6px 0 6px 22px;position:relative}
+  ul.clean li::before{content:"▹";position:absolute;left:0;color:var(--rose-deep)}
+
+  /* recap synthesis */
+  .teach{background:linear-gradient(160deg,#FBEEE9,#F6E6DC);border:1px solid #EFD3C8}
+  .teach h2{color:var(--rose-deep)}
+  .path{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:14px}
+  .path .opt{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+  .path .opt b{display:block;margin-bottom:6px}
+  .path .opt.rec{border:2px solid var(--rose);box-shadow:0 6px 18px rgba(201,123,99,.15)}
+  .path .opt .tagrec{font-size:.7rem;color:#fff;background:var(--rose-deep);border-radius:999px;padding:2px 9px;margin-left:6px}
+  @media(max-width:620px){.path{grid-template-columns:1fr}}
+
+  .pb{background:#F4F6F4;border:1px solid var(--line);border-radius:10px;padding:13px 15px;font-family:'Space Mono',monospace;font-size:.8rem;white-space:pre-wrap;line-height:1.65;color:#2c3a30;margin:8px 0 16px}
+  .pcat{font-family:"Noto Serif TC",serif;font-weight:600;font-size:1.05rem;margin:20px 0 4px;color:var(--ink)}
+  .pcat:first-child{margin-top:0}
+  footer{text-align:center;padding:40px 20px;color:var(--ink-soft);font-size:.85rem;border-top:1px solid var(--line)}
+
+  @media(max-width:560px){.hero h1{font-size:2rem}table{font-size:.82rem}th,td{padding:8px 9px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">先認識 AI 的世界 ・ 2026</div>
+    <h1>AI 工具全景・一次看懂</h1>
+    <p>自動化 AI、終端機、桌面 App、Claude Code、Codex —— 這些到底是什麼、誰適合用、怎麼選？<br>我幫妳研究好了，帶妳一次看懂，妳不用自己爬。</p>
+    <div class="meta">使命落地・AI 陪跑工作坊 ｜ 欣妙帶妳看 💛</div>
+  </div>
+</header>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#map">分類地圖</a>
+    <a href="#term">終端機版</a>
+    <a href="#desk">桌面式</a>
+    <a href="#auto">自動化 & Agent</a>
+    <a href="#claude">Claude Code</a>
+    <a href="#codex">Codex</a>
+    <a href="#foryou">妳能怎麼用</a>
+    <a href="#prompts">指令範本庫</a>
+    <a href="#teach">帶妳記住的重點</a>
+  </div>
+</nav>
+
+<!-- MAP -->
+<section id="map">
+  <div class="wrap">
+    <div class="sec-tag" style="color:var(--ink-soft)">// 先給妳一張地圖</div>
+    <h2>先有一張地圖：AI 怎麼分？</h2>
+    <p class="lead">分辨任何一個 AI 工具，其實只要問兩個問題：<strong>它長什麼樣子？</strong>（介面）以及 <strong>它會不會自己動手做事？</strong>（能力）。看懂這兩個，妳就不會再被一堆名詞嚇到。</p>
+
+    <div class="card">
+      <h3 style="margin-bottom:12px">① 依「介面形式」分 —— 它長什麼樣子</h3>
+      <table>
+        <tr><th>類型</th><th>長相</th><th>代表</th><th>對新手</th></tr>
+        <tr><td>純網頁聊天</td><td>開瀏覽器打字</td><td>ChatGPT、Claude.ai、Gemini</td><td>最簡單，但只會「講」</td></tr>
+        <tr><td><span style="color:var(--desk)">●</span> 桌面式 App（GUI）</td><td>裝在電腦、滑鼠點</td><td>Claude／ChatGPT 桌面版</td><td>甜蜜點：好上手又會動手</td></tr>
+        <tr><td><span style="color:var(--term)">●</span> 終端機版（CLI）</td><td>黑底命令列打指令</td><td><strong>Claude Code</strong>、Codex CLI</td><td>最強最自動，門檻較高</td></tr>
+        <tr><td>IDE 外掛／編輯器</td><td>寫程式的軟體裡</td><td>Cursor、Windsurf</td><td>偏工程，我們先不必碰</td></tr>
+        <tr><td><span style="color:var(--auto)">●</span> 自動化平台</td><td>拉流程圖／設觸發</td><td>Zapier、Make、n8n</td><td>串「自動跑」的流程</td></tr>
+      </table>
+      <h3 style="margin:18px 0 8px">② 依「能力」分（這個最關鍵）</h3>
+      <p><strong>聊天式 AI</strong>：一問一答，給妳答案，但<strong>不會自己動手</strong>。<br>
+      <strong>代理式 AI（Agent）</strong>：會自己規劃、用工具、讀寫檔案、執行任務、出錯還會自己修 ——「<strong>會動手把一件事做完</strong>」。</p>
+      <p style="color:var(--ink-soft);font-size:.94rem">我們課堂要學的 Claude Code，還有 Codex，都屬於「代理式」。它們特別的地方是 <strong>同一個引擎、跨多種介面</strong>（終端機／桌面 App／IDE／雲端都能用）。</p>
+    </div>
+  </div>
+</section>
+
+<!-- TERMINAL -->
+<section id="term">
+  <div class="wrap">
+    <div class="sec-tag" style="color:var(--term)">// 01 ・ 終端機</div>
+    <h2>終端機版 AI</h2>
+    <p class="lead">住在命令列（黑底白字視窗）裡的 AI。妳用日常語言下指令，它能讀檔、改檔、執行、自我修正 —— 不只回妳一句話，而是幫妳把事情做完。看起來最專業，門檻也最高。</p>
+    <div class="card accent a-term">
+      <span class="chip c-term">終端機 CLI</span>
+      <table>
+        <tr><th>工具</th><th>開發商</th><th>入門價</th><th>需程式背景</th><th>新手友善</th></tr>
+        <tr><td><strong>Claude Code</strong></td><td>Anthropic</td><td>Pro $20/月</td><td>不必（非工程用途）</td><td class="star">★★★★★</td></tr>
+        <tr><td>OpenAI Codex CLI</td><td>OpenAI</td><td>Go $8 / Plus $20</td><td>偏需要</td><td class="star">★★★</td></tr>
+        <tr><td>Gemini CLI</td><td>Google</td><td>免費額度大</td><td>偏需要</td><td class="star">★★★</td></tr>
+        <tr><td>aider</td><td>開源社群</td><td>免費＋token 費</td><td>需要</td><td class="star">★★</td></tr>
+        <tr><td>opencode</td><td>開源社群</td><td>免費＋token 費</td><td>需要</td><td class="star">★★</td></tr>
+        <tr><td>Warp（AI 終端機）</td><td>Warp.dev</td><td>Free / $20</td><td>偏需要</td><td class="star">★★★</td></tr>
+      </table>
+      <p style="font-size:.88rem;color:var(--ink-soft)">「新手友善」是我綜合研究後的判斷（推測），給妳排序參考用。</p>
+    </div>
+  </div>
+</section>
+
+<!-- DESKTOP -->
+<section id="desk">
+  <div class="wrap">
+    <div class="sec-tag" style="color:var(--desk)">// 02 ・ 桌面</div>
+    <h2>桌面式 AI（App）</h2>
+    <p class="lead">有視窗、用滑鼠點的 AI App。介於「難用的終端機」與「功能較少的純網頁」之間 —— 對我們來說，是好上手又能動手的甜蜜點。<strong>這也是我們課堂主要用的。</strong></p>
+    <div class="card accent a-desk">
+      <span class="chip c-desk">桌面 GUI</span>
+      <table>
+        <tr><th>工具</th><th>平台</th><th>起步價</th><th>一句話特色</th><th>新手友善</th></tr>
+        <tr><td><strong>Claude 桌面版</strong></td><td>mac／Win</td><td>App 免費，依訂閱</td><td>Code 分頁可不用終端機操作檔案、支援 MCP</td><td class="star">★★★★★</td></tr>
+        <tr><td>ChatGPT 桌面版</td><td>mac／Win</td><td>免費；$8/$20 起</td><td>快捷喚出、語音、截圖討論</td><td class="star">★★★★★</td></tr>
+        <tr><td>Gemini Windows App</td><td>Win／mac</td><td>免費，進階需訂閱</td><td>深整合 Google Drive／Workspace</td><td class="star">★★★★★</td></tr>
+        <tr><td>Microsoft Copilot</td><td>Win 內建</td><td>免費；併入 M365</td><td>深整合 Office、內建生圖</td><td class="star">★★★★</td></tr>
+        <tr><td>Cursor／Windsurf</td><td>mac／Win／Linux</td><td>免費；Pro $20</td><td>AI 程式編輯器</td><td class="star">★★</td></tr>
+      </table>
+      <div class="callout key" style="margin-top:6px">
+        <h3>🔑 2026 對新手最重要的好消息</h3>
+        <p style="margin-bottom:0">Claude 桌面版的「<strong>Code</strong>」分頁，現在 <strong>不需要打終端機</strong> 就能做那些「會動手」的事 —— 有視覺化的檔案對照、內建預覽與編輯器，每個動作都逐次問過妳，官方還特別建議「<strong>新手用 Ask 權限模式</strong>」。對「看到黑底命令列就怕」的妳，這是超溫柔的入口。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTOMATION -->
+<section id="auto">
+  <div class="wrap">
+    <div class="sec-tag" style="color:var(--auto)">// 03 ・ 自動化</div>
+    <h2>自動化 AI 與 Agent（代理）</h2>
+    <p class="lead">能自己規劃、用工具、跨步驟把任務「自動跑完」的 AI。核心精神很簡單：<strong>把做過兩次以上的事，變成一鍵重播的流程。</strong></p>
+    <div class="card accent a-auto">
+      <span class="chip c-auto">自動化 / Agent</span>
+      <table>
+        <tr><th>平台</th><th>定位</th><th>價格</th></tr>
+        <tr><td>Zapier</td><td>最易上手</td><td>免費 100 tasks/月起</td></tr>
+        <tr><td>Make</td><td>最划算</td><td>約 US$9/月（免費 1,000 點）</td></tr>
+        <tr><td>n8n</td><td>最彈性、可自架</td><td>自架免費</td></tr>
+        <tr><td>Claude Skill／Computer Use</td><td>AI 原生代理（欣妙現在在用的工作流）</td><td>含於 Claude 方案</td></tr>
+        <tr><td>ChatGPT Agent</td><td>AI 原生代理</td><td>含於 ChatGPT 方案</td></tr>
+      </table>
+      <div class="callout warn">
+        <h3>⚠️ 最大風險：AI 會「很有自信地犯錯，然後自動繼續跑」</h3>
+        <p style="margin-bottom:0">所以記得三句話：<strong>人在迴路、先小量測試、重要的事先確認。</strong>這也是「權限模式」存在的原因 —— 它會在動手前先問妳。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLAUDE CODE -->
+<section id="claude">
+  <div class="wrap">
+    <div class="sec-tag" style="color:var(--rose-deep)">// 04 ・ 我們的主角</div>
+    <h2>Claude Code（我們課堂的主角）</h2>
+    <p class="lead">Anthropic 的代理式 AI 工作助手 —— 讀寫檔案、執行指令、做網頁、串工具。同一個引擎，跨終端機／桌面 App／IDE／網頁四種介面。我們就是要用它，幫妳把點子做出來。</p>
+    <div class="card accent a-rose">
+      <span class="chip c-rose">Claude Code</span>
+      <table>
+        <tr><th>項目</th><th>內容</th></tr>
+        <tr><td>怎麼用（我們課堂）</td><td>桌面版 App 的 <strong>Code 分頁</strong>，滑鼠點、不碰終端機</td></tr>
+        <tr><td>方案</td><td>免費版<strong>不能用</strong>；Pro $20/月就很夠用（Max 是重度用戶才需要）</td></tr>
+        <tr><td>之後會認識的概念</td><td>CLAUDE.md（給 AI 的說明書）・權限模式・Skill（可重複的配方）—— 現在聽過就好，之後一堂堂帶</td></tr>
+        <tr><td>新手最溫柔的入口</td><td>桌面 App ＋ Ask 權限模式（動手前先問妳）</td></tr>
+      </table>
+      <ul class="clean">
+        <li><strong>為什麼我們選它：</strong>對非工程的人最友善、繁體中文好、能串 Google 工具 —— 而且欣妙自己就是從零學起、一路做出網頁和表單的活例子，所以我知道怎麼陪妳。</li>
+        <li><strong>誠實說一句：</strong>Codex 也做得到類似的事。我們選 Claude Code，是因為它最友善、我最熟、最能一路陪妳走。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CODEX -->
+<section id="codex">
+  <div class="wrap">
+    <div class="sec-tag" style="color:var(--codex)">// 05 ・ 也認識一下</div>
+    <h2>OpenAI Codex（順便認識）</h2>
+    <p class="lead">2026 的「Codex」是 OpenAI 全新的代理式工具（跟 2021 那個同名舊模型無關）。一個帳號跨多形態：終端機、IDE、雲端、ChatGPT 內、GitHub。妳不用學它，認識一下就好，這樣別人提到妳不會慌。</p>
+    <div class="card accent a-codex">
+      <span class="chip c-codex">Codex</span>
+      <table>
+        <tr><th>項目</th><th>內容</th></tr>
+        <tr><td>形態</td><td>CLI（開源）・IDE 擴充・雲端 Web・ChatGPT 內・GitHub・SDK</td></tr>
+        <tr><td>方案</td><td>無獨立訂閱，<strong>綁 ChatGPT 方案</strong>（Plus $20 起、Pro $100 起，或 API 計費）</td></tr>
+        <tr><td>新手入口</td><td>ChatGPT／雲端最友善；CLI 門檻較高</td></tr>
+        <tr><td>與 Claude Code 差異</td><td>概念高度相似；主要差在<strong>生態系與帳號綁定</strong></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FOR YOU -->
+<section id="foryou">
+  <div class="wrap">
+    <div class="sec-tag" style="color:var(--auto)">// 06 ・ 妳能怎麼用</div>
+    <h2>給陪伴工作者的 AI 應用</h2>
+    <p class="lead">我們這群人 —— 做陪產、哺乳母嬰、諮商、療癒身心靈、教育、陪伴、女人圈的女性 —— 有個共同點：會接觸很私密的個案資料。所以「怎麼用」和「哪裡不能用」一樣重要。</p>
+
+    <div class="callout warn">
+      <h3>🚫 最重要的紅線：個案隱私</h3>
+      <p style="margin-bottom:6px"><strong>不要把可識別的個案資料（姓名、生日、聯絡方式、可辨識細節）貼進一般 AI</strong> —— 多數主流 AI 並不是為醫療／諮商情境設計的，等於把資料送進公共領域。</p>
+      <ul class="clean" style="margin:0">
+        <li>要用就先<strong>去識別化</strong>（用代號、抽掉可辨識細節）—— 欣妙的陪產逐字稿就是這樣處理的</li>
+        <li><strong>知情同意</strong>：讓個案知道妳用 AI 做什麼、她可以拒絕</li>
+        <li><strong>人工核對</strong>：AI 會「自信地寫錯」，紀錄一定要自己看過</li>
+        <li>AI 是助理，<strong>不是專業者</strong>，不能取代妳的判斷與陪伴</li>
+      </ul>
+      <p style="font-size:.85rem;color:var(--ink-soft);margin:8px 0 0">來源：NBCC、ACA 美國諮商學會、APA、NPR</p>
+    </div>
+
+    <div class="card accent a-auto" style="margin-top:18px">
+      <span class="chip c-auto">四大安全切入點</span>
+      <table>
+        <tr><th>類別</th><th>例子</th><th>燈號</th></tr>
+        <tr><td>行政庶務</td><td>寫信、排程、預約表單、收費通知、名單</td><td>🟢 安全</td></tr>
+        <tr><td>內容行銷</td><td>IG 貼文、電子報、課程介紹、網頁、衛教圖文</td><td>🟢 安全</td></tr>
+        <tr><td>學習成長</td><td>把研究/書整理成白話、備課、做講義</td><td>🟢 安全</td></tr>
+        <tr><td>個案照顧</td><td>會談摘要、課後回饋整理、追蹤提醒</td><td>🟡 須去識別化</td></tr>
+      </table>
+      <p style="font-size:.88rem;color:var(--ink-soft)">參考數字：助人工作者最常把 AI 用在寫作(52%)、產內容(33%)、摘要(32%)、口述轉文字(22%)。（APA Monitor 2026）</p>
+    </div>
+
+    <div class="card accent a-auto">
+      <span class="chip c-auto">依妳的角色，這樣用</span>
+      <table>
+        <tr><th>角色</th><th>綠燈應用</th><th>注意</th></tr>
+        <tr><td>陪產 / Birth Keeper</td><td>產前衛教、給媽媽的溫暖回顧、產後追蹤提醒</td><td>錄音須去識別化</td></tr>
+        <tr><td>哺乳 / 母嬰</td><td>哺乳 FAQ、含乳圖文、餵養紀錄表單</td><td>個案紀錄用合規工具</td></tr>
+        <tr><td>諮商 / 療癒 / 身心靈</td><td>課程文案、引導語、冥想腳本、備課</td><td>個案內容不進一般 AI</td></tr>
+        <tr><td>教育 / 引導師</td><td>備課、講義投影片、學習單、課後問卷</td><td>—</td></tr>
+        <tr><td>女人圈 / 社群</td><td>活動企劃、報名頁、邀請文、主題引導卡</td><td>社群討論去識別化</td></tr>
+      </table>
+    </div>
+
+    <div class="card accent a-rose">
+      <span class="chip c-rose">Claude Code 能幫妳做的</span>
+      <ul class="clean">
+        <li>服務網頁、活動報名表單（中／日雙語都行）</li>
+        <li>把錄音 → 整理成精華 → 產出貼文（記得去識別化）</li>
+        <li>客戶名單系統、自動排「下次該聯繫日」</li>
+        <li>把重複流程打包成 Skill，一句話跑完</li>
+      </ul>
+      <p style="font-size:.88rem;color:var(--ink-soft)">這些不是空談 —— 妳眼前這頁、報名表單、課程網頁，都是欣妙用它做出來的。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROMPTS -->
+<section id="prompts">
+  <div class="wrap">
+    <div class="sec-tag" style="color:var(--rose-deep)">// 07 ・ 指令小抄</div>
+    <h2>好用的指令範本庫</h2>
+    <p class="lead">把【】換成妳的內容，貼給 AI 就好。⚠️ 沒去識別化的個案資料，不要放進一般 AI。</p>
+
+    <div class="card">
+      <div class="pcat">✍️ 內容創作</div>
+      <pre class="pb">你是溫暖但有骨的女性身心靈文案夥伴。請把下面這個感觸，寫成一篇 IG 貼文（300–500 字），語氣溫柔真誠、不浮誇、結尾不要硬銷售。主題／感觸：【…】 對象：25–45 歲的媽媽</pre>
+      <pre class="pb">請用這個結構寫貼文：1) 抓一個客戶私下擔心、檯面上沒人說的痛點 2) 帶入一個有研究依據的事實（年份/數字＋來源）3) 點出市面上大家通常怎麼說 4) 用「身心靈整合」視角給我的結論。主題：【…】</pre>
+      <pre class="pb">同一個主題給我三版貼文：V1 深度孕產身心靈(300–800字)｜V2 生活輕鬆版(200–500字)｜V3 短金句版(150字內)。主題：【…】</pre>
+      <pre class="pb">幫我為這篇內容想 10 個吸引人的開頭第一句（hook），溫暖、能讓媽媽停下來。內容：【…】</pre>
+
+      <div class="pcat">📩 行政與溝通</div>
+      <pre class="pb">幫我寫一封溫暖的信給報名學員，說明【上課時間／匯款方式／課前準備】，親切清楚不官腔。</pre>
+      <pre class="pb">我需要婉轉地【婉拒／改期】，對象【…】，情況【…】。幫我寫一則誠懇、不給對方壓力的訊息。</pre>
+      <pre class="pb">我要辦【活動】，幫我列出報名表單需要的欄位，並為每題寫好溫暖清楚的說明。</pre>
+
+      <div class="pcat">📚 備課與教學</div>
+      <pre class="pb">我要教【主題】，對象【…】，時間【60】分鐘。幫我設計流程：開場、核心觀念、實作練習、收尾，附 3 個討論問題與 1 個回家小任務。</pre>
+      <pre class="pb">請把【主題或理論】用白話解釋給完全不懂的媽媽聽，舉生活化例子，並標出哪些有研究依據、哪些是觀點。</pre>
+
+      <div class="pcat">🔎 研究與查證（第 2 堂會深入）</div>
+      <pre class="pb">請研究【主題】。規則：優先學術(PubMed/Cochrane)與官方(WHO)，交叉比對至少兩種類型；每個主張附來源連結；英文用中文摘要；推測處標註「推測」。</pre>
+      <pre class="pb">有人說「【某說法】」，有研究依據嗎？請查證共識、相反證據與來源連結。不確定就說不確定。</pre>
+
+      <div class="pcat">🗂 整理與摘要（先去識別化）</div>
+      <pre class="pb">這是已「去掉姓名、改成代號」的筆記，幫我整理成 5 點重點＋給對方 1 句溫暖回饋：【…】</pre>
+      <pre class="pb">這段逐字稿（已去識別化），幫我抓出：3 個金句、2 個情緒轉折、1 個可延伸成貼文的題目。【…】</pre>
+      <pre class="pb">這是我口述的心得逐字稿，幫我整理成通順、保留我口吻的文章，不要過度修飾：【…】</pre>
+
+      <div class="pcat">🌱 思考與成長夥伴</div>
+      <pre class="pb">我卡在【…】，請先不要給答案，先問我 5 個好問題，幫我想清楚。</pre>
+      <pre class="pb">我提供【服務】，客群【…】。幫我腦力激盪 3 種定位角度與對應定價邏輯，各自優缺點。</pre>
+
+      <div class="pcat">🛠 Claude Code 專用（操作型）</div>
+      <pre class="pb">幫我做一頁【服務／活動】網頁。風格：溫暖療癒、玫瑰粉、留白多、手機也好看。內容：【簡介／方案／報名】。做好給我預覽。</pre>
+      <pre class="pb">幫我用 Google 表單做一份【活動】報名表，欄位包含【…】，並把回應連到試算表方便管理。</pre>
+      <pre class="pb">我每次都會做這件事：【描述流程】。幫我打包成一個可重複呼叫的 Skill，下次一句話跑完。</pre>
+    </div>
+  </div>
+</section>
+
+<!-- RECAP -->
+<section id="teach">
+  <div class="wrap">
+    <div class="card teach">
+      <div class="sec-tag" style="color:var(--rose-deep)">// 帶妳記住的重點</div>
+      <h2>看完這麼多，其實只要記住這些</h2>
+
+      <h3 style="margin:18px 0 6px">一句話說我們在學什麼</h3>
+      <p style="font-style:italic;color:var(--rose-deep);font-size:1.08rem">「大部分 AI 只會跟妳聊天、給答案；我們要學的 Claude Code，是會<strong>自己動手把東西做出來</strong>的 AI —— 幫妳生網頁、做表單、整理資料。」</p>
+
+      <h3 style="margin:20px 0 10px">我們的課會怎麼走</h3>
+      <div class="path">
+        <div class="opt"><b>1 ・ 純終端機</b>最正統、最有成就感，但第一關容易勸退。我們先不走這條。</div>
+        <div class="opt rec"><b>2 ・ 先桌面 App → 再看情況 <span class="tagrec">我們走這條</span></b>前段用桌面 App 快速有成果、建立信心；之後有需要，再溫柔帶進終端機。</div>
+        <div class="opt"><b>3 ・ 全程桌面 App</b>最無痛，但少了終端機的彈性與成就感。</div>
+      </div>
+
+      <h3 style="margin:22px 0 6px">幾句想送給妳的話</h3>
+      <ul class="clean">
+        <li>聊天 AI 是顧問，代理 AI 是員工 —— 一個給建議，一個幫妳做完。</li>
+        <li>把做過兩次以上的事，變成一鍵重播的流程。</li>
+        <li>AI 會很有自信地犯錯 —— 所以「人在迴路、先小量測試、重要的事先確認」。</li>
+        <li>妳不需要變成工程師，妳只需要願意開口、願意試。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>裡面每個事實都查證過官方來源，推測之處都有標。</p>
+  <p style="margin-top:6px">AI 工具全景 ・ 一次看懂 ・ 欣妙在陪你 💛</p>
+</footer>
+
+</body>
+</html>
