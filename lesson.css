@@ -43,6 +43,7 @@ code.inl{font-family:"Space Mono",monospace;background:rgba(255,255,255,.10);col
 /* copy-this prompt block */
 .prompt{position:relative;background:var(--code-bg);color:var(--code-ink);border-radius:10px;padding:18px 18px 16px;margin:12px 0;font-family:"Noto Sans TC",sans-serif;font-size:.97rem;line-height:1.8;white-space:pre-wrap;border:1px solid var(--panel-line)}
 .prompt .tag{position:absolute;top:-10px;left:14px;background:var(--violet-deep);color:#fff;font-size:.7rem;padding:2px 10px;border-radius:999px;letter-spacing:.05em}
+.muted{color:var(--muted);font-size:.94rem}
 
 .warn{background:rgba(226,155,134,.12);border:1px solid var(--panel-line);border-radius:12px;padding:16px 20px;margin:14px 0}
 .warn b{color:var(--rose-bright)}
