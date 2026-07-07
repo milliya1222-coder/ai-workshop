@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用講的，比打字更快 ・ 語音輸入安裝教學 ・ 使命落地 AI 陪跑工作坊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lesson.css">
+<style>
+  /* 平台標籤 + 比較表（本頁專用小樣式，其餘沿用 lesson.css） */
+  .pill{display:inline-block;font-size:.72rem;font-weight:500;padding:2px 10px;border-radius:999px;margin-left:6px;vertical-align:middle}
+  .pill.mac{background:rgba(183,156,232,.16);color:var(--violet);border:1px solid rgba(183,156,232,.35)}
+  .pill.win{background:rgba(226,155,134,.16);color:var(--rose-bright);border:1px solid var(--panel-line)}
+  .cmp{width:100%;border-collapse:collapse;margin:14px 0;font-size:.93rem}
+  .cmp th,.cmp td{text-align:left;padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top}
+  .cmp th{font-family:"Space Mono",monospace;font-size:.78rem;letter-spacing:.03em;color:var(--violet);font-weight:400}
+  .cmp td b{color:var(--rose-bright)}
+  .cmp .free{color:#9ED8B4}
+  .cmp-wrap{overflow-x:auto;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:var(--panel)}
+  .cmp-wrap .cmp{margin:0}
+  .cmp-wrap th,.cmp-wrap td{padding-left:16px;padding-right:16px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="logo.png" alt="欣妙在陪你 ・ Birth with Milliya">
+    <div class="badge">工具加碼 ・ 用講的</div>
+    <h1 class="grad-text">用講的，<br>把想法直接說給 AI</h1>
+    <p>打字打不出的那些細節，用「講」的反而會自然說出來 ——<br>今天幫妳裝一個語音輸入小工具，讓妳出一張嘴，指令就打好了 🎙</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>妳有沒有這種經驗：心裡想得很清楚，一到打字就卡住、越打越簡短？<br>
+    <strong>用講的，妳會講出打字時想不到的細節</strong> —— 而這正是 AI 最需要的原料。這頁幫妳把「講話直接變文字」的工具裝起來，之後跟 Claude 工作、寫貼文、回訊息都用得到。</p>
+  </div>
+
+  <h2>// 這種工具跟手機語音輸入差在哪</h2>
+  <div class="step">
+    <p>手機那種語音輸入，是妳講什麼、它一字不漏打什麼（連「呃、然後、就是」都打進去）。</p>
+    <p style="margin-top:8px">今天裝的這種是<strong>會思考的語音輸入</strong>：它一邊聽，一邊<strong>自動把口語的贅字、重講、結巴清掉</strong>，變成一段乾淨、好用的文字。妳只要自然地講，它幫妳整理。</p>
+    <div class="tip"><b>💡 為什麼對「下指令給 AI」特別好用：</b>妳可以像跟朋友說話一樣，把「我想做一個什麼、要放哪些、給誰看」一口氣講完，它整理成通順的一段，妳再貼進 Claude —— 比慢慢打字精準太多。</div>
+  </div>
+
+  <h2>// 主角：Typeless 安裝步驟</h2>
+  <p class="muted" style="margin:-2px 0 14px">Typeless 支援 <b>Mac / Windows / 手機</b>，免費方案每週 8,000 字，日常夠用。跟著做就好 🌿</p>
+
+  <div class="step">
+    <div class="h"><div class="n">1</div><h3>下載</h3></div>
+    <p>打開瀏覽器，到官網按下載，選妳的系統：</p>
+    <div class="prompt"><span class="tag">網址</span>typeless.com</div>
+    <p class="muted">Mac 按「Download for macOS」、Windows 按「Download for Windows」<span class="pill mac">Mac</span><span class="pill win">Windows</span></p>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">2</div><h3>安裝、註冊一個免費帳號</h3></div>
+    <p>打開下載好的檔案、照畫面指示裝好，用 Email 註冊（選 <b>Free 免費方案</b>就好，每週 8,000 字很夠妳試）。</p>
+    <p class="muted">Mac 若跳出「來自網路的 App，確定要開嗎」，按<b>打開</b>即可 —— 這是正常的安全提醒。</p>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">3</div><h3>允許使用「麥克風」</h3></div>
+    <p>它會問可不可以用妳的麥克風 —— 按<b>允許</b>。沒有麥克風，它就聽不到妳說話。</p>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">4</div><h3><span style="color:var(--violet)">（Mac 專屬）</span>打開「輔助使用」權限 <span class="pill mac">Mac 必做</span></h3></div>
+    <p>Mac 會請妳到：<br><b>系統設定 → 隱私權與安全性 → 輔助使用（Accessibility）</b>，把 <b>Typeless</b> 的開關打開。</p>
+    <div class="warn"><b>⚠️ 這一步一定要做。</b>少了它，Typeless 沒辦法把整理好的字「打進」妳正在用的視窗，會變成好像沒反應。<br><b>Windows 通常不用這一步</b>，裝完給麥克風權限就能用。</div>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">5</div><h3>記住「按住說話」的快捷鍵</h3></div>
+    <p>Typeless 會給妳一個啟動快捷鍵（在設定裡看得到、也可以自己改）。用法就一個動作：</p>
+    <div class="prompt"><span class="tag">怎麼用</span>把游標點在要打字的地方 → 按住快捷鍵 → 開始講 → 講完放開 → 字就出現了</div>
+    <p class="muted">第一次先在記事本或 Line 的輸入框試講一句，看到字出來，就成功了 ✨</p>
+    <div class="tip"><b>💡 講中文記得：</b>在設定裡把語言選成中文（或用它的自動偵測）。第一次先講慢一點、清楚一點，它會越用越懂妳。</div>
+  </div>
+
+  <div class="warn"><b>🆘 卡住了？很正常，這樣檢查：</b><br>
+  · 講了沒反應（Mac）→ 十之八九是<b>第 4 步「輔助使用」沒打開</b>，回去確認一次<br>
+  · 完全沒收音 → 檢查<b>麥克風權限</b>、或系統有沒有選到對的麥克風<br>
+  · 字跑到別的地方 → 講之前先<b>把游標點進要打字的框框</b>裡<br>
+  · 中文變英文 → 到設定把語言改成中文<br>
+  · 還是不行 → 截圖丟群組，明天上課我陪妳一起弄，別自己硬撐 💛</div>
+
+  <h2>// 除了 Typeless，還有這些（都能中文）</h2>
+  <p class="muted" style="margin:-2px 0 12px">沒有最好、只有最適合妳。先從<b>免費內建</b>試起也完全可以，覺得想要更聰明的整理，再升級到付費款。（價格為 2026 年資訊，可能變動）</p>
+
+  <div class="cmp-wrap">
+  <table class="cmp">
+    <tr><th>工具</th><th>平台</th><th>費用</th><th>特色 / 適合誰</th></tr>
+    <tr>
+      <td><b>系統內建</b><br>（先試這個）</td>
+      <td>Mac 聽寫<br>Windows <code>Win + H</code></td>
+      <td class="free">完全免費</td>
+      <td>零安裝、馬上能用。<b>照唸照打</b>、不會幫妳整理贅字，但拿來「講出草稿」很夠。想先體驗「用講的」就從這開始。</td>
+    </tr>
+    <tr>
+      <td><b>Typeless</b><br>（今天主角）</td>
+      <td>Mac / Windows / 手機</td>
+      <td class="free">免費 8,000 字/週</td>
+      <td>會自動<b>去贅字、整理成乾淨文字</b>，跨 App 都能用。需要連網路。付費約 US$12/月（年繳）。</td>
+    </tr>
+    <tr>
+      <td><b>Wispr Flow</b></td>
+      <td>Mac / Windows / 手機</td>
+      <td class="free">免費 2,000 字/週</td>
+      <td>目前最多人用的一款，整理很順、中文好。免費額度較少，付費約 US$15/月。想要「最省心」可選它。</td>
+    </tr>
+    <tr>
+      <td><b>Superwhisper</b></td>
+      <td>Mac / iPhone</td>
+      <td>約 US$9.99/月</td>
+      <td>可<b>在自己電腦上運算、不一定要連網</b>，比較顧及隱私。適合在意「聲音不想上傳雲端」的妳。</td>
+    </tr>
+  </table>
+  </div>
+
+  <div class="tip"><b>🌷 我的建議：</b>今天先照上面把 <b>Typeless</b> 裝起來試試它「幫妳整理」的魔法；如果覺得免費額度不夠、或想要更順，再看看 Wispr Flow。真的只想免費、不想裝，<b>Mac 聽寫 / Windows 的 Win+H</b> 就能陪妳先上路。</div>
+
+  <div class="hw">
+    <h3>📝 裝好後，試一件事</h3>
+    <p>按住快捷鍵，<b>用講的</b>把「我想請 AI 幫我做的一件事」整段說出來（例如：幫我把這段服務介紹改得更溫暖、分段排好）。看它整理成一段乾淨文字，再貼進 Claude。</p>
+    <p style="margin-top:8px">妳會發現：<b>出一張嘴，指令就打好了</b> 🎙</p>
+  </div>
+
+  <div class="help">
+    <h3>裝不起來，別一個人卡著 💛</h3>
+    <p>截圖、或把畫面的訊息整段拍下來，丟到 LINE 群組或私訊我。明天上課我們也會一起裝一次。</p>
+    <p style="margin-top:10px">私訊我 LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <img src="logo.png" alt="欣妙在陪你 ・ Birth with Milliya">
+  <div>使命落地・AI 陪跑工作坊　|　欣妙在陪你 💛</div>
+</footer>
+
+</body>
+</html>
