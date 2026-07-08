@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>把網頁放上 GitHub，永久上線 ・ 使命落地 AI 陪跑工作坊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lesson.css">
+<style>
+  .cmp-wrap{overflow-x:auto;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:var(--panel);margin:14px 0}
+  .cmp{width:100%;border-collapse:collapse;font-size:.93rem}
+  .cmp th,.cmp td{text-align:left;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top}
+  .cmp th{font-family:"Space Mono",monospace;font-size:.78rem;letter-spacing:.03em;color:var(--violet);font-weight:400}
+  .cmp td b{color:var(--rose-bright)}
+  .cmp tr:last-child td{border-bottom:none}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="logo.png" alt="欣妙在陪你 ・ Birth with Milliya">
+    <div class="badge">進階上線 ・ GitHub Pages</div>
+    <h1 class="grad-text">把網頁放上 GitHub，<br>讓它永久在線上</h1>
+    <p>拖 Netlify 是「快速給人看一次」；<br>GitHub Pages 是妳<b>自己的一塊地</b> —— 免費、永久、有正式網址 🏠</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>我們的課程網站，就是這樣放上 GitHub 上線的。<br>它比拖檔案<strong>多幾個步驟</strong>，但一次設好之後：網址<strong>永遠有效</strong>、看起來<strong>更正式</strong>、之後改內容<strong>再上傳一次就更新</strong>。適合妳「真的要長期用」的那一頁。</p>
+  </div>
+
+  <h2>// 兩條路，選妳順的</h2>
+  <div class="step">
+    <ul>
+      <li><b>🌿 最省事：叫 Claude 幫妳</b> —— 貼一句話，它幫妳把整套弄好（推薦先試這條）</li>
+      <li><b>🖐 自己動手：在 GitHub 網站點一點</b> —— 不用終端機、不用寫程式，全程在瀏覽器裡</li>
+    </ul>
+    <p class="muted" style="margin-top:10px">兩條路的結果一樣：一個 <code>妳的帳號.github.io/…</code> 的網址。</p>
+  </div>
+
+  <h2>// 路 A ・ 叫 Claude 幫妳（最省事）</h2>
+  <div class="step">
+    <p>如果妳已經在用 Claude Code、也裝好了 Git，直接跟它說：</p>
+    <div class="prompt"><span class="tag">貼這句／講這段</span>幫我把這個網頁用 GitHub Pages 放到網路上，給我一個永久的網址。過程如果需要我登入 GitHub、或做什麼決定，請一步一步告訴我怎麼做。</div>
+    <p class="muted">它會幫妳建好倉庫（repository）、上傳檔案、開啟 Pages；過程中會請妳<b>登入一個免費的 GitHub 帳號</b>，照它說的點就好。卡住就把畫面截圖丟群組。</p>
+  </div>
+
+  <h2>// 路 B ・ 自己在 GitHub 網站做（不用終端機）</h2>
+  <p class="muted" style="margin:-2px 0 14px">全程在瀏覽器點一點就好。跟著五步走 🌿</p>
+
+  <div class="step">
+    <div class="h"><div class="n">1</div><h3>註冊一個 GitHub 帳號</h3></div>
+    <p>到 <b>github.com</b> 按 <b>Sign up</b>，用 Email 註冊一個免費帳號。妳取的<b>帳號名稱</b>之後會出現在網址裡，建議簡單好記。</p>
+    <div class="prompt"><span class="tag">網址</span>github.com</div>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">2</div><h3>開一個新倉庫（Repository）</h3></div>
+    <p>右上角 <b>＋ → New repository</b>：</p>
+    <ul>
+      <li><b>Repository name</b>：取個英文名字，例如 <code>my-page</code></li>
+      <li>選 <b>Public</b>（公開，這樣網頁才看得到）</li>
+      <li>勾 <b>Add a README file</b></li>
+      <li>按 <b>Create repository</b></li>
+    </ul>
+    <p class="muted">「倉庫」就是放這個網站所有檔案的資料夾。</p>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">3</div><h3>上傳妳的網頁檔案</h3></div>
+    <p>在倉庫頁面按 <b>Add file → Upload files</b>，把 AI 幫妳做好的網頁檔案<b>拖進去</b>，最後按 <b>Commit changes</b>。</p>
+    <div class="warn"><b>⚠️ 最重要一件事：主頁檔名要叫 <code>index.html</code></b><br>GitHub 會自動把 <code>index.html</code> 當成首頁。如果妳的檔案叫別的名字（例如 <code>mypage.html</code>），先把它改名成 <code>index.html</code> 再上傳。</div>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">4</div><h3>開啟 GitHub Pages</h3></div>
+    <p>倉庫上方 <b>Settings（設定）→ 左邊 Pages</b>：</p>
+    <ul>
+      <li><b>Source</b>：選 <b>Deploy from a branch</b></li>
+      <li><b>Branch</b>：選 <b>main</b>、資料夾選 <b>/(root)</b></li>
+      <li>按 <b>Save</b></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">5</div><h3>拿到妳的網址</h3></div>
+    <p>存檔後，在同一頁 <b>Pages</b> 上方會出現妳的網址，長這樣：</p>
+    <div class="prompt"><span class="tag">妳的網址</span>https://妳的帳號.github.io/my-page/</div>
+    <p class="muted">第一次可能要等<b>幾分鐘（最多 10 分鐘）</b>才生效 —— 出現網址後點點看，開得出來就成功了 ✨</p>
+    <div class="tip"><b>看到自己的網頁掛在一個正式網址上 —— 那就是「我也有一個作品在網路上」的證明 🌷</b></div>
+  </div>
+
+  <div class="warn"><b>🆘 卡住了？很正常，這樣做：</b><br>
+  · 網址點開是空白／404 → ①等滿 10 分鐘再試 ②確認主檔叫 <code>index.html</code> ③確認倉庫是 <b>Public</b><br>
+  · 找不到 Settings 裡的 Pages → 往左邊選單下面找「Pages」<br>
+  · 改了內容網頁沒變 → 一樣「<b>Add file → Upload files</b>」把新檔傳上去、Commit，等幾分鐘就更新<br>
+  · 整個卡住 → 截圖丟群組，或直接叫 Claude 幫妳（路 A）💛</div>
+
+  <h2>// 那我到底要用哪個？</h2>
+  <div class="cmp-wrap">
+    <table class="cmp">
+      <tr><th>　</th><th>Netlify Drop（拖檔案）</th><th>GitHub Pages（這頁）</th></tr>
+      <tr><td><b>快不快</b></td><td>最快，10 秒</td><td>要幾步、幾分鐘</td></tr>
+      <tr><td><b>網址</b></td><td>隨機、偏臨時</td><td><b>正式、永久、自己的</b></td></tr>
+      <tr><td><b>改內容</b></td><td>重拖一次</td><td>重新上傳一次</td></tr>
+      <tr><td><b>適合</b></td><td>快速給人看一次、測試</td><td><b>真的要長期用的那一頁</b></td></tr>
+    </table>
+  </div>
+  <p class="muted">建議：第一次體驗用 <b>Netlify Drop</b> 最有成就感；等妳有一頁「想長期放著」的，再搬到 <b>GitHub Pages</b> 給它一個正式的家。</p>
+
+  <div class="hw">
+    <h3>📝 小任務</h3>
+    <p>把妳做好的那頁網頁，用上面任一種方式放上 GitHub Pages，拿到一個 <code>github.io</code> 的網址。</p>
+    <p style="margin-top:8px">拿到網址就貼到作業區、或丟 LINE 群組 —— 我想看妳的正式網址 🌷</p>
+  </div>
+
+  <div class="help">
+    <h3>卡住了，別一個人硬撐 💛</h3>
+    <p>GitHub 全是英文、步驟又多，卡住太正常了。截圖丟群組或私訊我，我陪妳一步一步弄。</p>
+    <p style="margin-top:10px">私訊我 LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <img src="logo.png" alt="欣妙在陪你 ・ Birth with Milliya">
+  <div>使命落地・AI 陪跑工作坊　|　欣妙在陪你 💛</div>
+</footer>
+
+</body>
+</html>
