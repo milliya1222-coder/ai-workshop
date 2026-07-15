@@ -16,7 +16,7 @@ h1,h2,h3{font-family:"Noto Serif TC",serif}
 
 /* header */
 .top{text-align:center;padding:54px 0 30px;background:linear-gradient(160deg,rgba(226,155,134,.12),rgba(183,156,232,.10))}
-.top img{height:46px;margin-bottom:24px;filter:drop-shadow(0 0 14px rgba(226,155,134,.35))}
+.top img{display:block;height:46px;margin:0 auto 24px;filter:drop-shadow(0 0 14px rgba(226,155,134,.35))}
 .top .badge{display:inline-block;font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.28em;color:var(--rose-bright);border:1px solid var(--panel-line);border-radius:999px;padding:7px 18px;margin-bottom:20px}
 .top h1{font-size:2.1rem;font-weight:600;line-height:1.4;margin-bottom:14px}
 .top p{color:var(--muted);max-width:540px;margin:0 auto;font-size:1.02rem}
