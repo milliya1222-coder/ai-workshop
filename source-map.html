@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>打造妳自己的資料庫地圖 ・ 使命落地 AI 陪跑工作坊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lesson.css">
+<style>
+  .cmp-wrap{overflow-x:auto;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:var(--panel);margin:14px 0}
+  .cmp{width:100%;border-collapse:collapse;font-size:.92rem}
+  .cmp th,.cmp td{text-align:left;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top}
+  .cmp th{font-family:"Space Mono",monospace;font-size:.76rem;letter-spacing:.03em;color:var(--violet);font-weight:400}
+  .cmp td b{color:var(--rose-bright)}
+  .cmp tr:last-child td{border-bottom:none}
+  .abc{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0}
+  .abc .b{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 18px}
+  .abc .b h4{font-size:.9rem;font-weight:600;margin-bottom:6px;color:var(--rose-bright);font-family:"Noto Sans TC"}
+  .abc .b p{font-size:.88rem;color:var(--muted);margin:0;line-height:1.7}
+  @media(max-width:640px){.abc{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="logo.png" alt="欣妙在陪你 ・ Birth with Milliya">
+    <div class="badge">第 3 次・上半場加碼 ・ 資料來源</div>
+    <h1 class="grad-text">打造妳自己的<br>資料庫地圖</h1>
+    <p>妳跟別人的差距，不在指令下得漂不漂亮 ——<br><b>在妳餵給 AI 的「食材」從哪裡來</b> 🗺</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>有沒有這種感覺：請 AI 查了一輪，出來的東西<strong>「跟我自己 Google 差不多」</strong>？<br>
+    很多人第一個反應是「是不是我指令下得不夠好」。<br>
+    其實不是。<strong>問題不在妳怎麼問，在妳餵它的食材太單調。</strong><br>
+    這就像想熬一鍋頂級高湯，手上卻只有超市的調味包 —— 廚師再厲害，也只煮得出「超市的味道」。</p>
+  </div>
+
+  <h2>// 為什麼大家查出來都長一樣</h2>
+  <div class="step">
+    <p>需要查東西，九成的人第一個動作是打開 Google。</p>
+    <p style="margin-top:8px">Google 很強，但它只是<b>所有來源裡的其中一種</b>。而且因為每個人都用它，<strong>妳看到的答案，也是別人都看得到的答案</strong>。</p>
+    <p class="muted" style="margin-top:10px">這就像逛一間超大百貨公司 —— 什麼都有，但妳拿到的永遠是「推薦給每個客人的熱銷清單」。想找到那些深刻的、沒人講過的東西，得走出百貨公司，去逛巷子裡的專業小店。</p>
+    <div class="tip"><b>💡 這一頁要做的事：</b>幫妳找出<b>屬於妳這一行的巷子小店</b>，做成一張地圖存起來，然後教 AI 以後都照這張地圖去找。</div>
+  </div>
+
+  <h2>// 跟著做</h2>
+
+  <div class="step">
+    <div class="h"><div class="n">1</div><h3>請 AI 幫妳「開眼」—— 盤點妳領域的來源</h3></div>
+    <p>先讓它看看妳這一行除了 Google，還藏著哪些寶庫：</p>
+    <div class="prompt"><span class="tag">複製貼進 Claude</span>我是做【妳的領域，例如：孕產陪伴／身心靈療癒／瑜伽教學】的，客群是【例如：25–45 歲的媽媽】。
+除了 Google 搜尋，我這個領域還有哪些有價值的資料來源？請廣泛想，包含但不限於：
+・學術（論文資料庫、系統綜述）
+・社群（真人討論區、論壇）
+・百科（維基百科與它的參考文獻）
+・官方（政府衛教網站、國際組織）
+・國外英文資源
+・經典著作（這領域的大師是誰）
+用表格整理，每個來源寫：名稱｜是什麼（一句話）｜裡面有什麼（跟我領域相關的具體例子）｜為什麼對我有用｜語言。</div>
+    <p class="muted">妳會拿到一張表，上面有妳可能從沒想過的地方。花一分鐘看 —— 有沒有哪個讓妳「咦？」</p>
+  </div>
+
+  <div class="step">
+    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:8px">🔎 那些妳可能不知道的地方</h3>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <tr><th>來源</th><th>直覺反應</th><th>實際上藏著什麼</th></tr>
+        <tr><td><b>Reddit</b></td><td>「那不是外國論壇嗎？」</td><td>幾乎每個領域都有專版（孕產、產後、陪產員…），全是真人分享實戰、踩坑、爭議。<b>比部落格真實一百倍</b></td></tr>
+        <tr><td><b>學術資料庫</b></td><td>「我又不是要寫論文」</td><td>妳的領域一定有人做過研究。<b>有數字、有樣本數</b>的東西，拿來跟客戶溝通超有說服力</td></tr>
+        <tr><td><b>維基百科</b></td><td>「維基不是不可靠嗎？」</td><td>不是拿它當答案 —— <b>拉到最底下的「參考文獻」</b>，那是別人幫妳整理好的原始資料清單</td></tr>
+        <tr><td><b>官方衛教／國際組織</b></td><td>「那是給醫護看的吧」</td><td>政府衛教網站、WHO 指引，<b>免費、可引用、有權威</b>，客戶最信這個</td></tr>
+        <tr><td><b>經典著作</b></td><td>「那要花時間讀完」</td><td>這領域大師寫的書 —— <b>妳的方法論底子</b>，也是別人抄不走的部分</td></tr>
+      </table>
+    </div>
+    <div class="warn"><b>🌏 英文不是障礙。</b>英文資料通常更完整，但妳不用自己讀。跟 AI 說「<b>幫我讀這個英文頁面，用中文摘要重點、保留原始連結</b>」，它會直接翻給妳。</div>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">2</div><h3>做個小實驗：同一題，三種來源比一比</h3></div>
+    <p>這一步會讓妳<b>親眼看到</b>差別 —— 同一個問題，叫它去三個不同的地方找：</p>
+    <div class="prompt"><span class="tag">複製貼進 Claude</span>我想研究【妳的主題】。請分別用以下三種方式查，每種用 5 句話摘要，並標明你從哪裡找到的：
+【A 廣泛搜尋】一般網路搜尋，什麼來源都可以。
+【B 學術與百科】只看維基百科和學術論文的內容。英文的用中文摘要。
+【C 社群真人討論】只看討論區／論壇裡真人的經驗、踩過的坑、爭議觀點。英文的用中文摘要。
+三種都查完，做一個比較表：哪種最深入？哪種最有真人經驗？哪種最有數據？哪種最容易有業配？如果我要做出跟別人不一樣的內容，該優先看哪種？</div>
+    <div class="abc">
+      <div class="b"><h4>A ・ 廣泛搜尋</h4><p>「大家都知道的」。很得體，但沒深度，也不知道哪些是業配。</p></div>
+      <div class="b"><h4>B ・ 學術百科</h4><p>有根據、有數據。但偏硬，客戶不一定想聽。</p></div>
+      <div class="b"><h4>C ・ 社群真人</h4><p>真人說的話。有人說好、有人踩坑、有人吵架。最真實，也最亂。</p></div>
+    </div>
+    <div class="tip"><b>💡 三種加起來，才是一份有深度的研究。</b>只用 A，妳跟每個人一樣；加上 B，妳有數據撐腰；再加上 C，妳還有真人驗證。<br><b>妳的 AI 產出跟別人不一樣，不是因為指令厲害，是因為妳餵的來源比別人廣。</b></div>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">3</div><h3>把它存成「我的資料庫地圖」</h3></div>
+    <p>每次都重講一遍太累了。把今天的發現，變成一份<b>永久的資產</b>：</p>
+    <div class="prompt"><span class="tag">複製貼進 Claude</span>根據剛才的討論，幫我整理一份「我的資料庫地圖」。用表格列出我這個領域最有價值的 5–10 個來源，欄位：來源名稱｜網址或搜尋方式｜內容類型｜語言｜什麼時候用｜我的評價。
+「內容類型」分：學術／實戰／社群／官方／綜合。
+「什麼時候用」舉例：要查證某個說法時／要看真人經驗時／要寫貼文時。
+「我的評價」先空著，等我實際用過再自己填。
+存成一個檔案叫「我的資料庫地圖.md」，放在這個資料夾。</div>
+    <p class="muted">這份地圖不是我給妳的清單 —— 是<b>妳跟 AI 根據妳的真實工作，一起討論出來的專屬路徑</b>。</p>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">4</div><h3>寫進 CLAUDE.md，讓它永遠記得</h3></div>
+    <p>對話關掉就忘了（白板）；寫進 CLAUDE.md 就永遠記得（牆上公告）。把地圖和規則貼上牆：</p>
+    <div class="prompt"><span class="tag">複製貼進 Claude</span>幫我更新這個資料夾的 CLAUDE.md（已經有的話不要覆蓋，用新增的）。加入：
+
+## 關於我
+我是做【妳的領域】的，客群是【妳的客群】。
+
+## 我的資料來源
+（把剛剛「我的資料庫地圖」的表格放進來）
+
+## 搜尋規則
+- 我請你查資料時，不要只用 Google 廣泛搜尋
+- 優先用上面的來源，交叉比對至少 2 種不同類型
+- 每個重點都要標明來源出處
+- 你推測的、不是查到的，標註「推測」
+- 英文資料用中文摘要，但保留原始連結</div>
+    <div class="tip"><b>💡 測試它有沒有記住：</b>輸入 <code>/clear</code> 清空對話（全新的白板），然後問它「<b>我是誰？我做什麼的？我的資料來源有哪些？</b>」—— 它應該答得出來。因為那些貼在牆上，不在白板上 ✨</div>
+  </div>
+
+  <h2>// 我自己的地圖，長這樣</h2>
+  <div class="step">
+    <p>這是我這幾年慢慢養出來的（節錄幾行給妳看感覺）：</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <tr><th>來源</th><th>類型</th><th>我什麼時候用</th></tr>
+        <tr><td><b>Evidence Based Birth</b></td><td>綜合</td><td>要把研究結論寫成貼文／客戶問「這說法有研究嗎」</td></tr>
+        <tr><td><b>PubMed・Cochrane</b></td><td>學術</td><td>要找原始論文、具體數據；想知道某主題的「整體共識」</td></tr>
+        <tr><td><b>Reddit 孕產相關版</b></td><td>社群</td><td>要看真人經驗、踩坑案例、檯面上沒人說的話</td></tr>
+        <tr><td><b>國健署・WHO</b></td><td>官方</td><td>要引用台灣官方數據／要用國際權威背書</td></tr>
+        <tr><td><b>經典作者著作</b></td><td>實戰</td><td>建立方法論底子、引用大師增加厚度</td></tr>
+      </table>
+    </div>
+    <div class="tip"><b>🌷 我的公式：</b>先從<b>社群</b>找到「客戶私下擔心、檯面上沒人說」的題目 → 用<b>學術</b>補上數字和年份 → 看<b>廣泛網路</b>確認對手沒寫過 → 最後加上<b>我自己的視角</b>下結論。<br>前三層別人都拿得到，<b>最後一層拿不走</b> —— 那才是妳的護城河。</div>
+  </div>
+
+  <div class="hw">
+    <h3>📝 小任務</h3>
+    <p>做出妳自己的 <code>我的資料庫地圖.md</code>（5–10 個來源就好），並把「搜尋規則」寫進 CLAUDE.md。</p>
+    <p style="margin-top:8px">然後用它<b>真的查一次</b>妳工作上的問題 —— 跟妳以前隨便 Google 的結果比比看，有沒有不一樣 🌷</p>
+  </div>
+
+  <div class="help">
+    <h3>卡住了，別一個人硬撐 💛</h3>
+    <p>截圖或把訊息整段複製，丟到 LINE 群組或私訊我。卡住很正常，不是妳的問題。</p>
+    <p style="margin-top:10px">私訊我 LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a></p>
+  </div>
+
+  <p class="muted" style="text-align:center;margin:26px 0 0;font-size:.86rem">📎 結構參考改編自《科技魔杖入門課・U2 打破搜尋的疆界》並致謝 ・ 文字與範例為欣妙原創優化</p>
+
+</div>
+
+<footer>
+  <img src="logo.png" alt="欣妙在陪你 ・ Birth with Milliya">
+  <div>使命落地・AI 陪跑工作坊　|　欣妙在陪你 💛</div>
+</footer>
+
+</body>
+</html>
