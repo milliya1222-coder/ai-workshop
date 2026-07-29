@@ -105,6 +105,28 @@
   <div class="tip"><b>🌟 手機遙控・黃金口訣</b><br>
   一句話交代 → 要給檔案先放雲端 → 大事說「做好通知我」 → 成品叫它傳回手機看</div>
 
+  <style>
+    .cmp{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+    .cmp .row{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:14px 18px}
+    .cmp .row .rh{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .cmp .row .rh b{color:var(--rose-bright);font-size:1.02rem}
+    .cmp .row .tg{flex:0 0 auto;font-family:"Space Mono",monospace;font-size:.6rem;letter-spacing:.06em;padding:3px 10px;border-radius:999px;border:1px solid var(--panel-line);color:var(--muted);white-space:nowrap}
+    .cmp .row .tg.off{color:var(--violet);border-color:rgba(183,156,232,.4)}
+    .cmp .row p{color:var(--muted);font-size:.92rem;margin-top:7px}
+  </style>
+
+  <h2>// 還有這些方式（想更進階可以研究）</h2>
+  <p class="muted">今晚教的是「①遠端桌面」—— 最簡單、免費、看得到畫面。以下是其他選擇，給想再往前走的妳，慢慢看就好 👇</p>
+  <div class="cmp">
+    <div class="row"><div class="rh"><b>① 遠端桌面 App</b><span class="tg">通用・免費・最簡單</span></div><p>手機直接「看到並操作」家裡電腦整個畫面，像遙控器。（Chrome 遠端桌面最好上手・今晚教這個）</p></div>
+    <div class="row"><div class="rh"><b>② Cowork（Dispatch）</b><span class="tg off">官方・Pro/Max</span></div><p>在 Claude 手機 App 打字<b>派任務</b>，任務在妳家電腦上跑（要開著 Claude 桌面版）。最像「傳訊息交代事情」，最不用碰終端機。</p></div>
+    <div class="row"><div class="rh"><b>③ Remote Control</b><span class="tg off">官方・Pro/Max</span></div><p>電腦打 <code class="inl">claude remote-control</code> → 掃 QR → 手機接手同一個工作，執行與檔案都留在妳電腦，跑久會推播通知妳。</p></div>
+    <div class="row"><div class="rh"><b>④ Happy / Omnara</b><span class="tg">第三方 App</span></div><p>手機專用 App 遙控電腦上的 Claude Code，有<b>語音、推播</b>，手機體驗更順（是第三方，資料多留意）。</p></div>
+    <div class="row"><div class="rh"><b>⑤ Claude Code 網頁版</b><span class="tg off">官方・Pro/Max</span></div><p>在<b>雲端</b>跑，<b>電腦不用開</b>；適合開新任務、GitHub 專案。但讀不到妳本機的檔案。</p></div>
+    <div class="row"><div class="rh"><b>⑥ SSH + tmux</b><span class="tg">工程師取向</span></div><p>手機終端機 App 連回電腦跑指令。最彈性但最技術 —— 一般不用碰，知道有這條路就好。</p></div>
+  </div>
+  <div class="tip"><b>💡 欣妙的建議</b><br>先把「①遠端桌面」練熟，就很夠用了。想更輕鬆，之後可以玩玩官方的 <b>② Cowork</b> —— 手機打字就能派事情給電腦 ✨</div>
+
   <div class="hw">
     <h3>🎒 帶回家練習</h3>
     <p>今天回去，找一個<b>妳離開電腦的空檔</b> —— 排隊、等車、哄睡完的那 5 分鐘。</p>
