@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>圖文教學｜手機遙控妳的桌機（Cowork＋Remote Control）・使命落地 AI 陪跑工作坊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lesson.css">
+<style>
+  /* ── 圖文用的「圖」：全部 CSS 畫的，離線也看得到 ── */
+  .diagram{background:var(--panel);border:1px solid var(--panel-line);border-radius:16px;padding:22px 18px;margin:14px 0;text-align:center}
+  .flow{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+  .flow .box{background:rgba(255,255,255,.04);border:1px solid var(--panel-line);border-radius:14px;padding:12px 12px;min-width:84px}
+  .flow .box .ico{font-size:1.9rem;display:block;line-height:1.1}
+  .flow .box .lb{font-size:.78rem;color:var(--text);margin-top:4px;display:block}
+  .flow .box .sub{font-size:.64rem;color:var(--muted);display:block}
+  .flow .arr{color:var(--violet);font-size:1.4rem;font-weight:700}
+  .cap{font-size:.82rem;color:var(--muted);margin-top:12px}
+
+  .stage{display:flex;gap:18px;align-items:flex-start;margin:16px 0}
+  .stage .art{flex:0 0 auto}
+  .stage .txt{flex:1;min-width:0}
+  @media(max-width:560px){.stage{flex-direction:column;align-items:center}.stage .txt{width:100%}}
+
+  /* 手機外框 */
+  .phone{width:196px;background:#0e0a16;border:7px solid #2c2540;border-radius:28px;padding:12px 11px 16px;box-shadow:0 20px 46px -22px rgba(0,0,0,.75)}
+  .phone .notch{width:60px;height:5px;background:#2c2540;border-radius:99px;margin:0 auto 11px}
+  .phone .apptop{display:flex;align-items:center;gap:7px;font-size:.72rem;color:var(--rose-bright);font-family:"Space Mono",monospace;margin-bottom:10px}
+  .phone .apptop .rose{width:16px;height:16px;border-radius:5px;background:var(--grad)}
+  .msg{border-radius:12px;padding:8px 11px;font-size:.78rem;margin-bottom:7px;line-height:1.5}
+  .msg .who{display:block;font-size:.58rem;color:var(--muted);margin-bottom:2px;letter-spacing:.04em}
+  .msg.me{background:linear-gradient(120deg,rgba(226,155,134,.28),rgba(183,156,232,.24));border:1px solid rgba(226,155,134,.4);color:#fff;margin-left:22px}
+  .msg.ai{background:rgba(255,255,255,.05);border:1px solid var(--panel-line);color:var(--text);margin-right:22px}
+  .msg.note{background:rgba(183,156,232,.14);border:1px solid rgba(183,156,232,.3);color:var(--text);text-align:center;font-size:.72rem}
+  .pill-btn{display:block;text-align:center;background:var(--grad);color:#241320;font-weight:700;font-size:.76rem;border-radius:999px;padding:8px 0;margin-top:6px}
+  .sidebar{background:rgba(255,255,255,.05);border:1px solid var(--panel-line);border-radius:10px;padding:8px 10px;font-size:.74rem;color:var(--text)}
+  .sidebar .on{color:var(--rose-bright);font-weight:600}
+  .sidebar .row2{display:flex;align-items:center;gap:7px;padding:4px 0}
+
+  /* 終端機 */
+  .term{background:#120d1c;border:1px solid var(--panel-line);border-radius:12px;padding:14px 14px;font-family:"Space Mono",monospace;font-size:.8rem;color:#d9cbe8;line-height:1.75;width:100%;max-width:330px;overflow-x:auto}
+  .term .bar{display:flex;gap:6px;margin-bottom:10px}
+  .term .bar i{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .term .p{color:var(--rose-bright)}
+  .term .o{color:var(--muted)}
+  .term .u{color:#EDE6E2}
+
+  /* 假 QR（純裝飾） */
+  .qr{width:118px;height:118px;margin:6px auto 0;border-radius:10px;padding:9px;background:#EDE6E2;
+    background-image:
+      linear-gradient(90deg,#140f1e 25%,transparent 0 50%,#140f1e 0 62%,transparent 0),
+      linear-gradient(#140f1e 25%,transparent 0 50%,#140f1e 0 62%,transparent 0);
+    background-size:16px 16px;box-shadow:0 8px 22px -12px rgba(0,0,0,.6);position:relative}
+  .qr::after{content:"⌂";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#2c2540;background:#EDE6E2;width:34px;height:34px;margin:auto;border-radius:8px}
+  .qr-lbl{font-size:.7rem;color:var(--muted);text-align:center;margin-top:6px;font-family:"Space Mono",monospace}
+
+  .num-badge{display:inline-flex;width:30px;height:30px;border-radius:9px;background:var(--grad);color:#241320;font-family:"Space Mono",monospace;font-weight:700;align-items:center;justify-content:center;font-size:1rem;margin-right:8px;vertical-align:middle}
+  .tabs{display:flex;gap:8px;margin:8px 0 4px;flex-wrap:wrap}
+  .tabpill{border:1px solid var(--panel-line);border-radius:999px;padding:8px 16px;font-size:.86rem;color:var(--muted)}
+  .tabpill.on{background:rgba(226,155,134,.16);border-color:rgba(226,155,134,.5);color:var(--rose-bright);font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="logo.png" alt="欣妙在陪你 ・ Birth with Milliya">
+    <div class="badge">圖文教學 ・ 手機遙控</div>
+    <h1 class="grad-text">手機遙控妳的桌機<br>一步一步・圖文版</h1>
+    <p>兩種官方方式，慢慢跟著圖走就好。<br>不懂的地方，回來看一次，我都在 🌷</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>今晚我們學<strong>兩種官方方式</strong>，讓妳人在外面、也能請家裡電腦的 Claude 繼續幫妳做事：</p>
+    <div class="tabs" style="margin-top:10px">
+      <span class="tabpill on">① Cowork —— 手機打字派任務</span>
+      <span class="tabpill on">② Remote Control —— 掃 QR 接手</span>
+    </div>
+  </div>
+
+  <h2>// 先看懂一張圖：這到底在幹嘛</h2>
+  <div class="diagram">
+    <div class="flow">
+      <div class="box"><span class="ico">📱</span><span class="lb">妳的手機</span><span class="sub">人在外面</span></div>
+      <span class="arr">→</span>
+      <div class="box"><span class="ico">☁️</span><span class="lb">安全通道</span><span class="sub">加密傳訊</span></div>
+      <span class="arr">→</span>
+      <div class="box"><span class="ico">💻</span><span class="lb">家裡桌機</span><span class="sub">Claude 動手</span></div>
+      <span class="arr">→</span>
+      <div class="box"><span class="ico">🌷</span><span class="lb">成品</span><span class="sub">傳回妳手機</span></div>
+    </div>
+    <p class="cap"><b>桌機＝妳的工作室，Claude＝裡面的助理。</b>手機只是「對講機」——<br>妳在外面出一張嘴，<b>真正動手做事的，永遠是妳家那台電腦</b>。</p>
+  </div>
+
+  <!-- ================= 方式 ① Cowork ================= -->
+  <h2>// 方式 ①：Cowork —— 像傳訊息一樣派任務</h2>
+  <div class="warn"><b>先備一次（只做一次）：</b>①電腦裝好 <b>Claude 桌面版 App</b>　②手機裝 <b>Claude App</b>，登入<b>同一個帳號</b>　③把手機和電腦<b>配對</b>一次。需要 Pro / Max 方案。</div>
+
+  <div class="stage">
+    <div class="art">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="apptop"><span class="rose"></span> Claude</div>
+        <div class="sidebar">
+          <div class="row2">💬 Chat</div>
+          <div class="row2 on">🤖 Cowork ←在這裡</div>
+          <div class="row2">💻 Code</div>
+        </div>
+      </div>
+    </div>
+    <div class="txt">
+      <p><span class="num-badge">1</span><b>打開手機 Claude App，點側邊欄的 Cowork</b></p>
+      <p class="muted" style="margin-top:6px">Cowork 就是「會幫妳跑多步驟任務的助理」。第一次進去，它會問要不要連上妳的電腦——點<b>同意</b>就好。</p>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="art">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="apptop"><span class="rose"></span> Cowork</div>
+        <div class="msg me"><span class="who">妳</span>幫我把桌面「陪產逐字稿/E」那個資料夾裡最新的錄音，整理成這次的精華重點 🌷</div>
+        <div class="pill-btn">派給我的電腦 ▸</div>
+      </div>
+    </div>
+    <div class="txt">
+      <p><span class="num-badge">2</span><b>打字交代一件事，就像傳 LINE 給助理</b></p>
+      <p class="muted" style="margin-top:6px">用<b>自然的話</b>講清楚「要它做什麼、東西在哪」。越具體越好。<br>按下送出 → 它就把任務<b>派回妳家的電腦</b>去做。</p>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="art">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="apptop"><span class="rose"></span> Cowork</div>
+        <div class="msg note">💻 妳的電腦正在做…</div>
+        <div class="msg ai"><span class="who">Claude</span>整理好了！這次的精華我抓了 12 條、分 5 類，也存回 Google 試算表了 ✅</div>
+        <div class="msg note">🔔 任務完成・點開看成品</div>
+      </div>
+    </div>
+    <div class="txt">
+      <p><span class="num-badge">3</span><b>電腦在家默默做，做好通知妳</b></p>
+      <p class="muted" style="margin-top:6px">妳可以收起手機去忙別的。它做完會<b>推播通知</b>，成品也看得到。<br>⚠️ 過程中<b>電腦要醒著、Claude 桌面版要開著</b>（就像助理得在工作室裡）。</p>
+    </div>
+  </div>
+
+  <div class="tip"><b>🌟 Cowork 一句話</b><br>打開 Cowork → 打字交代 → 電腦幫妳做 → 通知妳。最省事、最不用碰終端機。</div>
+
+  <!-- ================= 方式 ② Remote Control ================= -->
+  <h2>// 方式 ②：Remote Control —— 掃 QR，手機接手操控</h2>
+  <p class="muted">這個是「接手正在跑的工作」：妳在電腦開好，出門後用手機<b>繼續同一個對話</b>。妳課堂上裝的 Claude Code（終端機）就能用，不用另外裝 App。</p>
+
+  <div class="stage">
+    <div class="art">
+      <div class="term">
+        <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+        <div><span class="p">你＄</span> <span class="u">claude remote-control</span></div>
+        <div class="o">✓ 已開啟遠端遙控</div>
+        <div class="o">掃描 QR 或用手機開啟連結：</div>
+        <div class="qr"></div>
+        <div class="qr-lbl">▢ 按空白鍵顯示 QR</div>
+      </div>
+    </div>
+    <div class="txt">
+      <p><span class="num-badge">1</span><b>在電腦打一句指令，它給妳一把「鑰匙」</b></p>
+      <div class="prompt"><span class="tag">電腦打這個</span>claude remote-control</div>
+      <p class="muted" style="margin-top:6px">它會跑出一個 <b>QR code</b> 和一串網址——這就是連進妳工作室的<b>鑰匙 🔑</b>。</p>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="art">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="apptop">📷 相機</div>
+        <div class="qr" style="margin-top:14px"></div>
+        <div class="msg note" style="margin-top:12px">🔗 開啟 claude.ai/code 連結？</div>
+      </div>
+    </div>
+    <div class="txt">
+      <p><span class="num-badge">2</span><b>手機相機掃那個 QR</b></p>
+      <p class="muted" style="margin-top:6px">用手機<b>相機</b>對著電腦螢幕上的 QR 掃一下 → 點開跳出的連結<br>（沒有 Claude App 的話，在電腦打 <code class="inl">/mobile</code> 會給妳下載 App 的 QR）。</p>
+    </div>
+  </div>
+
+  <div class="stage">
+    <div class="art">
+      <div class="phone">
+        <div class="notch"></div>
+        <div class="apptop"><span class="rose"></span> Claude Code ・🟢 已連線</div>
+        <div class="msg me"><span class="who">妳（手機）</span>把剛剛那篇貼文改得再溫暖一點，最後加一句行動呼籲</div>
+        <div class="msg ai"><span class="who">Claude（在妳電腦上）</span>好，我改好了，這是新版本…</div>
+      </div>
+    </div>
+    <div class="txt">
+      <p><span class="num-badge">3</span><b>手機跟電腦變成「同一個對話」</b></p>
+      <p class="muted" style="margin-top:6px">接上後，妳在手機打字＝在電腦上工作。看到<b>綠點🟢＋妳電腦的名字</b>，就代表真的接通了。<br>它動手前一樣會問妳、要同意才做——<b>跟在電腦上一樣安全</b>。</p>
+    </div>
+  </div>
+
+  <div class="tip"><b>🌟 Remote Control 一句話</b><br>電腦打 <code class="inl">claude remote-control</code> → 手機掃 QR → 同一個對話接著聊。跑久了它會推播通知妳。</div>
+
+  <!-- ================= 邊界 + 安全 ================= -->
+  <h2>// 什麼手機丟給它好用、什麼留電腦</h2>
+  <div class="tip"><b>📱 手機交代超好用</b><br>
+  🟢 跑流程：「整理這次陪伴的錄音」🟢 寫東西：「把這個感觸寫成 3 版貼文」🟢 查東西：「我上次那篇寫到哪」</div>
+  <div class="warn"><b>💻 這幾件留電腦 / 要繞路</b><br>
+  ⚠️ 手機的<b>照片</b>要給它 → 先放進 Google 雲端硬碟，它才拿得到<br>
+  ⚠️ 要它<b>幫妳點網頁按鈕</b> → 助理只在工作室動手，不幫妳操作瀏覽器<br>
+  ⚠️ 要<b>妳本人點的授權彈窗</b> → 有些門只有妳能開，留到回電腦</div>
+
+  <h2>// 會不會危險？會不會很難？</h2>
+  <div class="step"><ul>
+    <li><b>別人會連進來嗎？</b>　那把鑰匙（QR／配對）是<b>妳自己的</b>，別給別人就好。全程加密。</li>
+    <li><b>要另外花錢嗎？</b>　兩個都含在妳的 <b>Pro／Max</b> 方案裡，沒有額外費用。</li>
+    <li><b>怕用手機弄壞。</b>　它動手前都會問妳，<b>跟在電腦上一樣安全</b>。想停，一樣可以停。妳<b>不會弄壞任何東西</b>。</li>
+  </ul></div>
+
+  <div class="hw">
+    <h3>🎒 今晚的小練習</h3>
+    <p>選<b>一種</b>方式接上一次，交代它做一件小事——整理個東西、寫句貼文都行。</p>
+    <p style="margin-top:8px">接上了、或卡住了，<b>都拍給我看</b> 🌷 我們一起解。</p>
+  </div>
+
+  <div class="help">
+    <h3>妳的工作室一直在家裡等妳 💛</h3>
+    <p>從今天起，<b>妳人在哪，妳的使命就能在哪往前一步。</b></p>
+    <p style="margin-top:10px">→ 想看六種方式的完整比較：<a href="mobile-remote.html">手機遙控總覽</a></p>
+    <p style="margin-top:6px">有任何想繼續的，私訊我 LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <img src="logo.png" alt="欣妙在陪你 ・ Birth with Milliya">
+  <div>使命落地・AI 陪跑工作坊　|　欣妙在陪你 💛</div>
+</footer>
+
+</body>
+</html>
