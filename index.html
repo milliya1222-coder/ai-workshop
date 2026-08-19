@@ -183,6 +183,29 @@
   .work-card a.wl .ar{color:var(--rose-bright)}
   .work-card a.wl.primary .ar{color:#241320}
   @media(max-width:560px){.works .grid{grid-template-columns:1fr}.work-card p{min-height:0}}
+  .voices{padding:96px 0}
+  .voices .vgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
+  .vcard{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:18px;
+    padding:26px;backdrop-filter:blur(10px);transition:border-color .3s,transform .3s;
+    display:flex;flex-direction:column}
+  .vcard:hover{border-color:var(--panel-line);transform:translateY(-3px)}
+  .vbefore{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.05em;
+    color:var(--violet);margin-bottom:14px;line-height:1.7;opacity:.9}
+  .vquote{font-size:1rem;line-height:1.9;margin-bottom:16px}
+  .vquote b{color:var(--rose-bright);font-weight:600}
+  .vsay{font-size:.95rem;line-height:1.8;color:var(--muted);
+    border-left:2px solid var(--panel-line);padding-left:14px;margin-bottom:18px}
+  .vname{margin-top:auto;font-size:.9rem;color:var(--rose);letter-spacing:.04em}
+  .vcard.vstat{align-items:center;justify-content:center;text-align:center;
+    background:linear-gradient(135deg,rgba(226,155,134,.12),rgba(183,156,232,.10));
+    border-color:var(--panel-line)}
+  .vstatnum{font-size:2.6rem;font-weight:700;letter-spacing:.02em;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;line-height:1.2}
+  .vstatlab{margin-top:10px;font-size:1rem;line-height:1.8}
+  .vstatnote{margin-top:14px;font-size:.84rem;color:var(--muted);line-height:1.9}
+  @media(max-width:560px){.voices{padding:64px 0}.voices .vgrid{grid-template-columns:1fr}}
+
 
   /* INFO CARD */
   .card{
@@ -306,10 +329,10 @@
   <div class="wrap">
     <p class="sec-label">5_SESSIONS</p>
     <h2>五次，陪妳走完一段</h2>
-    <p class="lead">五次團體討論：<b>7/1・7/8・7/15・7/22・7/29</b>（每次 20:00–21:30）。<br>每一次，妳都會帶走一個「自己的、真的能用」的成品 —— 不是聽課，是做中學。</p>
+    <p class="lead">五次團體討論：<b>9/2・9/9・9/16・9/23・9/30</b>（每次 20:00–21:30）。<br>每一次，妳都會帶走一個「自己的、真的能用」的成品 —— 不是聽課，是做中學。</p>
 
     <div class="week">
-      <div class="num"><b>01</b><span>7/1</span></div>
+      <div class="num"><b>01</b><span>9/2</span></div>
       <div class="body">
         <h3>起步・把 AI 準備好</h3>
         <p>第一週比較特別，也是新手最關鍵的一關 —— 我們一起把 Claude 裝好、串好 Google，學會讓 AI 讀懂妳、開口對話、幫妳改文件。別怕，我會陪著。</p>
@@ -318,7 +341,7 @@
     </div>
 
     <div class="week">
-      <div class="num"><b>02</b><span>7/8</span></div>
+      <div class="num"><b>02</b><span>9/9</span></div>
       <div class="body">
         <h3>讓 AI 當妳的研究員</h3>
         <p>學會讓 AI 幫妳上網、多元查資料、交叉比對，幫自己養一個「隨叫隨到的研究員」，找什麼都比以前快又準。</p>
@@ -327,7 +350,7 @@
     </div>
 
     <div class="week">
-      <div class="num"><b>03</b><span>7/15</span></div>
+      <div class="num"><b>03</b><span>9/16</span></div>
       <div class="body">
         <h3>把心裡的東西，變成一頁網頁</h3>
         <p>學會把心裡想做的講清楚、讓 AI 聽懂妳；再用我的真實案例帶妳，把一份內容變成屬於自己的一頁網頁。</p>
@@ -336,7 +359,7 @@
     </div>
 
     <div class="week">
-      <div class="num"><b>04</b><span>7/22</span></div>
+      <div class="num"><b>04</b><span>9/23</span></div>
       <div class="body">
         <h3>從一個點子，到真的上線</h3>
         <p>做一份能用的報名表單，並讓 AI 幫妳自動整理回應 —— 完整走一次「從一個點子，到真的做出來、上線」。</p>
@@ -345,7 +368,7 @@
     </div>
 
     <div class="week">
-      <div class="num"><b>05</b><span>7/29</span></div>
+      <div class="num"><b>05</b><span>9/30</span></div>
       <div class="body">
         <h3>把重複的事交給 AI・結業展示</h3>
         <p>把常重複做的事，變成可以一鍵重來的流程；把心裡的感觸變成貼文，收尾成一套屬於妳的方法。</p>
@@ -432,20 +455,86 @@
 </section>
 
 <!-- INFO -->
+<!-- VOICES -->
+<section class="voices">
+  <div class="wrap">
+    <p class="sec-label">VOICES</p>
+    <h2>第一梯的姊妹，<span class="grad-text">後來怎麼說</span></h2>
+    <p class="lead">七位姊妹走完五週。下面每一段，都是她們自己填在結業表單裡的原話 —— 依各自同意的方式署名。</p>
+
+    <div class="vgrid">
+      <div class="vcard">
+        <p class="vbefore">課前：怕要看很多英文字，然後一堆步驟搞不懂</p>
+        <p class="vquote">我真的心想事成，把預約功能完成了。<br>自動化的預約，讓工作時間效益提升，還能美美地呈現網頁 —— 自己都覺得不可思議。</p>
+        <p class="vsay">「不會太難，你絕對可以的。」</p>
+        <p class="vname">— 精靈</p>
+      </div>
+
+      <div class="vcard">
+        <p class="vbefore">課前：資料量很龐大，不知道該從何做起</p>
+        <p class="vquote">有一步一步的行動，把腦中複雜的想法跟巨量的靈感，先落地成為一頁式網站、表單，再來逐漸優化。</p>
+        <p class="vsay">「猶豫的時間可以拿來產出很多厲害的酷東西，不要停在原地了。」</p>
+        <p class="vname">— Hannah</p>
+      </div>
+
+      <div class="vcard">
+        <p class="vbefore">課前：只會簡單對話，不知道如何建構資料或 AI 大腦</p>
+        <p class="vquote">變得很有行動力、執行力，而且覺得無所不能，沒有難事。</p>
+        <p class="vsay">「行動吧。當你開始願意去了解，一切原來比你想的還要容易、輕鬆、喜悅。」</p>
+        <p class="vname">— Chenti</p>
+      </div>
+
+      <div class="vcard">
+        <p class="vbefore">課前：安全性的考量，以及卡關時的暴躁 XD</p>
+        <p class="vquote">原本對 Claude 還只是玩玩的觀望性質，到現在是想認真投入。<br>真的有<b>品牌陪產</b>的感覺 —— 原來品牌的創立，也可以用懷孕待產的心情，陪著它慢慢孵育出來。</p>
+        <p class="vsay">「試試看吧！Claude 真的可以幫助你把想法落地。」</p>
+        <p class="vname">— 一位第一梯姊妹（匿名分享）</p>
+      </div>
+
+      <div class="vcard">
+        <p class="vbefore">課前：擔心 AI 達不到我的標準，反而更耗能 —— 倒不如全都靠自己來</p>
+        <p class="vquote">原來 AI 有這麼多不同的創造和可能性呀！看到有人做出品牌的一頁式網站、串接表單、跟 Canva 協作、甚至玩出心理測驗，覺得自己也被激發出滿滿的靈感。</p>
+        <p class="vsay">「保持開放和玩心，就會發現可以很正面地跟 AI 相處。」</p>
+        <p class="vname">— 郁文</p>
+      </div>
+
+      <div class="vcard">
+        <p class="vbefore">課前：覺得怎麼可能，應該要動很多工程師的語言才可以</p>
+        <p class="vquote">AI 幫助我們行動落地，但也要有覺知地使用。</p>
+        <p class="vsay">「想建活動網站、想知道怎麼快速使用 Claude 的，非常推薦 —— 有陪跑省力很多。」</p>
+        <p class="vname">— 宥妤</p>
+      </div>
+
+      <div class="vcard">
+        <p class="vbefore">課前：使用太複雜，卡住沒人問</p>
+        <p class="vquote">變得願意探索和遊戲。</p>
+        <p class="vsay">「開始後就會發現一切都不難 —— 難在未知的恐懼。」</p>
+        <p class="vname">— 柔懿</p>
+      </div>
+
+      <div class="vcard vstat">
+        <p class="vstatnum">7 / 7</p>
+        <p class="vstatlab">第一梯每一位<br>都帶走了自己的成品</p>
+        <p class="vstatnote">一頁式網站・線上預約系統・報名表單<br>心理測驗・神諭卡・活動網頁</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="info">
   <div class="wrap">
     <p class="sec-label">DETAILS</p>
     <h2>課程資訊</h2>
-    <p class="lead">首期內圈共創價 —— 只給最早一起走的姊妹。</p>
+    <p class="lead">第二梯・九月開課。第一梯七位姊妹，五週後每個人都帶走了自己的作品。</p>
     <div class="card">
       <div class="price-top">
-        <div class="small">首期共創價</div>
-        <div class="big">NT$ 2,888</div>
+        <div class="small">第二梯 · 九月</div>
+        <div class="big">NT$ 3,333</div>
         <div class="note">／ 每人</div>
       </div>
       <div class="rows">
-        <div class="row"><span class="k">開課日</span><span class="v">2026 / 7 / 1</span></div>
-        <div class="row"><span class="k">團體討論</span><span class="v">7/1・7/8・7/15・7/22・7/29（五次）</span></div>
+        <div class="row"><span class="k">開課日</span><span class="v">2026 / 9 / 2（週三）</span></div>
+        <div class="row"><span class="k">團體討論</span><span class="v">9/2・9/9・9/16・9/23・9/30（五次）</span></div>
         <div class="row"><span class="k">每次時間</span><span class="v">20:00–21:30 線上</span></div>
         <div class="row"><span class="k">課後支援</span><span class="v">群組答疑・全程開放回放</span></div>
         <div class="row"><span class="k">使用工具</span><span class="v">Claude Code</span></div>
@@ -478,7 +567,7 @@
     <h2>想跟我一起<span class="grad-text">走這段</span>嗎？</h2>
     <p>如果妳心裡有個一直想做的東西，這就是把它生出來的時候了。</p>
     <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeswiZQZgUjHT46-a7apq9ojihIZLPjoDBXFq4BsQ82xG6etA/viewform" target="_blank" rel="noopener" id="signup">我想加入 →</a>
-    <p class="seats">// 首期共創價・歡迎妳加入</p>
+    <p class="seats">// 第二梯 · 九月開課 · 小班制</p>
   </div>
 </section>
 
