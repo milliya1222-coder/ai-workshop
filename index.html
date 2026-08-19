@@ -4,22 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>使命落地・AI 陪跑工作坊 ・ 陪妳生出妳的點子｜欣妙在陪你</title>
+<meta name="theme-color" content="#F6EFE4">
+<meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --rose:#E29B86;
-    --rose-bright:#F2BCA8;
-    --violet:#B79CE8;
-    --violet-deep:#8A6FD0;
-    --bg:#241C30;
-    --bg2:#2E2540;
-    --panel:rgba(255,255,255,.035);
-    --panel-line:rgba(226,155,134,.20);
-    --text:#EDE6E2;
-    --muted:#9F938E;
-    --grad:linear-gradient(120deg,#E29B86 0%,#B79CE8 100%);
+    /* 第二梯 · 秋金米紙 —— 第一梯的紫保留給見證區（--v1 系） */
+    --rose:#C4735A;
+    --rose-bright:#E29B86;
+    --gold:#B07A22;
+    --gold-deep:#8C5F16;
+    --bg:#F6EFE4;
+    --bg2:#FFFBF4;
+    --panel:rgba(255,255,255,.72);
+    --panel-line:rgba(176,122,34,.30);
+    --text:#332A24;
+    --muted:#7C6C61;
+    --grad:linear-gradient(120deg,#C4735A 0%,#C79233 100%);
+    --glow1:rgba(226,155,134,.24);
+    --glow2:rgba(232,184,113,.26);
+    --glow3:rgba(196,145,63,.16);
+    --hair:rgba(90,64,48,.14);
+    --hair-soft:rgba(90,64,48,.11);
+    --grid:rgba(90,64,48,.035);
+    --rose-wash:rgba(196,115,90,.10);
+    --rose-line:rgba(196,115,90,.22);
+    /* 第一梯的紫 */
+    --v1:#6B4FA8;
+    --v1wash:rgba(107,79,168,.07);
+    --v1line:rgba(107,79,168,.20);
+    --v1grad:linear-gradient(120deg,#C4735A,#6B4FA8);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -40,15 +56,15 @@
   body::before{
     content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
     background:
-      radial-gradient(600px circle at 15% 8%, rgba(226,155,134,.18), transparent 55%),
-      radial-gradient(700px circle at 85% 25%, rgba(183,156,232,.18), transparent 55%),
-      radial-gradient(600px circle at 50% 100%, rgba(138,111,208,.14), transparent 60%);
+      radial-gradient(600px circle at 15% 8%, var(--glow1), transparent 55%),
+      radial-gradient(700px circle at 85% 25%, var(--glow2), transparent 55%),
+      radial-gradient(600px circle at 50% 100%, var(--glow3), transparent 60%);
   }
   body::after{
     content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
     background-image:
-      linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+      linear-gradient(var(--grid) 1px,transparent 1px),
+      linear-gradient(90deg,var(--grid) 1px,transparent 1px);
     background-size:46px 46px;
     -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000,transparent 75%);
             mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000,transparent 75%);
@@ -57,7 +73,8 @@
   /* brand logo image */
   .brandlogo{
     height:48px;width:auto;display:block;
-    filter:drop-shadow(0 0 14px rgba(226,155,134,.35));
+    /* logo 原色是給深底用的，亮底上壓深一階才站得住 */
+    filter:brightness(.86) saturate(1.12) drop-shadow(0 2px 6px rgba(90,64,48,.12));
   }
   .footlogo{height:64px;margin:0 auto 16px}
 
@@ -70,8 +87,8 @@
     width:30px;height:30px;border-radius:50%;
     background:var(--grad);
     display:flex;align-items:center;justify-content:center;
-    font-size:.95rem;color:#1a1320;font-weight:700;
-    box-shadow:0 0 18px rgba(226,155,134,.5);
+    font-size:.95rem;color:#FFF8EE;font-weight:700;
+    box-shadow:0 3px 12px rgba(140,95,22,.22);
   }
   .siglogo .t b{font-weight:600;color:var(--text)}
   .siglogo .t span{color:var(--muted);font-size:.86rem}
@@ -96,7 +113,7 @@
   .hero .sub{font-size:1.12rem;color:var(--muted);max-width:540px;margin:0 auto}
   .hero .tag{
     margin-top:36px;font-family:"Space Mono",monospace;
-    font-size:.82rem;color:var(--violet);letter-spacing:.06em;
+    font-size:.82rem;color:var(--gold);letter-spacing:.06em;
   }
 
   /* SECTION */
@@ -104,7 +121,7 @@
   .sec-label{
     text-align:center;font-family:"Space Mono",monospace;
     font-size:.72rem;letter-spacing:.34em;
-    color:var(--violet);margin-bottom:16px;
+    color:var(--gold);margin-bottom:16px;
   }
   h2{text-align:center;font-size:1.85rem;font-weight:500;margin-bottom:14px;letter-spacing:.03em}
   .lead{text-align:center;color:var(--muted);max-width:600px;margin:0 auto 44px;font-size:1.02rem}
@@ -113,7 +130,7 @@
   .who ul{list-style:none;max-width:580px;margin:0 auto}
   .who li{
     padding:17px 0 17px 40px;position:relative;font-size:1.05rem;
-    border-bottom:1px solid rgba(255,255,255,.06);
+    border-bottom:1px solid var(--hair-soft);
   }
   .who li:last-child{border-bottom:none}
   .who li::before{
@@ -127,11 +144,11 @@
 
   /* TWO KINDS */
   .tk-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:640px;margin:0 auto}
-  .tk-card{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:26px;backdrop-filter:blur(10px)}
+  .tk-card{background:var(--panel);border:1px solid var(--hair);border-radius:18px;padding:26px;backdrop-filter:blur(10px)}
   .tk-card .tk-tag{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.16em;margin-bottom:12px;color:var(--muted)}
   .tk-card h3{font-size:1.14rem;font-weight:600;margin-bottom:10px}
   .tk-card p{color:var(--muted);font-size:.95rem}
-  .tk-card.lit{border-color:var(--panel-line);box-shadow:0 0 30px rgba(226,155,134,.12)}
+  .tk-card.lit{border-color:var(--panel-line);box-shadow:0 6px 22px rgba(90,64,48,.10)}
   .tk-card.lit .tk-tag{color:var(--rose-bright)}
   .tk-card.dim{opacity:.72}
   @media(max-width:560px){.tk-grid{grid-template-columns:1fr}}
@@ -140,14 +157,14 @@
   .week{
     display:flex;gap:22px;align-items:flex-start;
     padding:26px;margin-bottom:16px;
-    background:var(--panel);border:1px solid rgba(255,255,255,.07);
+    background:var(--panel);border:1px solid var(--hair);
     border-radius:18px;backdrop-filter:blur(10px);
     transition:border-color .3s, transform .3s;
   }
   .week:hover{border-color:var(--panel-line);transform:translateY(-3px)}
   .week .num{
     flex-shrink:0;width:60px;height:60px;border-radius:14px;
-    background:linear-gradient(135deg,rgba(226,155,134,.18),rgba(183,156,232,.18));
+    background:linear-gradient(135deg,var(--rose-wash),rgba(176,122,34,.14));
     border:1px solid var(--panel-line);
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     font-family:"Space Mono",monospace;line-height:1.1;
@@ -158,7 +175,7 @@
   .week .body p{color:var(--muted);font-size:.96rem;margin-bottom:10px}
   .week .gift{
     display:inline-block;font-size:.82rem;color:var(--rose-bright);
-    background:rgba(226,155,134,.12);border:1px solid var(--panel-line);
+    background:var(--rose-wash);border:1px solid var(--panel-line);
     padding:5px 13px;border-radius:999px;
   }
 
@@ -171,36 +188,41 @@
 
   /* WORKS */
   .works .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  .work-card{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:26px;backdrop-filter:blur(10px);transition:border-color .3s,transform .3s}
+  .work-card{background:var(--panel);border:1px solid var(--hair);border-radius:18px;padding:26px;backdrop-filter:blur(10px);transition:border-color .3s,transform .3s}
   .work-card:hover{border-color:var(--panel-line);transform:translateY(-3px)}
-  .work-card .flag{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.16em;color:var(--violet);margin-bottom:12px}
+  .work-card .flag{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.16em;color:var(--gold);margin-bottom:12px}
   .work-card h3{font-size:1.12rem;font-weight:600;margin-bottom:8px}
   .work-card p{color:var(--muted);font-size:.94rem;margin-bottom:18px;min-height:48px}
   .work-card .links{display:flex;flex-direction:column;gap:10px}
   .work-card a.wl{display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none;font-size:.96rem;padding:11px 16px;border-radius:10px;border:1px solid var(--panel-line);color:var(--text);transition:background .2s,transform .2s}
-  .work-card a.wl:hover{background:rgba(226,155,134,.12);transform:translateX(3px)}
-  .work-card a.wl.primary{background:var(--grad);color:#241320;font-weight:600;border:none}
+  .work-card a.wl:hover{background:var(--rose-wash);transform:translateX(3px)}
+  .work-card a.wl.primary{background:var(--grad);color:#FFF8EE;font-weight:600;border:none}
   .work-card a.wl .ar{color:var(--rose-bright)}
-  .work-card a.wl.primary .ar{color:#241320}
+  .work-card a.wl.primary .ar{color:#FFF8EE}
   @media(max-width:560px){.works .grid{grid-template-columns:1fr}.work-card p{min-height:0}}
-  .voices{padding:96px 0}
+  /* 見證區是第一梯的聲音 —— 整段沿用第一梯的紫，跟第二梯的秋金分開 */
+  .voices{padding:96px 0;
+    background:linear-gradient(180deg,var(--v1wash),transparent 70%);
+    border-top:1px solid var(--v1line);border-bottom:1px solid var(--v1line)}
+  .voices .sec-label{color:var(--v1)}
+  .voices h2 em{color:var(--v1)}
   .voices .vgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
-  .vcard{background:var(--panel);border:1px solid rgba(255,255,255,.07);border-radius:18px;
+  .vcard{background:var(--panel);border:1px solid var(--hair);border-radius:18px;
     padding:26px;backdrop-filter:blur(10px);transition:border-color .3s,transform .3s;
     display:flex;flex-direction:column}
   .vcard:hover{border-color:var(--panel-line);transform:translateY(-3px)}
   .vbefore{font-family:"Space Mono",monospace;font-size:.74rem;letter-spacing:.05em;
-    color:var(--violet);margin-bottom:14px;line-height:1.7;opacity:.9}
+    color:var(--gold);margin-bottom:14px;line-height:1.7;opacity:.9}
   .vquote{font-size:1rem;line-height:1.9;margin-bottom:16px}
   .vquote b{color:var(--rose-bright);font-weight:600}
   .vsay{font-size:.95rem;line-height:1.8;color:var(--muted);
     border-left:2px solid var(--panel-line);padding-left:14px;margin-bottom:18px}
-  .vname{margin-top:auto;font-size:.9rem;color:var(--rose);letter-spacing:.04em}
+  .vname{margin-top:auto;font-size:.9rem;color:var(--v1);letter-spacing:.04em}
   .vcard.vstat{align-items:center;justify-content:center;text-align:center;
-    background:linear-gradient(135deg,rgba(226,155,134,.12),rgba(183,156,232,.10));
-    border-color:var(--panel-line)}
+    background:linear-gradient(135deg,var(--rose-wash),var(--v1wash));
+    border-color:var(--v1line)}
   .vstatnum{font-size:2.6rem;font-weight:700;letter-spacing:.02em;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;
+    background:var(--v1grad);-webkit-background-clip:text;background-clip:text;
     -webkit-text-fill-color:transparent;line-height:1.2}
   .vstatlab{margin-top:10px;font-size:1rem;line-height:1.8}
   .vstatnote{margin-top:14px;font-size:.84rem;color:var(--muted);line-height:1.9}
@@ -212,10 +234,10 @@
     max-width:560px;margin:0 auto;
     border:1px solid var(--panel-line);border-radius:22px;overflow:hidden;
     background:var(--panel);backdrop-filter:blur(12px);
-    box-shadow:0 0 50px rgba(138,111,208,.15);
+    box-shadow:0 10px 34px rgba(90,64,48,.10);
   }
   .card .price-top{
-    background:var(--grad);color:#1a1320;text-align:center;padding:36px 20px;position:relative;
+    background:var(--grad);color:#FFF8EE;text-align:center;padding:36px 20px;position:relative;
   }
   .card .price-top .small{font-family:"Space Mono",monospace;font-size:.78rem;letter-spacing:.2em}
   .card .price-top .big{font-family:"Noto Serif TC",serif;font-size:2.8rem;font-weight:700;margin:4px 0}
@@ -223,7 +245,7 @@
   .card .rows{padding:14px 30px}
   .card .row{
     display:flex;justify-content:space-between;gap:16px;
-    padding:15px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:1rem;
+    padding:15px 0;border-bottom:1px solid var(--hair);font-size:1rem;
   }
   .card .row:last-child{border-bottom:none}
   .card .row .k{color:var(--muted);flex-shrink:0}
@@ -234,28 +256,28 @@
     max-width:600px;margin:0 auto;
     background:var(--panel);backdrop-filter:blur(10px);
     border-radius:18px;padding:32px 34px;border-left:3px solid var(--rose);
-    border-top:1px solid rgba(255,255,255,.06);
+    border-top:1px solid var(--hair-soft);
   }
   .honest h3{font-size:1.18rem;margin-bottom:16px;color:var(--rose-bright)}
   .honest ul{list-style:none}
   .honest li{padding:9px 0 9px 28px;position:relative;color:var(--muted);font-size:.98rem}
-  .honest li::before{content:"✦";position:absolute;left:0;color:var(--violet);top:9px}
+  .honest li::before{content:"✦";position:absolute;left:0;color:var(--gold);top:9px}
 
   /* CTA */
   .cta{text-align:center;padding:84px 0}
   .cta h2{margin-bottom:18px;font-size:2rem}
   .cta p{color:var(--muted);margin:0 auto 32px;max-width:480px}
   .btn{
-    display:inline-block;background:var(--grad);color:#1a1320;
+    display:inline-block;background:var(--grad);color:#FFF8EE;
     text-decoration:none;font-size:1.08rem;font-weight:700;
     padding:17px 52px;border-radius:999px;letter-spacing:.05em;
-    box-shadow:0 0 36px rgba(226,155,134,.45);
+    box-shadow:0 6px 20px rgba(140,95,22,.28);
     transition:transform .2s, box-shadow .2s;
   }
-  .btn:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(183,156,232,.6)}
-  .seats{margin-top:24px;font-family:"Space Mono",monospace;font-size:.82rem;color:var(--violet);letter-spacing:.1em}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(140,95,22,.36)}
+  .seats{margin-top:24px;font-family:"Space Mono",monospace;font-size:.82rem;color:var(--gold);letter-spacing:.1em}
 
-  footer{text-align:center;padding:48px 20px;color:var(--muted);font-size:.85rem;position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06)}
+  footer{text-align:center;padding:48px 20px;color:var(--muted);font-size:.85rem;position:relative;z-index:2;border-top:1px solid var(--hair-soft)}
   footer .siglogo{margin-bottom:12px}
   footer .small{font-size:.8rem}
 
@@ -327,9 +349,9 @@
 <!-- TIMELINE -->
 <section>
   <div class="wrap">
-    <p class="sec-label">5_SESSIONS</p>
-    <h2>五次，陪妳走完一段</h2>
-    <p class="lead">五次團體討論：<b>9/2・9/9・9/16・9/23・9/30</b>（每次 20:00–21:30）。<br>每一次，妳都會帶走一個「自己的、真的能用」的成品 —— 不是聽課，是做中學。</p>
+    <p class="sec-label">4_SESSIONS</p>
+    <h2>四次，陪妳走完一段</h2>
+    <p class="lead">四次團體討論：<b>9/2・9/9・9/16・9/23</b>（每次 20:00–21:30）。<br>第二梯把節奏收得更緊 —— 一樣是四次都帶走成品，一樣有群組答疑與全程回放。</p>
 
     <div class="week">
       <div class="num"><b>01</b><span>9/2</span></div>
@@ -352,29 +374,21 @@
     <div class="week">
       <div class="num"><b>03</b><span>9/16</span></div>
       <div class="body">
-        <h3>把心裡的東西，變成一頁網頁</h3>
-        <p>學會把心裡想做的講清楚、讓 AI 聽懂妳；再用我的真實案例帶妳，把一份內容變成屬於自己的一頁網頁。</p>
-        <span class="gift">帶走：自己的一頁網頁</span>
+        <h3>把心裡的東西，變成一頁網頁 —— 而且真的上線</h3>
+        <p>學會把心裡想做的講清楚、讓 AI 聽懂妳；用我的真實案例帶妳把一份內容變成屬於自己的一頁網頁，並且當場推上網，拿到一個可以傳給別人的網址。</p>
+        <span class="gift">帶走：自己的一頁網頁 + 一個能傳出去的網址</span>
       </div>
     </div>
 
     <div class="week">
       <div class="num"><b>04</b><span>9/23</span></div>
       <div class="body">
-        <h3>從一個點子，到真的上線</h3>
-        <p>做一份能用的報名表單，並讓 AI 幫妳自動整理回應 —— 完整走一次「從一個點子，到真的做出來、上線」。</p>
-        <span class="gift">帶走：一份能用的報名表單 + 自動整理流程</span>
+        <h3>讓它自己跑・結業展示</h3>
+        <p>做一份能用的報名表單，讓 AI 自動整理回應；再把常重複做的事，變成可以一鍵重來的流程。最後我們一起看看，這四週妳生出了什麼。</p>
+        <span class="gift">帶走：一份能用的報名表單 + 自己的自動化流程 + 結業成品</span>
       </div>
     </div>
 
-    <div class="week">
-      <div class="num"><b>05</b><span>9/30</span></div>
-      <div class="body">
-        <h3>把重複的事交給 AI・結業展示</h3>
-        <p>把常重複做的事，變成可以一鍵重來的流程；把心裡的感觸變成貼文，收尾成一套屬於妳的方法。</p>
-        <span class="gift">帶走：自己的自動化流程 + 結業成品</span>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -460,7 +474,7 @@
   <div class="wrap">
     <p class="sec-label">VOICES</p>
     <h2>第一梯的姊妹，<span class="grad-text">後來怎麼說</span></h2>
-    <p class="lead">七位姊妹走完五週。下面每一段，都是她們自己填在結業表單裡的原話 —— 依各自同意的方式署名。</p>
+    <p class="lead">七位姊妹走完了整趟課程。下面每一段，都是她們自己填在結業表單裡的原話 —— 依各自同意的方式署名。</p>
 
     <div class="vgrid">
       <div class="vcard">
@@ -525,7 +539,7 @@
   <div class="wrap">
     <p class="sec-label">DETAILS</p>
     <h2>課程資訊</h2>
-    <p class="lead">第二梯・九月開課。第一梯七位姊妹，五週後每個人都帶走了自己的作品。</p>
+    <p class="lead">第二梯・九月開課，四次濃縮版。第一梯七位姊妹，課程結束後每個人都帶走了自己的作品。</p>
     <div class="card">
       <div class="price-top">
         <div class="small">第二梯 · 九月</div>
@@ -534,7 +548,7 @@
       </div>
       <div class="rows">
         <div class="row"><span class="k">開課日</span><span class="v">2026 / 9 / 2（週三）</span></div>
-        <div class="row"><span class="k">團體討論</span><span class="v">9/2・9/9・9/16・9/23・9/30（五次）</span></div>
+        <div class="row"><span class="k">團體討論</span><span class="v">9/2・9/9・9/16・9/23（四次）</span></div>
         <div class="row"><span class="k">每次時間</span><span class="v">20:00–21:30 線上</span></div>
         <div class="row"><span class="k">課後支援</span><span class="v">群組答疑・全程開放回放</span></div>
         <div class="row"><span class="k">使用工具</span><span class="v">Claude Code</span></div>
