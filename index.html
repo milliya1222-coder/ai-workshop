@@ -127,6 +127,29 @@
   h2{text-align:center;font-size:1.85rem;font-weight:500;margin-bottom:14px;letter-spacing:.03em}
   .lead{text-align:center;color:var(--muted);max-width:600px;margin:0 auto 44px;font-size:1.02rem}
 
+  /* 學員作品畫廊 */
+  .gallery{padding:96px 0}
+  .ggrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:42px}
+  .gcard{background:var(--panel);border:1px solid var(--hair);border-radius:18px;
+    overflow:hidden;backdrop-filter:blur(10px);transition:border-color .3s,transform .3s}
+  .gcard:hover{border-color:var(--panel-line);transform:translateY(-3px)}
+  .gshot{display:block;width:100%;aspect-ratio:9/7;object-fit:cover;object-position:top center;
+    border-bottom:1px solid var(--hair);background:var(--bg2)}
+  .gtext{padding:22px 24px 24px}
+  .gwho{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.16em;
+    color:var(--v1);margin-bottom:8px}
+  .gtext h3{font-family:"Noto Serif TC",serif;font-weight:500;font-size:1.14rem;
+    letter-spacing:.02em;margin-bottom:6px}
+  .gtext p{color:var(--muted);font-size:.92rem;line-height:1.9}
+
+  /* 上課現場 */
+  .classroom{margin-top:52px}
+  .classroom img{display:block;width:100%;border-radius:18px;border:1px solid var(--hair);
+    box-shadow:0 10px 30px rgba(90,64,48,.10)}
+  .cap{margin-top:14px;text-align:center;font-size:.86rem;color:var(--muted);line-height:1.9}
+
+  @media(max-width:640px){.gallery{padding:64px 0}.ggrid{grid-template-columns:1fr}}
+
   /* FOUR THINGS */
   .four{padding:96px 0}
   .four .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
@@ -517,6 +540,58 @@
 
 <!-- INFO -->
 <!-- VOICES -->
+<!-- 學員作品 -->
+<section class="gallery">
+  <div class="wrap">
+    <p class="sec-label">THEIR_WORKS</p>
+    <h2>第一梯的姊妹，做出了什麼</h2>
+    <p class="lead">下面每一個網頁，都是第一梯的姊妹在課堂上親手做出來的。<br>她們來的時候，沒有一個人寫過程式。</p>
+
+    <div class="ggrid">
+      <div class="gcard">
+        <img class="gshot" src="img/works/w-jingling.jpg" alt="精靈的 Lomi Lomi 療癒之觸網站" loading="lazy">
+        <div class="gtext">
+          <div class="gwho">精靈</div>
+          <h3>Lomi Lomi 療癒之觸</h3>
+          <p>療程介紹、特色與流程、時間與收費，還接上了線上預約 —— 就是她說的那句「我真的心想事成，把預約功能完成了」。</p>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <img class="gshot" src="img/works/w-hannah.jpg" alt="Hannah 的海曜療癒網站" loading="lazy">
+        <div class="gtext">
+          <div class="gwho">Hannah</div>
+          <h3>海曜療癒</h3>
+          <p>「如日出般溫暖・如海洋般包容」—— 從品牌故事、服務項目到預約諮詢，一頁式網站配上她自己的漸層海景。</p>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <img class="gshot" src="img/works/w-youyu.jpg" alt="宥妤的產後溫柔修復網站" loading="lazy">
+        <div class="gtext">
+          <div class="gwho">宥妤</div>
+          <h3>產後溫柔修復</h3>
+          <p>用 Why／Who／What／When／Where 五張卡片，把一個產後修復的服務講清楚 —— 給的是「慢慢回到自己」。</p>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <img class="gshot" src="img/works/w-yuwen.jpg" alt="郁文的女子的市網站" loading="lazy">
+        <div class="gtext">
+          <div class="gwho">郁文</div>
+          <h3>女子的市 The Fair Ladies</h3>
+          <p>「她不問『妳想成為什麼樣的女人』，她問『妳本來就是誰』。」—— 一個女子市集的品牌理念頁，語氣完全是她自己的。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="classroom">
+      <img src="img/works/class.jpg" alt="AI 陪跑工作坊上課現場" loading="lazy">
+      <p class="cap">第一梯上課現場・週三晚上八點，一群女人一起把東西做出來。<br>為保護學員隱私，畫面已做去識別處理。</p>
+    </div>
+  </div>
+</section>
+
 <section class="voices">
   <div class="wrap">
     <p class="sec-label">VOICES</p>
