@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>真愛 AI 陪跑課 ・ 陪妳生出妳的點子｜欣妙在陪你</title>
-<meta name="description" content="真愛 AI 陪跑課：四次線上陪跑，學會靈活應用工具、拿捏對的 AI 使用方式、做出美麗而真實的網頁，並且用得上它、不被它拉走。第二梯 9/9 開課，9/2 有必修前導課。">
+<meta name="description" content="真愛 AI 陪跑課：四次線上陪跑，學會靈活應用工具、拿捏對的 AI 使用方式、做出美麗而真實的網頁，並且用得上它、不被它拉走。第二梯 9/9 開課；報名即贈 9/2 自媒體定位課（Tatiana Chen 主講，價值 NT$1,280）。">
 <meta name="theme-color" content="#F6EFE4">
 <meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -161,6 +161,24 @@
   @media(max-width:640px){.gallery{padding:64px 0}.ggrid{grid-template-columns:1fr}
     .gcard.wide{grid-template-columns:1fr}
     .gcard.wide .gshot{min-height:0;aspect-ratio:9/7;border-right:none;border-bottom:1px solid var(--hair)}}
+
+  /* 隨課附贈 */
+  .bonus{margin-top:26px;background:linear-gradient(150deg,rgba(78,124,116,.10),var(--panel));
+    border:1px solid rgba(78,124,116,.26);border-radius:20px;padding:32px 34px;
+    backdrop-filter:blur(10px);text-align:left}
+  .btag{display:inline-block;font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.2em;
+    color:#3E6A62;background:rgba(78,124,116,.14);border-radius:999px;padding:5px 16px;margin-bottom:16px}
+  .bonus h3{font-family:"Noto Serif TC",serif;font-weight:500;font-size:1.3rem;
+    letter-spacing:.02em;line-height:1.6;margin-bottom:6px}
+  .bonus .bwho{font-size:.92rem;color:var(--muted);margin-bottom:14px}
+  .bonus p{color:var(--muted);font-size:.98rem;line-height:1.95}
+  .bonus .price-strike{color:var(--muted);text-decoration:line-through;opacity:.75}
+  .bonus b{font-weight:500;color:#3E6A62}
+  .blink{display:inline-flex;align-items:center;gap:8px;margin-top:18px;
+    border:1px solid rgba(78,124,116,.32);border-radius:999px;padding:10px 22px;
+    font-size:.92rem;letter-spacing:.06em;color:#3E6A62;text-decoration:none;
+    background:rgba(255,255,255,.5);transition:transform .3s,border-color .3s}
+  .blink:hover{transform:translateX(3px);border-color:rgba(78,124,116,.55)}
 
   /* 一個月後的長信 */
   .letter{padding:0 0 96px}
@@ -367,6 +385,7 @@
     <h1><span class="grad-text">陪妳生出</span><br>妳的點子</h1>
     <p class="sub">妳腦中那個一直想做、卻不知道怎麼變出來的東西 ——<br>讓我陪妳，用 AI 把它生出來。<br>用得上它，又不被它拉走。</p>
     <p class="tag">// 專為女性的工作・創造與使命</p>
+    <p class="tag" style="margin-top:10px;color:#3E6A62">// 報名第二梯，加贈 9/2 自媒體定位課・價值 NT$1,280</p>
   </div>
 </header>
 
@@ -608,17 +627,8 @@
         </div>
       </div>
 
-      <div class="gcard">
-        <img class="gshot" src="img/works/w-yuwen-oracle.jpg" alt="郁文的女子的市・大地神諭卡" loading="lazy">
-        <div class="gtext">
-          <div class="gwho">郁文</div>
-          <h3>女子的市・大地神諭卡</h3>
-          <p>三十六種風景，各自代表一種此刻可能的心境。牌卡用 Claude 加 Canva 生成，抽卡網站自己搭 —— 從「找一個能安靜下來的地方，坐好」開始。</p>
-          <a class="glink" href="https://oracle-cards-tfl.netlify.app/" target="_blank" rel="noopener">去抽一張 →</a>
-        </div>
-      </div>
 
-      <div class="gcard">
+      <div class="gcard wide">
         <img class="gshot" src="img/works/w-gong.jpg" alt="Chenti的海潮銅鑼 Ocean Tide Gong" loading="lazy">
         <div class="gtext">
           <div class="gwho">Chenti</div>
@@ -628,16 +638,6 @@
         </div>
       </div>
 
-      <div class="gcard wide">
-        <img class="gshot" src="img/works/w-chenti.jpg" alt="Chenti 的大地的．喜悅之籽線上抽卡" loading="lazy">
-        <div class="gtext">
-          <div class="gwho">Chenti</div>
-          <h3>大地的．喜悅之籽　線上抽卡</h3>
-          <p>不只是一頁網頁 —— 是一個真的會動的抽卡網站：播種、灌溉、生長、開花、死亡與重生五個主題，每天可以抽一張，抽到還能分享出去。<br>
-            「以種籽生長的軌跡為路引，轉譯為光明的文字力量。」牌卡是她自己的創作，網站是她在課堂上做出來的。</p>
-          <a class="glink" href="https://seedofjoycards.netlify.app/daily" target="_blank" rel="noopener">去抽一張看看 →</a>
-        </div>
-      </div>
     </div>
 
     <div class="classroom">
@@ -655,15 +655,11 @@
     <p class="lead">郁文在結業那天寫了一篇長長的心得。<br>下面是其中幾段 —— 全是她的原話。</p>
 
     <div class="lbox">
-      <p>回頭看這一個月，才發現自己竟然一個人搭起了這麼多東西 —— 女子的市的心理測驗網站、神諭卡抽卡頁、白蘭媽媽的成果花絮、You When Mama 的輪播內容策略，還有這份現在正在寫的文字。都是從「我想試試看」開始的，一步一步走出來的。</p>
+      <p>回頭看這一個月，才發現自己竟然一個人搭起了這麼多東西 —— 心理測驗網站、神諭卡抽卡頁、輪播內容策略，還有這份現在正在寫的文字。都是從「我想試試看」開始的，一步一步走出來的。</p>
 
-      <p>我學會的第一件事，其實跟技術無關，是<b>「我可以先講清楚我要什麼」</b>。以前遇到問題可能會覺得說不清楚沒關係，慢慢磨合就好；這個月我發現，只要我願意具體講出「這裡不對」「我要的是這種感覺」，事情就會很快被調整到我要的樣子。這讓我更信任自己的判斷力。</p>
+      <p>我學會的第一件事，其實跟技術無關，是<b>「我可以先講清楚我要什麼」</b>。只要我願意具體講出「這裡不對」「我要的是這種感覺」，事情就會很快被調整到我要的樣子。這讓我更信任自己的判斷力。</p>
 
-      <p>我也重新確認了一件很重要的事：<b>不管 AI 幫我省了多少力氣，最後的聲音一定要是我自己的。</b>翻譯也好、文案草稿也好，我還是習慣自己再潤一次、甚至整段重寫，不是因為前面做得不好，是因為只有我自己知道，什麼樣的語氣才真正像我。</p>
-
-      <p>這些瑣碎的坑，一個一個踩過去，現在再遇到類似狀況，我大概知道要往哪個方向懷疑、怎麼問問題。這種「原來卡住的地方是這個」的感覺，累積起來就是能力。</p>
-
-      <p>如果要說最大的改變，大概是：<b>我不再覺得自己是「一個人在土法煉鋼地弄這些」</b>，而是有一個可以一起討論、一起修正、一起把細節做到位的夥伴關係。工作變快了，但更重要的是，我對自己想做的事，看得更清楚了一點。</p>
+      <p>我也重新確認了一件很重要的事：<b>不管 AI 幫我省了多少力氣，最後的聲音一定要是我自己的。</b>我還是習慣自己再潤一次、甚至整段重寫，不是因為前面做得不好，是因為只有我自己知道，什麼樣的語氣才真正像我。</p>
 
       <div class="lsig">— 郁文，2026 / 7 / 29 結業當天</div>
     </div>
@@ -747,7 +743,7 @@
         <div class="note">／ 每人</div>
       </div>
       <div class="rows">
-        <div class="row"><span class="k">必修前導課</span><span class="v"><a href="101/" style="color:var(--rose);text-decoration:none;border-bottom:1px solid rgba(196,115,90,.35)">9/2 自媒體 101 →</a></span></div>
+        <div class="row"><span class="k">隨課附贈</span><span class="v"><a href="101/" style="color:var(--rose);text-decoration:none;border-bottom:1px solid rgba(196,115,90,.35)">9/2 自媒體 101（價值 NT$1,280）→</a></span></div>
         <div class="row"><span class="k">開課日</span><span class="v">2026 / 9 / 9（週三）</span></div>
         <div class="row"><span class="k">團體討論</span><span class="v">9/9・9/16・9/23・9/30（四次）</span></div>
         <div class="row"><span class="k">每次時間</span><span class="v">20:00–21:30 線上</span></div>
@@ -756,6 +752,17 @@
         <div class="row"><span class="k">主要對象</span><span class="v">女性創業者・孕育工作者（人人可學）</span></div>
         <div class="row"><span class="k">小小回禮</span><span class="v">課後給我一段真實見證 💛</span></div>
       </div>
+    </div>
+
+    <div class="bonus">
+      <div class="btag">報名就送 ・ BONUS</div>
+      <h3>自媒體 101・我是誰、我要用 AI 做什麼</h3>
+      <div class="bwho">Tatiana Chen 主講 —— 從全職媽媽做到四萬粉的自媒體講師</div>
+      <p>一堂完整的自媒體定位課：怎麼找到自己的位置，找到之後怎麼經營下去。<br>
+        單堂定價 <span class="price-strike">NT$1,280</span> ——<b>報名第二梯的姊妹，免費參加</b>。</p>
+      <p style="margin-top:14px">因為我發現，卡住大家的常常不是 AI，是不知道自己要做什麼。<br>
+        所以我把它排在開課前一週：<b>9/2（週三）20:00–21:30</b>，線上、全程開放回放。</p>
+      <a class="blink" href="101/">看這堂課在講什麼 →</a>
     </div>
   </div>
 </section>
@@ -782,7 +789,7 @@
     <h2>想跟我一起<span class="grad-text">走這段</span>嗎？</h2>
     <p>如果妳心裡有個一直想做的東西，這就是把它生出來的時候了。</p>
     <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSevCOECI0jX0VEvbEtAU4nBn7j14MsSP3qjIP3Hqq3E3qmX7w/viewform" target="_blank" rel="noopener" id="signup">我想加入 →</a>
-    <p class="seats">// 第二梯 · 九月開課 · 小班制</p>
+    <p class="seats">// 第二梯 · 九月開課 · 小班制 · 加贈 9/2 自媒體定位課</p>
   </div>
 </section>
 
