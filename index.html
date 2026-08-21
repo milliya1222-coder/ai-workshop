@@ -148,7 +148,31 @@
     box-shadow:0 10px 30px rgba(90,64,48,.10)}
   .cap{margin-top:14px;text-align:center;font-size:.86rem;color:var(--muted);line-height:1.9}
 
-  @media(max-width:640px){.gallery{padding:64px 0}.ggrid{grid-template-columns:1fr}}
+  .gcard.wide{grid-column:1/-1;display:grid;grid-template-columns:1.08fr 1fr;align-items:stretch}
+  .gcard.wide .gshot{aspect-ratio:auto;height:100%;min-height:340px;
+    border-bottom:none;border-right:1px solid var(--hair)}
+  .gcard.wide .gtext{display:flex;flex-direction:column;justify-content:center;padding:34px 36px}
+  .glink{display:inline-flex;align-items:center;gap:8px;margin-top:18px;align-self:flex-start;
+    border:1px solid var(--hair);border-radius:999px;padding:9px 20px;font-size:.88rem;
+    letter-spacing:.06em;color:var(--rose);text-decoration:none;background:var(--rose-wash);
+    transition:transform .3s,border-color .3s}
+  .glink:hover{transform:translateX(3px);border-color:var(--panel-line)}
+
+  @media(max-width:640px){.gallery{padding:64px 0}.ggrid{grid-template-columns:1fr}
+    .gcard.wide{grid-template-columns:1fr}
+    .gcard.wide .gshot{min-height:0;aspect-ratio:9/7;border-right:none;border-bottom:1px solid var(--hair)}}
+
+  /* 一個月後的長信 */
+  .letter{padding:0 0 96px}
+  .lbox{background:linear-gradient(160deg,var(--v1wash),var(--panel));
+    border:1px solid var(--v1line);border-left:3px solid var(--v1);
+    border-radius:20px;padding:40px 44px;backdrop-filter:blur(10px);margin-top:40px}
+  .lbox p{font-size:1.02rem;line-height:2.1;color:var(--muted)}
+  .lbox p+p{margin-top:22px}
+  .lbox b{font-weight:500;color:var(--text)}
+  .lsig{margin-top:30px;padding-top:22px;border-top:1px solid var(--v1line);
+    text-align:right;color:var(--v1);font-size:.94rem;letter-spacing:.04em}
+  @media(max-width:640px){.letter{padding-bottom:64px}.lbox{padding:30px 26px}}
 
   /* FOUR THINGS */
   .four{padding:96px 0}
@@ -545,11 +569,11 @@
   <div class="wrap">
     <p class="sec-label">THEIR_WORKS</p>
     <h2>第一梯的姊妹，做出了什麼</h2>
-    <p class="lead">下面每一個網頁，都是第一梯的姊妹在課堂上親手做出來的。<br>她們來的時候，沒有一個人寫過程式。</p>
+    <p class="lead">下面每一個，都是第一梯的姊妹在這一個月裡親手做出來的。<br>她們來的時候，沒有一個人寫過程式 —— 有幾個現在已經在線上收預約了。</p>
 
     <div class="ggrid">
       <div class="gcard">
-        <img class="gshot" src="img/works/w-jingling.jpg" alt="精靈的 Lomi Lomi 療癒之觸網站" loading="lazy">
+        <img class="gshot" src="img/works/w-jingling.jpg" alt="精靈的Lomi Lomi 療癒之觸" loading="lazy">
         <div class="gtext">
           <div class="gwho">精靈</div>
           <h3>Lomi Lomi 療癒之觸</h3>
@@ -558,7 +582,7 @@
       </div>
 
       <div class="gcard">
-        <img class="gshot" src="img/works/w-hannah.jpg" alt="Hannah 的海曜療癒網站" loading="lazy">
+        <img class="gshot" src="img/works/w-hannah.jpg" alt="Hannah的海曜療癒" loading="lazy">
         <div class="gtext">
           <div class="gwho">Hannah</div>
           <h3>海曜療癒</h3>
@@ -567,7 +591,7 @@
       </div>
 
       <div class="gcard">
-        <img class="gshot" src="img/works/w-youyu.jpg" alt="宥妤的產後溫柔修復網站" loading="lazy">
+        <img class="gshot" src="img/works/w-youyu.jpg" alt="宥妤的產後溫柔修復" loading="lazy">
         <div class="gtext">
           <div class="gwho">宥妤</div>
           <h3>產後溫柔修復</h3>
@@ -576,11 +600,42 @@
       </div>
 
       <div class="gcard">
-        <img class="gshot" src="img/works/w-yuwen.jpg" alt="郁文的女子的市網站" loading="lazy">
+        <img class="gshot" src="img/works/w-yuwen.jpg" alt="郁文的女子的市 The Fair Ladies" loading="lazy">
         <div class="gtext">
           <div class="gwho">郁文</div>
           <h3>女子的市 The Fair Ladies</h3>
           <p>「她不問『妳想成為什麼樣的女人』，她問『妳本來就是誰』。」—— 一個女子市集的品牌理念頁，語氣完全是她自己的。</p>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <img class="gshot" src="img/works/w-yuwen-oracle.jpg" alt="郁文的女子的市・大地神諭卡" loading="lazy">
+        <div class="gtext">
+          <div class="gwho">郁文</div>
+          <h3>女子的市・大地神諭卡</h3>
+          <p>三十六種風景，各自代表一種此刻可能的心境。牌卡用 Claude 加 Canva 生成，抽卡網站自己搭 —— 從「找一個能安靜下來的地方，坐好」開始。</p>
+          <a class="glink" href="https://oracle-cards-tfl.netlify.app/" target="_blank" rel="noopener">去抽一張 →</a>
+        </div>
+      </div>
+
+      <div class="gcard">
+        <img class="gshot" src="img/works/w-gong.jpg" alt="Chenti的海潮銅鑼 Ocean Tide Gong" loading="lazy">
+        <div class="gtext">
+          <div class="gwho">Chenti</div>
+          <h3>海潮銅鑼 Ocean Tide Gong</h3>
+          <p>中英雙語、有導覽列、有場次與常見問題，還接上 LINE 預約 —— 這已經是一個完整營運中的服務網站了。</p>
+          <a class="glink" href="https://gong-bath.kumudsfreqs.live" target="_blank" rel="noopener">看網站 →</a>
+        </div>
+      </div>
+
+      <div class="gcard wide">
+        <img class="gshot" src="img/works/w-chenti.jpg" alt="Chenti 的大地的．喜悅之籽線上抽卡" loading="lazy">
+        <div class="gtext">
+          <div class="gwho">Chenti</div>
+          <h3>大地的．喜悅之籽　線上抽卡</h3>
+          <p>不只是一頁網頁 —— 是一個真的會動的抽卡網站：播種、灌溉、生長、開花、死亡與重生五個主題，每天可以抽一張，抽到還能分享出去。<br>
+            「以種籽生長的軌跡為路引，轉譯為光明的文字力量。」牌卡是她自己的創作，網站是她在課堂上做出來的。</p>
+          <a class="glink" href="https://seedofjoycards.netlify.app/daily" target="_blank" rel="noopener">去抽一張看看 →</a>
         </div>
       </div>
     </div>
@@ -588,6 +643,29 @@
     <div class="classroom">
       <img src="img/works/class.jpg" alt="AI 陪跑工作坊上課現場" loading="lazy">
       <p class="cap">第一梯上課現場・週三晚上八點，一群女人一起把東西做出來。<br>為保護學員隱私，畫面已做去識別處理。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 一個月後的長信 -->
+<section class="letter">
+  <div class="wrap">
+    <p class="sec-label">ONE_MONTH_LATER</p>
+    <h2>一個月後，她自己寫下的</h2>
+    <p class="lead">郁文在結業那天寫了一篇長長的心得。<br>下面是其中幾段 —— 全是她的原話。</p>
+
+    <div class="lbox">
+      <p>回頭看這一個月，才發現自己竟然一個人搭起了這麼多東西 —— 女子的市的心理測驗網站、神諭卡抽卡頁、白蘭媽媽的成果花絮、You When Mama 的輪播內容策略，還有這份現在正在寫的文字。都是從「我想試試看」開始的，一步一步走出來的。</p>
+
+      <p>我學會的第一件事，其實跟技術無關，是<b>「我可以先講清楚我要什麼」</b>。以前遇到問題可能會覺得說不清楚沒關係，慢慢磨合就好；這個月我發現，只要我願意具體講出「這裡不對」「我要的是這種感覺」，事情就會很快被調整到我要的樣子。這讓我更信任自己的判斷力。</p>
+
+      <p>我也重新確認了一件很重要的事：<b>不管 AI 幫我省了多少力氣，最後的聲音一定要是我自己的。</b>翻譯也好、文案草稿也好，我還是習慣自己再潤一次、甚至整段重寫，不是因為前面做得不好，是因為只有我自己知道，什麼樣的語氣才真正像我。</p>
+
+      <p>這些瑣碎的坑，一個一個踩過去，現在再遇到類似狀況，我大概知道要往哪個方向懷疑、怎麼問問題。這種「原來卡住的地方是這個」的感覺，累積起來就是能力。</p>
+
+      <p>如果要說最大的改變，大概是：<b>我不再覺得自己是「一個人在土法煉鋼地弄這些」</b>，而是有一個可以一起討論、一起修正、一起把細節做到位的夥伴關係。工作變快了，但更重要的是，我對自己想做的事，看得更清楚了一點。</p>
+
+      <div class="lsig">— 郁文，2026 / 7 / 29 結業當天</div>
     </div>
   </div>
 </section>
