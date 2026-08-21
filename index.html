@@ -148,19 +148,22 @@
     box-shadow:0 10px 30px rgba(90,64,48,.10)}
   .cap{margin-top:14px;text-align:center;font-size:.86rem;color:var(--muted);line-height:1.9}
 
-  .gcard.wide{grid-column:1/-1;display:grid;grid-template-columns:1.08fr 1fr;align-items:stretch}
-  .gcard.wide .gshot{aspect-ratio:auto;height:100%;min-height:340px;
+  /* 橫幅大卡：用 flex-wrap，窄螢幕會自然疊起來（不靠 height:100%，Safari 才不會疊字） */
+  .gcard.wide{grid-column:1/-1;display:flex;flex-wrap:wrap}
+  .gcard.wide .gshot{flex:1 1 330px;min-width:300px;aspect-ratio:4/3;height:auto;
     border-bottom:none;border-right:1px solid var(--hair)}
-  .gcard.wide .gtext{display:flex;flex-direction:column;justify-content:center;padding:34px 36px}
+  .gcard.wide .gtext{flex:1 1 300px;min-width:280px;
+    display:flex;flex-direction:column;justify-content:center;padding:34px 36px}
   .glink{display:inline-flex;align-items:center;gap:8px;margin-top:18px;align-self:flex-start;
     border:1px solid var(--hair);border-radius:999px;padding:9px 20px;font-size:.88rem;
     letter-spacing:.06em;color:var(--rose);text-decoration:none;background:var(--rose-wash);
     transition:transform .3s,border-color .3s}
   .glink:hover{transform:translateX(3px);border-color:var(--panel-line)}
 
-  @media(max-width:640px){.gallery{padding:64px 0}.ggrid{grid-template-columns:1fr}
-    .gcard.wide{grid-template-columns:1fr}
-    .gcard.wide .gshot{min-height:0;aspect-ratio:9/7;border-right:none;border-bottom:1px solid var(--hair)}}
+  @media(max-width:760px){.gallery{padding:64px 0}.ggrid{grid-template-columns:1fr}
+    .gcard.wide .gshot{flex-basis:100%;min-width:0;aspect-ratio:9/7;height:auto;
+      border-right:none;border-bottom:1px solid var(--hair)}
+    .gcard.wide .gtext{flex-basis:100%;min-width:0;padding:22px 24px 26px}}
 
   /* 隨課附贈 */
   .bonus{margin-top:26px;background:linear-gradient(150deg,rgba(78,124,116,.10),var(--panel));
