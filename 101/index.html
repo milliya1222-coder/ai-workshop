@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自媒體 101 ・ 我是誰、我要用 AI 做什麼｜Tatiana Chen 主講・真愛 AI 陪跑課必修前導課</title>
+<meta name="description" content="自媒體 101：自媒體講師 Tatiana Chen 主講，談自媒體的定位與營運。真愛 AI 陪跑課的必修前導課，第一梯與第二梯學員免費參加，一般報名 NT$798。9/2 週三 20:00 線上，全程開放回放。">
+<meta name="theme-color" content="#F6EFE4">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@300;400;700&family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6EFE4;
+    --ink:#332A24;
+    --muted:#7C6C61;
+    --rose:#C4735A;
+    --rose-soft:#E29B86;
+    --gold:#B07A22;
+    --guest:#4E7C74;
+    --line:rgba(90,64,48,.15);
+    --line-soft:rgba(90,64,48,.10);
+    --card:rgba(255,255,255,.66);
+    --grad:linear-gradient(120deg,#C4735A 0%,#C79233 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"LXGW WenKai TC",serif;
+    color:var(--ink);background:var(--paper);
+    line-height:2.0;font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;position:relative;
+  }
+  /* 「真愛」等要用標準字形的地方（楷體是傳承字形，真會寫成眞） */
+  .std{font-family:"Noto Serif TC",serif;font-weight:500}
+  .num{font-family:"Noto Sans TC",sans-serif;font-weight:400}
+
+  /* 水彩暈染背景 */
+  .wash{position:fixed;inset:0;width:100vw;height:100vh;z-index:0;pointer-events:none}
+  .grain{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:linear-gradient(rgba(90,64,48,.03) 1px,transparent 1px),
+                     linear-gradient(90deg,rgba(90,64,48,.03) 1px,transparent 1px);
+    background-size:62px 62px;
+    -webkit-mask-image:radial-gradient(ellipse 82% 58% at 50% 32%,#000,transparent 78%);
+            mask-image:radial-gradient(ellipse 82% 58% at 50% 32%,#000,transparent 78%)}
+
+  .wrap{max-width:840px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
+  section{position:relative;z-index:2;padding-bottom:96px}
+
+  /* 頂 */
+  .topbar{position:relative;z-index:3;padding:30px 0 0}
+  .brandlogo{height:46px;display:block;margin:0 auto;
+    filter:brightness(.86) saturate(1.12) drop-shadow(0 2px 6px rgba(90,64,48,.12))}
+
+  /* HERO */
+  .hero{text-align:center;padding:58px 0 96px;position:relative}
+  .ring{position:absolute;border-radius:50%;border:2px solid rgba(196,115,90,.22);z-index:1;
+    left:50%;transform:translateX(-50%)}
+  .kick{font-size:.95rem;letter-spacing:.42em;text-indent:.42em;color:var(--gold);
+    margin-bottom:30px}
+  .hero h1{font-size:clamp(2.4rem,7vw,3.9rem);line-height:1.34;letter-spacing:.05em;font-weight:700}
+  .hero h1 .two{color:var(--rose);display:block;margin-top:6px}
+  .hero .host{margin-top:26px;font-size:1.06rem;letter-spacing:.06em;color:var(--guest)}
+  .hero .host b{font-weight:700;font-size:1.16rem}
+  .hero .sub{margin-top:22px;color:var(--muted);font-size:1.08rem;line-height:2.05}
+  .hero .when{margin-top:34px;font-size:.98rem;color:var(--ink);letter-spacing:.06em}
+  .hero .when b{font-weight:400;color:var(--rose)}
+
+  .label{text-align:center;font-size:.9rem;letter-spacing:.4em;text-indent:.4em;
+    color:var(--gold);margin-bottom:14px}
+  h2{text-align:center;font-size:1.95rem;font-weight:700;letter-spacing:.05em;line-height:1.5;
+    margin-bottom:14px}
+  .lead{text-align:center;color:var(--muted);max-width:620px;margin:0 auto 46px;font-size:1.02rem}
+
+  /* WHY */
+  .whybox{background:var(--card);border:1px solid var(--line);border-radius:26px;
+    padding:38px 40px;backdrop-filter:blur(8px)}
+  .whybox p+p{margin-top:20px}
+  .whybox b{font-weight:700;color:var(--rose)}
+
+  /* 議程 */
+  .item{display:flex;gap:28px;align-items:flex-start;padding:30px 0;border-bottom:1px solid var(--line-soft)}
+  .item:last-child{border-bottom:none}
+  .clock{min-width:82px;text-align:center;padding-top:4px}
+  .clock b{display:block;font-size:1.05rem;color:var(--gold);letter-spacing:.02em;font-weight:700}
+  .clock span{display:block;font-size:.78rem;color:var(--muted);margin-top:2px;letter-spacing:.06em}
+  .ibody h3{font-size:1.3rem;font-weight:700;letter-spacing:.03em;margin-bottom:8px;line-height:1.6}
+  .ibody p{color:var(--muted);font-size:1rem}
+  .by{display:inline-block;margin-top:14px;font-size:.85rem;letter-spacing:.1em;
+    border:1px solid var(--line);border-radius:999px;padding:5px 16px;color:var(--muted)}
+  .by.guest{color:var(--guest);border-color:rgba(78,124,116,.26);background:rgba(78,124,116,.07)}
+
+  /* 講者 */
+  .sgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+  .scard{background:var(--card);border:1px solid var(--line);border-radius:26px;
+    padding:36px 32px;text-align:center;backdrop-filter:blur(8px)}
+  .scard.guest{border-color:rgba(78,124,116,.24);
+    background:linear-gradient(165deg,rgba(78,124,116,.07),var(--card))}
+  .avatar{width:168px;height:168px;border-radius:50%;object-fit:cover;margin:0 auto 22px;display:block;
+    box-shadow:0 10px 30px rgba(90,64,48,.16);
+    -webkit-mask-image:radial-gradient(circle at 50% 50%,#000 68%,transparent 99%);
+            mask-image:radial-gradient(circle at 50% 50%,#000 68%,transparent 99%)}
+  .srole{font-size:.82rem;letter-spacing:.34em;text-indent:.34em;color:var(--gold);margin-bottom:8px}
+  .scard.guest .srole{color:var(--guest)}
+  .sname{font-size:1.5rem;font-weight:700;letter-spacing:.04em;line-height:1.5}
+  .shandle{font-size:.9rem;color:var(--muted);margin-bottom:20px}
+  .scard p{color:var(--muted);font-size:.98rem;text-align:left}
+  .scard p+p{margin-top:14px}
+  .creds{margin-top:20px;padding-top:18px;border-top:1px solid var(--line-soft);text-align:left}
+  .creds li{list-style:none;position:relative;padding:7px 0 7px 22px;
+    font-size:.9rem;line-height:1.8;color:var(--muted)}
+  .creds li::before{content:"·";position:absolute;left:6px;top:7px;color:var(--gold);font-weight:700}
+  .scard.guest .creds li::before{color:var(--guest)}
+
+  /* 誰適合 */
+  .who ul{list-style:none;max-width:600px;margin:0 auto}
+  .who li{padding:18px 0 18px 38px;position:relative;font-size:1.04rem;
+    border-bottom:1px solid var(--line-soft)}
+  .who li:last-child{border-bottom:none}
+  .who li::before{content:"✦";position:absolute;left:0;color:var(--rose);top:18px;font-size:.86rem}
+
+  /* 價格 */
+  .pgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:26px;
+    padding:38px 30px;text-align:center;backdrop-filter:blur(8px);position:relative;overflow:hidden}
+  .pcard.free{border-color:rgba(176,122,34,.30);
+    background:linear-gradient(165deg,rgba(196,115,90,.10),var(--card))}
+  .ptag{font-size:.84rem;letter-spacing:.3em;text-indent:.3em;color:var(--gold);margin-bottom:16px}
+  .pnum{font-family:"Noto Serif TC",serif;font-weight:700;font-size:2.6rem;line-height:1.3;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent}
+  .pwho{margin-top:14px;font-size:.98rem;color:var(--muted);line-height:1.9}
+  .facts{margin-top:34px;background:var(--card);border:1px solid var(--line);
+    border-radius:26px;padding:14px 36px;backdrop-filter:blur(8px)}
+  .frow{display:flex;justify-content:space-between;align-items:center;
+    padding:17px 0;border-bottom:1px solid var(--line-soft);font-size:1.02rem}
+  .frow:last-child{border-bottom:none}
+  .frow .k{color:var(--muted);font-size:.96rem}
+
+  /* CTA */
+  .cta{text-align:center;position:relative}
+  .btn{display:inline-block;background:var(--grad);color:#FFF8EE;
+    padding:18px 50px;border-radius:999px;text-decoration:none;font-weight:700;
+    font-size:1.08rem;letter-spacing:.1em;box-shadow:0 6px 20px rgba(140,95,22,.28);
+    transition:transform .3s,box-shadow .3s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(140,95,22,.36)}
+  .ctanote{margin-top:22px;font-size:.94rem;color:var(--muted)}
+  .ctanote a{color:var(--rose);text-decoration:none;border-bottom:1px solid rgba(196,115,90,.35)}
+
+  /* 誠實說 */
+  .hbox{background:var(--card);border:1px solid var(--line);border-radius:26px;
+    padding:36px 38px;border-left:3px solid var(--rose);backdrop-filter:blur(8px)}
+  .hbox h3{font-size:1.18rem;font-weight:700;color:var(--rose);margin-bottom:18px;letter-spacing:.04em}
+  .hbox li{list-style:none;position:relative;padding:12px 0 12px 30px;
+    color:var(--muted);font-size:.99rem}
+  .hbox li::before{content:"✦";position:absolute;left:0;color:var(--gold);top:12px;font-size:.82rem}
+
+  footer{text-align:center;padding:50px 20px 66px;color:var(--muted);font-size:.9rem;
+    position:relative;z-index:2;border-top:1px solid var(--line-soft)}
+  footer a{color:var(--rose);text-decoration:none}
+  footer .small{margin-top:10px;font-size:.85rem}
+
+  @media(max-width:640px){
+    .sgrid,.pgrid{grid-template-columns:1fr}
+    .hero{padding:40px 0 72px}
+    section{padding-bottom:72px}
+    .item{gap:16px}.clock{min-width:60px}
+    .whybox,.hbox{padding:30px 26px}
+    .ring{display:none}
+  }
+</style>
+</head>
+<body>
+
+<svg class="wash" viewBox="0 0 1000 1400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="wa"><feTurbulence type="fractalNoise" baseFrequency="0.011" numOctaves="4" seed="7"/>
+      <feDisplacementMap in="SourceGraphic" scale="150"/><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="wb"><feTurbulence type="fractalNoise" baseFrequency="0.016" numOctaves="3" seed="21"/>
+      <feDisplacementMap in="SourceGraphic" scale="120"/><feGaussianBlur stdDeviation="26"/></filter>
+  </defs>
+  <g filter="url(#wa)" opacity=".40">
+    <ellipse cx="180" cy="180" rx="300" ry="230" fill="#E5A78F"/>
+    <ellipse cx="870" cy="1180" rx="330" ry="250" fill="#E7C287"/>
+  </g>
+  <g filter="url(#wb)" opacity=".30">
+    <ellipse cx="900" cy="300" rx="280" ry="220" fill="#E7C287"/>
+    <ellipse cx="150" cy="1210" rx="260" ry="210" fill="#A8C6BF"/>
+  </g>
+</svg>
+<div class="grain"></div>
+
+<div class="topbar">
+  <img src="../logo.png" alt="欣妙在陪你 ・ Birth with Milliya" class="brandlogo">
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="ring" style="width:540px;height:540px;top:120px"></div>
+  <div class="wrap">
+    <div class="kick"><span class="std">真愛 AI 陪跑課</span>・必修前導課</div>
+    <h1>自媒體 101<span class="two">我是誰、我要用 AI 做什麼</span></h1>
+    <p class="host">主講 ・ <b>Tatiana Chen</b>　自媒體講師</p>
+    <p class="sub">在讓 AI 幫妳做東西之前，得先知道<br>妳要做什麼、做給誰。這一晚，我請專業的人來講。</p>
+    <p class="when"><b class="num">9 / 2</b>（週三）<b class="num">20:00–21:30</b>　線上・全程開放回放</p>
+  </div>
+</header>
+
+<!-- WHY -->
+<section class="why">
+  <div class="wrap">
+    <div class="label">為什麼先開這一晚</div>
+    <h2>因為工具再好，<br>也回答不了「我是誰」</h2>
+    <p class="lead"></p>
+    <div class="whybox">
+      <p>第一梯上完之後，我發現卡住大家的常常不是 AI。<br>
+        是坐在螢幕前，不知道自己要做什麼。</p>
+      <p>妳問它「幫我寫一篇貼文」，它就真的給妳一篇 —— 通順、漂亮、可以直接發，<b>但不像妳</b>。<br>
+        不是它不夠聰明，是它不知道妳是誰。而很多時候，我們自己也還沒說清楚。</p>
+      <p>所以在四堂課開始的前一週，我想先開這一晚。<br>
+        把「我是誰」跟「我要用 AI 做什麼」放在一起談 —— 這兩件事本來就是同一件。</p>
+      <p>定位跟營運不是我的專業，所以我沒有自己講。<br>
+        我請了 Tatiana Chen —— 一個從全職媽媽做到四萬粉的自媒體講師。<br>
+        我只做一件事：把她講的，接回下一週妳要動手做的東西上。</p>
+      <p><b>這一晚我把它排成 AI 課的必修</b>，第一梯與第二梯的姊妹都可以免費參加。<br>
+        必修，但不是負擔 —— 免費、全程回放，當下不能來也跟得上。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 議程 -->
+<section class="agenda">
+  <div class="wrap">
+    <div class="label">這一晚</div>
+    <h2>這一晚怎麼走</h2>
+    <p class="lead">九十分鐘，主體是 Tati 的兩段，我負責開場與收尾。</p>
+
+    <div class="item">
+      <div class="clock"><b class="num">20:00</b><span>開場</span></div>
+      <div class="ibody">
+        <h3>為什麼我把這一晚排成必修</h3>
+        <p>十分鐘，我說明這一晚跟 9/9 開始那四堂的關係，以及我希望妳今晚帶著什麼問題聽。</p>
+        <span class="by">Milliya ・ 10 分鐘</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="clock"><b class="num">20:10</b><span>主講</span></div>
+      <div class="ibody">
+        <h3>我是誰 —— 自媒體的定位</h3>
+        <p>妳想被誰看見？妳想因為什麼被記得？定位不是想一個好聽的標籤，是找到那個「別人做不來、而妳做起來不費力」的位置。</p>
+        <span class="by guest">Tatiana Chen ・ 主講</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="clock"><b class="num">20:45</b><span>主講</span></div>
+      <div class="ibody">
+        <h3>找到之後，怎麼經營下去 —— 自媒體的營運</h3>
+        <p>定位找到了，接下來是每一天的事：發什麼、多久發一次、怎麼在不燃燒自己的前提下持續。這一段談的是真的能走下去的節奏。</p>
+        <span class="by guest">Tatiana Chen ・ 主講</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="clock"><b class="num">21:15</b><span>收尾</span></div>
+      <div class="ibody">
+        <h3>接回下一週 —— 把「我是誰」變成 AI 聽得懂的話</h3>
+        <p>Tati 講完之後，我用十五分鐘把它接回工具：怎麼讓 AI 知道妳是誰、妳的語氣、妳服務誰，它做出來的東西才會像妳。也一起看看，妳手上哪些事現在就能交給它。</p>
+        <span class="by">Milliya ・ 15 分鐘</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 講者 -->
+<section class="speakers">
+  <div class="wrap">
+    <div class="label">這一晚陪妳的人</div>
+    <h2>主講，與把她請來的人</h2>
+    <p class="lead">她談的是我教不了的那一半：我會陪妳把東西做出來，<br>她會陪妳想清楚，這個東西要為誰而做。</p>
+
+    <div class="sgrid">
+      <div class="scard guest">
+        <img class="avatar" src="img/tati.jpg" alt="Tatiana Chen" width="168" height="168" loading="lazy">
+        <div class="srole">主講</div>
+        <div class="sname">Tatiana Chen</div>
+        <div class="shandle">自媒體講師 ・ 料理家</div>
+        <p>全職媽媽，也是料理家。<span class="num">2023</span> 年開始經營自己的自媒體品牌，粉絲累積 <span class="num">40,000+</span>。</p>
+        <p>在那之前，她做的是別人的品牌 —— STAR HOSTEL 信星旅館的行銷與營運經理，帶著團隊拿下全球青年旅館第一名。所以她談的不只是怎麼被看見，還有怎麼撐得住。</p>
+        <ul class="creds">
+          <li>曾任 YAHOO 電商特邀講師</li>
+          <li>BOS 巴菲特線上學院・商業之星計畫 認證導師</li>
+          <li>玖樓共生公寓 營運顧問</li>
+          <li>著有<span class="std">《成為料理家的 0 到 1》</span>電子書</li>
+          <li>受訪於 <span class="num">EVERYDAY OBJECT</span>、加拿大 FÊTE CHINOISE、客家電視台</li>
+        </ul>
+      </div>
+
+      <div class="scard">
+        <img class="avatar" src="img/milliya.jpg" alt="Milliya 欣妙" width="168" height="168" loading="lazy">
+        <div class="srole">主辦 ・ 合作</div>
+        <div class="sname">Milliya 欣妙</div>
+        <div class="shandle">Birth with Milliya ・ 欣妙在陪妳工作室</div>
+        <p>陪產員、孕產顧問，也是「<span class="std">真愛 AI 陪跑課</span>」的老師。第一梯七位姊妹，課程結束後每個人都帶走了自己的作品。</p>
+        <p>我不是科技人。我自己就是從完全不會，一路做出活動網頁、報名表單、線上預約系統 —— 所以我知道妳會卡在哪。</p>
+        <ul class="creds">
+          <li>溫柔生產陪產員（Doula）・獨立生產顧問</li>
+          <li>EmbodyBirth &amp; BellyDance Birth 覺知分娩倡導者</li>
+          <li>阿育吠陀產後按摩・女性身心靈整合教練</li>
+          <li>「<span class="std">真愛 AI 陪跑課</span>」第一梯：七位姊妹，七個成品</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 誰適合 -->
+<section class="who">
+  <div class="wrap">
+    <div class="label">給誰</div>
+    <h2>這一晚，是為這樣的妳開的</h2>
+    <p class="lead">不需要已經有帳號，也不需要已經想清楚。</p>
+    <ul>
+      <li>想開始經營自媒體，卻不知道自己要以什麼身分出現</li>
+      <li>有在發文，但每次都要想很久，發完覺得「這好像不是我」</li>
+      <li>用 AI 寫過東西，通順漂亮，但總覺得少了什麼</li>
+      <li>報名了 <span class="num">9/9</span> 開始的 AI 課 —— 這一晚是妳的必修，先把方向想清楚再開始</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 價格 -->
+<section class="price">
+  <div class="wrap">
+    <div class="label">時間與費用</div>
+    <h2>學員免費，其他人 <span class="num">798</span></h2>
+    <p class="lead">這一晚是<span class="std">真愛 AI 陪跑課</span>的必修 ——<br>第一梯與第二梯的姊妹，都不用另外付費。</p>
+
+    <div class="pgrid">
+      <div class="pcard free">
+        <div class="ptag">AI 課學員・必修</div>
+        <div class="pnum">免費</div>
+        <div class="pwho">第一梯與第二梯的姊妹<br>不用匯款，我會直接把連結給妳</div>
+      </div>
+      <div class="pcard">
+        <div class="ptag">一般報名</div>
+        <div class="pnum num">NT$ 798</div>
+        <div class="pwho">之後若報名 AI 課<br>這 798 會折抵在課程費用裡</div>
+      </div>
+    </div>
+
+    <div class="facts">
+      <div class="frow"><span class="k">日期</span><span class="num">2026 / 9 / 2（週三）</span></div>
+      <div class="frow"><span class="k">時間</span><span class="num">20:00–21:30</span></div>
+      <div class="frow"><span class="k">形式</span><span>線上・全程開放回放</span></div>
+      <div class="frow"><span class="k">主講</span><span>Tatiana Chen</span></div>
+      <div class="frow"><span class="k">開場與收尾</span><span>Milliya</span></div>
+      <div class="frow"><span class="k">帶走</span><span>一句能講清楚自己的話</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="ring" style="width:560px;height:560px;top:-40px"></div>
+  <div class="wrap">
+    <h2>想來的話，<span style="color:var(--rose)">留個位子給妳</span></h2>
+    <p class="lead">填完表單我會親自跟妳聯繫，把上課連結給妳。</p>
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScEim4oKb_TgIFsC5EfddC-kQbPB8L_nJPzfjMh-m29mVqAXQ/viewform" target="_blank" rel="noopener">我要報名 →</a>
+    <p class="ctanote">有問題也可以直接加我 LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a></p>
+  </div>
+</section>
+
+<!-- 誠實說 -->
+<section class="honest">
+  <div class="wrap">
+    <div class="hbox">
+      <h3>我想先誠實跟妳說</h3>
+      <ul>
+        <li>這一晚的主體是 Tati 的分享，我不是主講 —— 我做的是開場與收尾，把它接回下一週的課。</li>
+        <li>這一晚是「想清楚」的課，不是「做出來」的課。真正動手做東西，是 9/9 開始的那四堂。</li>
+        <li>它是 AI 課的必修，但免費、也有回放 —— 不會變成妳的負擔。</li>
+        <li>不需要事先準備什麼，也不需要已經有帳號 —— 帶著妳現在的疑問來就好。</li>
+        <li>當下不能參加也沒關係，全程開放回放，我會把連結留給妳。</li>
+        <li>這是一個女人陪女人的空間。我主要陪伴女性創業者與孕育工作者，但歡迎任何想把自己說清楚的妳。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div><a href="../">← 回<span class="std">真愛 AI 陪跑課</span></a></div>
+  <div class="small">自媒體 101 ・ 前導課　|　有問題加我 LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a> 💛</div>
+</footer>
+
+</body>
+</html>
