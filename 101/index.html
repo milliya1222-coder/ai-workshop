@@ -114,6 +114,39 @@
   .creds li::before{content:"·";position:absolute;left:6px;top:7px;color:var(--gold);font-weight:700}
   .scard.guest .creds li::before{color:var(--guest)}
 
+  /* 她自己的示範 */
+  .dgrid{display:grid;grid-template-columns:.86fr 1.14fr;gap:30px;align-items:center;margin-top:40px}
+  .dphoto{margin:0}
+  .dphoto img{width:100%;border-radius:24px;display:block;
+    box-shadow:0 10px 30px rgba(90,64,48,.16)}
+  .dphoto figcaption{margin-top:12px;text-align:center;font-size:.86rem;
+    letter-spacing:.16em;color:var(--guest)}
+  .dtext p{color:var(--muted);font-size:.99rem;text-align:left}
+  .dtext p+p{margin-top:16px}
+  .slog{font-family:"Noto Sans TC",sans-serif;font-size:1.3rem;font-weight:400;
+    letter-spacing:.05em;line-height:1.7;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent}
+  .stats{display:flex;gap:10px;margin:22px 0;padding:18px 0;
+    border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+  .stats>div{flex:1;text-align:center}
+  .stats b{display:block;font-family:"Noto Serif TC",serif;font-weight:700;
+    font-size:1.44rem;color:var(--guest);line-height:1.5}
+  .stats span{font-size:.82rem;color:var(--muted)}
+  .pcase{margin-top:26px;background:var(--card);border:1px solid var(--line);
+    border-radius:26px;padding:32px 34px;backdrop-filter:blur(8px)}
+  .ptitle{font-size:.84rem;letter-spacing:.3em;text-indent:.3em;
+    color:var(--guest);margin-bottom:18px}
+  .pcase p{color:var(--muted);font-size:.99rem}
+  .pcase p+p{margin-top:14px}
+  .pills{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+  .pills li{border:1px solid rgba(78,124,116,.3);border-radius:999px;
+    padding:6px 18px;font-size:.9rem;color:var(--guest);
+    background:rgba(78,124,116,.06);line-height:1.7}
+  .iglink{display:inline-block;margin-top:18px;color:var(--rose);
+    text-decoration:none;font-size:.96rem;
+    border-bottom:1px solid rgba(196,115,90,.35)}
+
   /* 誰適合 */
   .who ul{list-style:none;max-width:600px;margin:0 auto}
   .who li{padding:18px 0 18px 38px;position:relative;font-size:1.04rem;
@@ -163,7 +196,8 @@
   footer .small{margin-top:10px;font-size:.85rem}
 
   @media(max-width:640px){
-    .sgrid,.pgrid{grid-template-columns:1fr}
+    .sgrid,.pgrid,.dgrid{grid-template-columns:1fr}
+    .pcase{padding:28px 24px}
     .hero{padding:40px 0 72px}
     section{padding-bottom:72px}
     .item{gap:16px}.clock{min-width:60px}
@@ -287,8 +321,8 @@
         <img class="avatar" src="img/tati.jpg" alt="Tatiana Chen" width="168" height="168" loading="lazy">
         <div class="srole">主講</div>
         <div class="sname">Tatiana Chen</div>
-        <div class="shandle">自媒體講師 ・ 料理家</div>
-        <p>全職媽媽，也是料理家。<span class="num">2023</span> 年開始經營自己的自媒體品牌，粉絲累積 <span class="num">40,000+</span>。</p>
+        <div class="shandle">自媒體講師 ・ 料理家 ・ <span class="num">@smallhandcook</span></div>
+        <p>全職媽媽，兩個孩子，也是料理家。<span class="num">2023</span> 年開始經營自己的品牌「小手料理 Small Hand Cook」，現在有 <span class="num">4.5</span> 萬位讀者跟著她。</p>
         <p>在那之前，她做的是別人的品牌 —— STAR HOSTEL 信星旅館的行銷與營運經理，帶著團隊拿下全球青年旅館第一名。所以她談的不只是怎麼被看見，還有怎麼撐得住。</p>
         <ul class="creds">
           <li>曾任 YAHOO 電商特邀講師</li>
@@ -314,6 +348,55 @@
         </ul>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- 她自己的示範 -->
+<section class="demo">
+  <div class="wrap">
+    <div class="label">她自己</div>
+    <h2>她要講的東西，她自己已經做了三年</h2>
+    <p class="lead">我找一個人來講定位，條件只有一個 ——<br>她自己得先站得住。</p>
+
+    <div class="dgrid">
+      <figure class="dphoto">
+        <img src="img/tati-cook.jpg" alt="Tatiana Chen ・ 小手料理 Small Hand Cook" loading="lazy">
+        <figcaption>小手料理 Small Hand Cook</figcaption>
+      </figure>
+
+      <div class="dtext">
+        <p class="slog">living soft, living strong</p>
+        <p>這是她寫在自己帳號上的一句話。溫柔地活，也強壯地活 —— 我看到的時候愣了一下，因為這幾乎就是我一直想跟姊妹們說的事。</p>
+
+        <div class="stats">
+          <div><b class="num">2023</b><span>年開始</span></div>
+          <div><b class="num">320</b><span>則貼文</span></div>
+          <div><b class="num">4.5 萬</b><span>位讀者</span></div>
+        </div>
+
+        <p>三年，三百多篇。她不是一夕之間被看見的，是一篇一篇寫過來的 —— 這也是為什麼她說「數字沒那麼重要」的時候，我聽得進去。</p>
+      </div>
+    </div>
+
+    <div class="pcase">
+      <div class="ptitle">她的內容是這樣分的</div>
+      <ul class="pills">
+        <li>Self care</li>
+        <li>Eat better</li>
+        <li>Baby food</li>
+        <li>夏食</li>
+        <li>拿歌單</li>
+      </ul>
+      <p>照顧自己、把飯吃好一點、孩子的副食品、當季的菜，還有她在聽的歌。</p>
+      <p>這就是那一晚會講到的「內容支柱」—— 不是什麼玄的行銷名詞，就是把妳講得出來的事分成幾類，然後長長久久地講下去。妳點進她的帳號，一眼就知道她是誰。</p>
+    </div>
+
+    <div class="pcase">
+      <div class="ptitle">一個人，五個地方</div>
+      <p>Instagram、Threads、Facebook、部落格，還有一個專門講採買的「媽媽買什麼」。料理、育兒、生活、選物 —— 角色不少，平台也不少，可是不亂。</p>
+      <p>因為從頭到尾，都是同一個人在講話。<br>妳手上如果也有好幾件事想被看見，這一段會是妳的。</p>
+      <a class="iglink" href="https://www.instagram.com/smallhandcook/" target="_blank" rel="noopener">看看她的 IG ・ <span class="num">@smallhandcook</span> →</a>
     </div>
   </div>
 </section>
