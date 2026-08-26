@@ -135,6 +135,13 @@
   .stats b{display:block;font-family:"Noto Serif TC",serif;font-weight:700;
     font-size:1.44rem;color:var(--guest);line-height:1.5}
   .stats span{font-size:.82rem;color:var(--muted)}
+  .lifegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+  .lifegrid img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:16px;display:block;
+    box-shadow:0 6px 18px rgba(90,64,48,.12)}
+  .lifecap{margin-top:20px;text-align:center;color:var(--muted);font-size:.99rem;line-height:2.05}
+  .lifecre{margin-top:12px;text-align:center;font-size:.82rem;color:var(--muted);opacity:.85}
+  .lifecre a{color:var(--guest);text-decoration:none;border-bottom:1px solid rgba(78,124,116,.3)}
+  .creds a{color:var(--guest);text-decoration:none;border-bottom:1px solid rgba(78,124,116,.3)}
   .pcase{margin-top:26px;background:var(--card);border:1px solid var(--line);
     border-radius:26px;padding:32px 34px;backdrop-filter:blur(8px)}
   .ptitle{font-size:.84rem;letter-spacing:.3em;text-indent:.3em;
@@ -224,6 +231,7 @@
 
   @media(max-width:640px){
     .sgrid,.pgrid,.dgrid,.nsgrid,.pgrid.three{grid-template-columns:1fr}
+    .lifegrid{grid-template-columns:1fr 1fr;gap:10px}
     .pcase{padding:28px 24px}
     .hero{padding:40px 0 72px}
     section{padding-bottom:72px}
@@ -349,15 +357,16 @@
         <img class="avatar" src="img/tati.jpg" alt="Tatiana Chen" width="168" height="168" loading="lazy">
         <div class="srole">主講</div>
         <div class="sname">Tatiana Chen</div>
-        <div class="shandle">自媒體講師 ・ 料理家 ・ <span class="num">@smallhandcook</span></div>
+        <div class="shandle">料理研究家 ・ 自媒體講師 ・ <span class="num">@smallhandcook</span></div>
         <p>全職媽媽，兩個孩子，也是料理家。<span class="num">2023</span> 年開始經營自己的品牌「小手料理 Small Hand Cook」，現在有 <span class="num">4.5</span> 萬位讀者跟著她。</p>
         <p>在那之前，她做的是別人的品牌 —— STAR HOSTEL 信星旅館的行銷與營運經理，帶著團隊拿下全球青年旅館第一名。所以她談的不只是怎麼被看見，還有怎麼撐得住。</p>
         <ul class="creds">
           <li>曾任 YAHOO 電商特邀講師</li>
           <li>BOS 巴菲特線上學院・商業之星計畫 認證導師</li>
+          <li><span class="num">2023</span>《不可思議超越大會》受邀講師 —— 同屆講者含《富爸爸窮爸爸》作者羅伯特・清崎、瑪麗・巴菲特</li>
           <li>玖樓共生公寓 營運顧問</li>
           <li>著有<span class="std">《成為料理家的 0 到 1》</span>電子書</li>
-          <li>受訪於 <span class="num">EVERYDAY OBJECT</span>、加拿大 FÊTE CHINOISE、客家電視台</li>
+          <li>受訪於 <a href="https://www.everydayobject.us/lagostina-with-tati/" target="_blank" rel="noopener"><span class="num">EVERYDAY OBJECT</span></a>、加拿大 FÊTE CHINOISE、客家電視台</li>
         </ul>
       </div>
 
@@ -406,6 +415,14 @@
         <p>三年，三百多篇。她不是一夕之間被看見的，是一篇一篇寫過來的 —— 這也是為什麼她說「數字沒那麼重要」的時候，我聽得進去。</p>
       </div>
     </div>
+
+    <div class="lifegrid">
+      <img src="img/tati-life1.jpg" alt="Tati 在廚房備料" loading="lazy">
+      <img src="img/tati-life2.jpg" alt="Tati 在爐前煮食" loading="lazy">
+      <img src="img/tati-life3.jpg" alt="Tati 坐下來吃自己做的義大利麵" loading="lazy">
+    </div>
+    <p class="lifecap">備料、下鍋，然後坐下來好好吃一頓。<br>她的日常就是她的內容 —— 這也是 <span class="num">9/2</span> 那晚她會講到的其中一件事：<b>生活既是創作</b>。</p>
+    <p class="lifecre">照片｜<a href="https://www.everydayobject.us/lagostina-with-tati/" target="_blank" rel="noopener">EVERYDAY OBJECT × Lagostina 專訪</a>・攝影 花籽</p>
 
     <div class="pcase">
       <div class="ptitle">她的內容是這樣分的</div>
