@@ -116,6 +116,25 @@
   .creds li::before{content:"·";position:absolute;left:6px;top:7px;color:var(--gold);font-weight:700}
   .scard.guest .creds li::before{color:var(--guest)}
 
+  /* 痛點・開頭鉤子 */
+  .pain h2{line-height:1.8}
+  .tangle{display:block;width:100%;max-width:640px;margin:40px auto 0;height:auto;overflow:visible}
+  .tangle .tg{stroke:var(--rose);stroke-width:2.1;opacity:.5}
+  .tangle .ln{stroke:var(--gold);stroke-width:2.6;stroke-linecap:round}
+  .tangle .dot{fill:var(--gold)}
+  .tangle .tx{font-size:17px;fill:var(--muted);font-family:"LXGW WenKai TC",serif;opacity:.9}
+  .tangle .tx.hi{fill:var(--gold);font-size:19px;opacity:1}
+  .paincap{margin-top:22px;text-align:center;color:var(--muted);font-size:1.04rem;line-height:2}
+  .paincap b{color:var(--rose);font-weight:400}
+  .bubbles{margin:40px auto 0;max-width:620px;display:grid;gap:15px}
+  .bubbles p{background:var(--card);border:1px solid var(--line);
+    border-radius:22px 22px 22px 7px;padding:19px 26px;color:var(--muted);
+    font-size:1rem;line-height:1.95;backdrop-filter:blur(8px);text-align:left}
+  .bubbles p:nth-child(odd){transform:rotate(-.45deg)}
+  .bubbles p:nth-child(even){transform:rotate(.45deg);border-radius:22px 22px 7px 22px}
+  .painend{margin-top:38px;text-align:center;font-size:1.1rem;color:var(--ink);line-height:2}
+  .painend b{color:var(--rose);font-weight:400}
+
   /* 她自己的示範 */
   .dgrid{display:grid;grid-template-columns:.86fr 1.14fr;gap:30px;align-items:center;margin-top:40px}
   .dphoto{margin:0}
@@ -232,6 +251,9 @@
   @media(max-width:640px){
     .sgrid,.pgrid,.dgrid,.nsgrid,.pgrid.three{grid-template-columns:1fr}
     .lifegrid{grid-template-columns:1fr 1fr;gap:10px}
+    .bubbles p{padding:17px 20px;font-size:.97rem}
+    .tangle .tx{font-size:21px}
+    .tangle .tx.hi{font-size:23px}
     .pcase{padding:28px 24px}
     .hero{padding:40px 0 72px}
     section{padding-bottom:72px}
@@ -277,6 +299,47 @@
     <p class="herotiny">這一晚同時是<span class="std">真愛 AI 陪跑課</span>的必修前導課 —— 該課學員免費參加</p>
   </div>
 </header>
+
+<!-- 痛點・開頭鉤子 -->
+<section class="pain">
+  <div class="wrap">
+    <div class="label">先說說妳</div>
+    <h2>妳做的事，從來不只一件<br>所以每次要介紹自己，就卡住</h2>
+
+    <svg class="tangle" viewBox="0 0 800 250" role="img" aria-label="很多角色纏成一團，最後理成一條線">
+      <g class="tg" fill="none">
+        <ellipse cx="172" cy="126" rx="96" ry="44" transform="rotate(-16 172 126)"/>
+        <ellipse cx="170" cy="124" rx="90" ry="38" transform="rotate(37 170 124)"/>
+        <ellipse cx="176" cy="128" rx="78" ry="52" transform="rotate(79 176 128)"/>
+        <ellipse cx="166" cy="122" rx="99" ry="33" transform="rotate(115 166 122)"/>
+        <ellipse cx="174" cy="127" rx="70" ry="56" transform="rotate(-58 174 127)"/>
+        <ellipse cx="168" cy="125" rx="60" ry="61" transform="rotate(12 168 125)"/>
+      </g>
+      <text class="tx" x="40"  y="38"  text-anchor="middle">陪產</text>
+      <text class="tx" x="170" y="18"  text-anchor="middle">諮商</text>
+      <text class="tx" x="296" y="46"  text-anchor="middle">療癒</text>
+      <text class="tx" x="26"  y="224" text-anchor="middle">帶課</text>
+      <text class="tx" x="172" y="244" text-anchor="middle">媽媽</text>
+      <text class="tx" x="292" y="220" text-anchor="middle">手作</text>
+
+      <path class="ln" d="M268,118 C 316,74 366,148 322,166 C 288,180 284,126 332,120 C 388,113 428,152 486,140 C 558,126 592,152 664,134 C 702,124 722,127 744,124" fill="none"/>
+      <circle class="dot" cx="754" cy="124" r="6.5"/>
+      <text class="tx hi" x="752" y="96" text-anchor="middle">妳自己</text>
+    </svg>
+
+    <p class="paincap">角色可以很多，主軸只有一個 —— <b>就是妳這個人</b>。</p>
+
+    <div class="bubbles">
+      <p>「我做陪產、也做療癒、也帶課。可是每次要介紹自己，我都不知道該從哪一句開始。」</p>
+      <p>「我的服務講出來要三分鐘，別人三秒就滑掉了。」</p>
+      <p>「發文之前想很久，發完又覺得 —— 這好像不是我。」</p>
+      <p>「怕講太滿變成推銷，講太淡又沒人看得懂我在做什麼。」</p>
+      <p>「粉絲一直沒有變多，我開始懷疑是不是我不適合做這件事。」</p>
+    </div>
+
+    <p class="painend">如果妳剛剛點頭了 ——<br><b>這一晚就是為妳開的。</b></p>
+  </div>
+</section>
 
 <!-- WHY -->
 <section class="why">
