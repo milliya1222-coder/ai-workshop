@@ -255,6 +255,19 @@
   .frow:last-child{border-bottom:none}
   .frow .k{color:var(--muted);font-size:.96rem}
 
+  /* 視覺帶 */
+  .strip{display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;
+    padding:36px 26px 26px;margin:0 -26px;
+    scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+    scrollbar-width:thin}
+  .strip::-webkit-scrollbar{height:6px}
+  .strip::-webkit-scrollbar-track{background:transparent}
+  .strip::-webkit-scrollbar-thumb{background:rgba(90,64,48,.2);border-radius:99px}
+  .strip img{flex:0 0 auto;width:232px;height:auto;border-radius:18px;
+    scroll-snap-align:center;display:block;
+    border:1px solid var(--line-soft);box-shadow:0 8px 26px rgba(90,64,48,.18)}
+  .stripnote{text-align:center;color:var(--muted);font-size:.95rem;line-height:1.95;margin-top:8px}
+
   /* CTA */
   .cta{text-align:center;position:relative}
   .btn{display:inline-block;background:var(--grad);color:#FFF8EE;
@@ -675,6 +688,28 @@
       <div class="frow"><span class="k">開場與收尾</span><span>Milliya</span></div>
       <div class="frow"><span class="k">帶走</span><span>一句能講清楚自己的話</span></div>
     </div>
+  </div>
+</section>
+
+<!-- 視覺帶 -->
+<section class="cards">
+  <div class="wrap">
+    <div class="label">帶著走</div>
+    <h2>想轉給誰的話，這幾張直接存下來</h2>
+    <p class="lead">妳身邊如果有正在卡「不知道怎麼介紹自己」的姊妹，<br>把圖傳給她，比講一長串容易。</p>
+
+    <div class="strip">
+      <img src="img/cards/c01.jpg" alt="自媒體 101 ・ 9/2 週三 20:00 線上" loading="lazy" decoding="async">
+      <img src="img/cards/c02.jpg" alt="妳做的事從來不只一件，所以每次要介紹自己就卡住" loading="lazy" decoding="async">
+      <img src="img/cards/c03.jpg" alt="Part I 定位 ・ 先把別人塞給妳的迷思打掉" loading="lazy" decoding="async">
+      <img src="img/cards/c04.jpg" alt="Part II 內容 ・ 妳看世界的角度才是那個秘密" loading="lazy" decoding="async">
+      <img src="img/cards/c05.jpg" alt="Milliya 欣妙 ・ 我不是科技人，我是陪產員" loading="lazy" decoding="async">
+      <img src="img/cards/c06.jpg" alt="第一梯姊妹的作品 ・ 她們用 AI 做出了自己的服務" loading="lazy" decoding="async">
+      <img src="img/cards/c07.jpg" alt="三種進來的方式 ・ 798 / 3,333 / 學員免費" loading="lazy" decoding="async">
+      <img src="img/cards/c08.jpg" alt="兩晚，一條路 ・ 9/2 想清楚，9/9 做出來" loading="lazy" decoding="async">
+    </div>
+
+    <p class="stripnote">左右滑動 ・ 長按存圖<br>或者，直接把這一頁的網址傳給她 💛</p>
   </div>
 </section>
 
