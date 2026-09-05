@@ -390,6 +390,49 @@
 </head>
 <body>
 
+<style>
+  /* 女人圈 ・ 名額 ・ 對照表 ・ 影片 */
+  .circle .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+  .ccard{background:var(--panel);border:1px solid var(--hair);border-radius:22px;padding:30px 32px}
+  .ccard.lit{grid-column:1/-1;border-color:var(--panel-line);
+    background:linear-gradient(160deg,rgba(196,115,90,.10),var(--panel))}
+  .ccard .ctag{font-size:.8rem;letter-spacing:.24em;color:var(--gold);margin-bottom:10px}
+  .ccard h3{font-size:1.28rem;font-weight:700;line-height:1.5}
+  .ccard p{color:var(--muted);font-size:.99rem;line-height:1.95;margin-top:10px}
+  .ccard p b{color:var(--text);font-weight:500}
+
+  .vidwrap{margin-top:40px;border-radius:22px;overflow:hidden;
+    border:1px solid var(--hair);box-shadow:0 12px 34px rgba(90,64,48,.16);
+    max-width:520px;margin-left:auto;margin-right:auto}
+  .vidwrap video{width:100%;display:block}
+  .vidcap{text-align:center;color:var(--muted);font-size:.92rem;margin-top:14px}
+
+  .cmp{margin-top:38px;background:var(--panel);border:1px solid var(--hair);
+    border-radius:22px;overflow:hidden}
+  .cmp table{width:100%;border-collapse:collapse}
+  .cmp th,.cmp td{padding:16px 20px;text-align:left;font-size:.97rem;line-height:1.8;
+    border-bottom:1px solid rgba(176,122,34,.14);vertical-align:top}
+  .cmp tr:last-child th,.cmp tr:last-child td{border-bottom:none}
+  .cmp thead th{font-size:.86rem;letter-spacing:.14em;color:var(--gold);
+    background:rgba(176,122,34,.07);font-weight:400}
+  .cmp thead th:last-child{color:var(--rose)}
+  .cmp tbody th{font-weight:400;color:var(--muted);width:24%;font-size:.9rem}
+  .cmp td.a{color:var(--muted)}
+  .cmp td.b{color:var(--text)}
+  .cmpnote{text-align:center;color:var(--muted);font-size:.94rem;line-height:1.95;margin-top:20px}
+
+  .seats{margin-top:34px;background:linear-gradient(160deg,rgba(196,115,90,.14),var(--panel));
+    border:1px solid var(--panel-line);border-radius:22px;padding:30px 34px;text-align:center}
+  .seats .n{font-family:"Noto Serif TC",serif;font-size:2.6rem;font-weight:700;color:var(--rose);line-height:1.2}
+  .seats .t{font-size:1.06rem;margin-top:8px}
+  .seats p{color:var(--muted);font-size:.97rem;line-height:1.95;margin-top:14px}
+  @media(max-width:760px){
+    .circle .cgrid{grid-template-columns:1fr}
+    .cmp th,.cmp td{padding:12px 13px;font-size:.9rem}
+    .cmp tbody th{width:26%;font-size:.84rem}
+  }
+</style>
+
 <!-- TOPBAR LOGO -->
 <div class="topbar">
   <div class="wrap">
@@ -442,6 +485,31 @@
         <p>不追新工具，把每週在做的事一件一件交給它，省下時間，把人留給真正重要的事。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- AI vs AGENT -->
+<section class="four">
+  <div class="wrap">
+    <p class="sec-label">WHAT_WE_USE</p>
+    <h2>我們用的，不是妳平常在聊天的那種 AI</h2>
+    <p class="lead">一樣叫 AI，但能做的事差很多。</p>
+
+    <div class="cmp">
+      <table>
+        <thead><tr><th></th><th>一般 AI 聊天</th><th>AI Agent（我們教的）</th></tr></thead>
+        <tbody>
+          <tr><th>它做什麼</th><td class="a">回答妳的問題，給妳一段文字</td><td class="b">幫妳把事情<b>做完</b></td></tr>
+          <tr><th>妳拿到什麼</th><td class="a">一段文字，要自己複製貼上</td><td class="b">一個真的網頁、一份真的表單</td></tr>
+          <tr><th>能不能碰檔案</th><td class="a">碰不到妳電腦裡的東西</td><td class="b">能讀、能改、能建立妳的檔案</td></tr>
+          <tr><th>多步驟的事</th><td class="a">一次問一個，妳要自己接下去</td><td class="b">自己拆解步驟，一路做到完</td></tr>
+          <tr><th>做錯的時候</th><td class="a">妳要自己發現、自己重問</td><td class="b">自己看到錯誤，自己修</td></tr>
+          <tr><th>像什麼</th><td class="a">一個很會講的顧問</td><td class="b">一個<b>會動手的助理</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="cmpnote">妳已經有一個很會講的顧問了。<br>這堂課要給妳的，是一個會動手的助理 🌿</p>
   </div>
 </section>
 
@@ -539,6 +607,48 @@
       <p class="grad-text" style="font-weight:600;font-size:1.05rem;margin-top:14px">旁聽別人的時段，通常是整堂課最精華的地方 —— 因為妳會從別人的問題裡，學到超多 ✨</p>
       <p style="font-size:.85rem;color:var(--muted);margin-top:8px">（報名人數較多時，後段實戰討論會視情況彈性加開到 21:30 之後。）</p>
     </div>
+  </div>
+</section>
+
+<!-- 女人圈 -->
+<section class="circle">
+  <div class="wrap">
+    <p class="sec-label">THE_CIRCLE</p>
+    <h2>這堂課最值得的，其實不是工具</h2>
+    <p class="lead">四堂之後妳會有一個做好的東西。<br>但更多人跟我說，她們真正帶走的是別的。</p>
+
+    <div class="cgrid">
+      <div class="ccard lit">
+        <div class="ctag">含 金 量 最 高 的 地 方</div>
+        <h3>每一堂，每個人都有 10–15 分鐘的一對一</h3>
+        <p>前 20 分鐘我解鎖當週的新技能，<b>剩下的 70 分鐘，一位一位輪流</b> —— 我陪妳看妳這週卡在哪、妳的發現、妳想問的任何問題。不是統一講解，是針對妳手上那個東西。</p>
+        <p>其他姊妹可以自由旁聽。<b>而旁聽，往往才是整堂課最精華的部分</b> —— 因為她卡住的地方，常常也是妳還沒發現自己卡住的地方。</p>
+        <p>越簡單、越「笨」的問題越歡迎。<b>妳的問題，很可能正是別人的問題</b>，只是她還沒說出口。</p>
+      </div>
+
+      <div class="ccard">
+        <div class="ctag">彼 此 見 證</div>
+        <h3>做出來的那一刻，有人在場</h3>
+        <p>不是自己一個人在螢幕前完成、然後沒人知道。有人看見，有人替妳高興。</p>
+      </div>
+
+      <div class="ccard">
+        <div class="ctag">不 只 是 學 員</div>
+        <h3>一群懂妳難處的女人</h3>
+        <p>做陪伴、療癒、身心靈、教育的女性。卡住的時候不是自己一個人 —— 而妳問的那個問題，也可能剛好接住了另一個人。</p>
+      </div>
+
+      <div class="ccard lit">
+        <div class="ctag">而 且</div>
+        <h3>《自媒體 101》的講師 Tatiana Chen，也會在這個圈子裡</h3>
+        <p>料理研究家、自媒體講師，<b>4.5 萬讀者</b>。9/2 那一晚她講定位與內容經營 —— 而她會繼續在這個圈子裡。<br>妳做東西的時候，旁邊有一個知道「怎麼被看見」的人。</p>
+      </div>
+    </div>
+
+    <div class="vidwrap">
+      <video src="circle.mp4" poster="circle-poster.jpg" controls playsinline preload="metadata"></video>
+    </div>
+    <p class="vidcap">16 秒 ・ 第一梯做出來的東西，還有這個圈子在做什麼</p>
   </div>
 </section>
 
@@ -783,6 +893,14 @@
         <div class="row"><span class="k">主要對象</span><span class="v">女性創業者・孕育工作者（人人可學）</span></div>
         <div class="row"><span class="k">小小回禮</span><span class="v">課後給我一段真實見證 💛</span></div>
       </div>
+    </div>
+
+    <div class="seats">
+      <div class="n">只剩 3 個名額</div>
+      <div class="t">第二梯 ・ 9/9 開課</div>
+      <p>不是行銷話術，是時間算出來的 ——<br>
+      一堂 90 分鐘，扣掉前 20 分鐘上課，剩下 70 分鐘要分給每個人 10–15 分鐘的一對一。<br>
+      <b>人再多，那段時間就不夠深了。</b></p>
     </div>
 
     <div class="bonus">
