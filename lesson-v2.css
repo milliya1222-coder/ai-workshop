@@ -116,3 +116,10 @@ footer{text-align:center;padding:44px 20px;color:var(--muted);font-size:.86rem;
   border-top:1px solid var(--hair);margin-top:34px;position:relative;z-index:2}
 footer img{height:56px;display:block;margin:0 auto 14px;filter:brightness(.86) saturate(1.12)}
 @media(max-width:560px){.top h1{font-size:1.65rem}.wrap{padding:0 20px}}
+
+/* 終端機示意（給 L3 加碼「什麼是終端機」用） */
+.term{background:#15101e;border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:16px 18px;margin:12px 0;font-family:"Space Mono",monospace;font-size:.9rem;color:#cfc4e8;word-break:break-all}
+.term .dots{display:flex;gap:6px;margin-bottom:10px}
+.term .dots i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.term .dots i:nth-child(1){background:#E27A6A}.term .dots i:nth-child(2){background:#E2B36A}.term .dots i:nth-child(3){background:#7EC489}
+.term .ln{color:#8a7fb0}.term .cmd{color:#F2BCA8}
