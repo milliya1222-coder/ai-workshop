@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent 是什麼・三家在拚什麼 ・ 真愛 AI 陪跑課</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lesson.css">
+<style>
+  .vs2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
+  .vs2 .b{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 20px}
+  .vs2 .b h4{font-size:.95rem;font-weight:600;margin-bottom:8px;color:var(--rose-bright);font-family:"Noto Sans TC"}
+  .vs2 .b p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.75}
+  @media(max-width:600px){.vs2{grid-template-columns:1fr}}
+  .three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:16px 0}
+  .three .col{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 16px}
+  .three .col .name{font-family:"Noto Serif TC",serif;font-size:1.05rem;font-weight:600;color:var(--rose-bright);margin-bottom:2px}
+  .three .col .maker{font-size:.72rem;color:var(--violet);font-family:"Space Mono",monospace;letter-spacing:.03em;margin-bottom:10px}
+  .three .col .lab{font-size:.72rem;color:var(--muted);font-family:"Space Mono",monospace;margin:10px 0 3px}
+  .three .col p{font-size:.86rem;color:var(--text);margin:0;line-height:1.7}
+  .three .col .ver{font-size:.8rem;color:var(--muted);line-height:1.6}
+  @media(max-width:640px){.three{grid-template-columns:1fr}}
+  .pick{width:100%;border-collapse:collapse;margin:14px 0;font-size:.93rem}
+  .pick td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.08);vertical-align:top}
+  .pick tr:last-child td{border-bottom:none}
+  .pick td:first-child{color:var(--text);width:62%}
+  .pick td:last-child{color:var(--rose-bright);font-weight:600;text-align:right}
+  .pick-wrap{overflow-x:auto;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:var(--panel);margin:14px 0}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <img src="logo.png" alt="欣妙在陪你 ・ Birth with Milliya">
+    <div class="badge">AI 觀念補給 ・ 2026 年 9 月</div>
+    <h1 class="grad-text">AI Agent 是什麼？<br>還有這個月，三家在拚什麼</h1>
+    <p>一頁看懂「會自己動手的 AI」——<br>還有 Anthropic／OpenAI／Google 現在各自強在哪 🤖</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>最近一定常聽到「<strong>AI Agent</strong>（AI 代理人／智能體）」。它跟我們平常聊天的 AI 差在哪？<br>
+    這頁用最白話講清楚，順便告訴妳三家系統<strong>這個月</strong>的差別 —— <strong>不用記型號，記重點就好</strong> 🌿</p>
+  </div>
+
+  <h2>// 一、AI Agent 到底是什麼</h2>
+  <div class="step">
+    <p>用一個比喻最快懂：</p>
+    <div class="vs2">
+      <div class="b"><h4>💬 聊天機器人</h4><p>妳<b>問一句、它答一句</b>。像跟人問路 —— 它告訴妳怎麼走，但腳還是妳自己在走。</p></div>
+      <div class="b"><h4>🤖 AI Agent</h4><p>妳給它一個<b>目標</b>，它<b>自己動手去完成</b>。像請一位助理：「幫我把這件事辦好」，它就去辦。</p></div>
+    </div>
+    <p>差別在 <b>Agent 會自己跑一個循環</b>：</p>
+    <div class="flow" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:14px 16px;background:rgba(255,255,255,.04);border:1px dashed var(--panel-line);border-radius:12px;margin:12px 0">
+      <span style="padding:5px 12px;background:rgba(226,155,134,.12);border:1px solid var(--panel-line);border-radius:999px;font-size:.86rem;color:var(--rose-bright)">① 規劃（拆成小步）</span><span style="color:var(--muted)">→</span>
+      <span style="padding:5px 12px;background:rgba(226,155,134,.12);border:1px solid var(--panel-line);border-radius:999px;font-size:.86rem;color:var(--rose-bright)">② 動手（會用工具）</span><span style="color:var(--muted)">→</span>
+      <span style="padding:5px 12px;background:rgba(226,155,134,.12);border:1px solid var(--panel-line);border-radius:999px;font-size:.86rem;color:var(--rose-bright)">③ 檢查、修正</span><span style="color:var(--muted)">↻ 直到完成</span>
+    </div>
+    <p class="muted">它還會<b>記得前面做過什麼</b>，不用妳每一步都盯著下指令。</p>
+    <div class="tip"><b>💡 其實妳已經用過了 ✨</b>妳在 Claude 裡說「幫我建一個資料夾、把這份文件改好、做成一頁網頁放上線」—— 它自己一步步完成，那就是 AI Agent 的雛形。妳這四堂課，一直在跟一個 agent 工作。</div>
+    <p class="muted" style="margin-top:12px">為什麼今年特別紅：<b>2026 是 AI Agent 從「實驗」變成「真的能用」的一年</b>。研究機構 Gartner 估計，到今年底約 <b>40% 的企業軟體會內建 AI Agent</b>（去年還不到 5%）。</p>
+  </div>
+
+  <h2>// 二、這個月，三家在拚什麼</h2>
+  <div class="step">
+    <p>先講一句最重要的：<strong>現在最頂尖的幾個模型，聰明程度的差距是史上最小的。</strong>所以選哪一家，重點不是「誰最聰明」，而是 —— <b>妳要做什麼、習慣哪個生態</b>。</p>
+    <div class="three">
+      <div class="col">
+        <div class="name">Claude</div>
+        <div class="maker">ANTHROPIC</div>
+        <div class="ver">最新：Fable 5.1（9/1）、Opus 4.8。<br>（就是我們這堂課用的這家）</div>
+        <div class="lab">最擅長</div>
+        <p>寫作與內容、策略思考、寫程式、<b>誠實不亂編</b>、動手做事（agent）很穩。</p>
+      </div>
+      <div class="col">
+        <div class="name">ChatGPT</div>
+        <div class="maker">OPENAI</div>
+        <div class="ver">最新：GPT-5.5、GPT-5.6（Sol／Terra／Luna 系列）。</div>
+        <div class="lab">最擅長</div>
+        <p>生態最廣、<b>多媒體</b>（圖片／語音／影片）、把很多工具串起來自動化。</p>
+      </div>
+      <div class="col">
+        <div class="name">Gemini</div>
+        <div class="maker">GOOGLE</div>
+        <div class="ver">最新：Gemini 3.6 Flash、3.1 Pro。</div>
+        <div class="lab">最擅長</div>
+        <p>研究、<b>一次讀超長資料</b>、事實查證、跟 Google（Gmail／Docs／Drive）整合最順。</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>// 三、那我該用哪一個？</h2>
+  <div class="step">
+    <p>用「妳想做什麼」來選，比較實際：</p>
+    <div class="pick-wrap">
+      <table class="pick">
+        <tr><td>寫貼文、文案、有溫度的深度內容</td><td>Claude</td></tr>
+        <tr><td>要生圖／語音／影片、把一堆工具串成自動化</td><td>ChatGPT</td></tr>
+        <tr><td>讀超長文件、做研究、跟 Google 服務整合</td><td>Gemini</td></tr>
+        <tr><td>學「叫 AI 動手做事」（像我們課這樣）</td><td>Claude</td></tr>
+      </table>
+    </div>
+    <div class="tip"><b>🌷 最誠實的一句：</b>三家都很強，也都在互相追、每個月都在變。<b>與其一直找「最好的那個」，不如選一個「妳用得順、願意天天打開」的</b>—— 熟悉一個、把它用深，比每個都淺淺碰過有用太多。</div>
+  </div>
+
+  <div class="warn"><b>⏳ 這頁是「2026 年 9 月」的快照。</b>模型型號每個月都在變、名字會越換越多 —— <b>型號忘了沒關係，記住觀念就好</b>：AI Agent ＝ 妳給它一個目標，它自己規劃、動手、修正，一路做到完成。</div>
+
+  <div class="help">
+    <h3>有想深入的，隨時問我 💛</h3>
+    <p>這些名詞看起來很多，但妳課堂上做的每一件事，都是在跟一個 agent 一起工作。慢慢來，用熟一個就好。</p>
+    <p style="margin-top:10px">私訊我 LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a></p>
+  </div>
+
+  <p class="muted" style="font-size:.82rem;line-height:1.9;margin:24px 0 0">
+    📎 <b>資料來源</b>（截至 2026-09，交叉比對後整理；型號與排名會變動）：<br>
+    ・<a href="https://felloai.com/best-ai-models/" style="color:var(--muted)">Best AI Models in September 2026（Fello AI）</a><br>
+    ・<a href="https://www.onewave-ai.com/blog/ai-showdown-claude-chatgpt-gemini-perplexity-manus" style="color:var(--muted)">Six AI Platforms Compared, Sept 2026（OneWave）</a><br>
+    ・<a href="https://mitsloan.mit.edu/ideas-made-to-matter/agentic-ai-explained" style="color:var(--muted)">Agentic AI, explained（MIT Sloan）</a><br>
+    ・<a href="https://www.tiledb.com/blog/what-is-agentic-ai" style="color:var(--muted)">What is agentic AI: a 2026 guide（含 Gartner 40% 估計）</a>
+  </p>
+
+</div>
+
+<footer>
+  <img src="logo.png" alt="欣妙在陪你 ・ Birth with Milliya">
+  <div>真愛 AI 陪跑課　|　欣妙在陪你 💛</div>
+</footer>
+
+</body>
+</html>
