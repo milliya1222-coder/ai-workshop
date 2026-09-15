@@ -1,0 +1,151 @@
+<!doctype html><html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>糾錯實戰・一次示範｜讓 AI 當妳的研究員｜真愛 AI 陪跑課</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lesson-v2.css">
+<style>
+  /* 對話示意（本頁專用） */
+  .chat{background:var(--panel);border:1px solid var(--hair);border-radius:18px;padding:20px 20px 22px;margin:16px 0;backdrop-filter:blur(8px)}
+  .chat .win{display:flex;gap:6px;margin-bottom:14px}
+  .chat .win i{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .chat .win i:nth-child(1){background:#E27A6A}.chat .win i:nth-child(2){background:#E2B36A}.chat .win i:nth-child(3){background:#7EC489}
+  .bub{max-width:86%;padding:12px 16px;border-radius:14px;margin:10px 0;font-size:.97rem;line-height:1.8;white-space:pre-wrap}
+  .bub .who{display:block;font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.12em;margin-bottom:5px;opacity:.7}
+  .me{margin-left:auto;background:var(--rose-wash);border:1px solid rgba(196,115,90,.25);border-bottom-right-radius:4px}
+  .ai{margin-right:auto;background:var(--bg2);border:1px solid var(--hair);border-bottom-left-radius:4px}
+  .ai.bad{border-color:rgba(196,115,90,.4)}
+  .fake{background:rgba(196,115,90,.16);border-bottom:1.5px dashed var(--rose);padding:0 2px;border-radius:3px}
+  .real{background:rgba(126,163,90,.18);padding:0 2px;border-radius:3px}
+  .tellback{background:linear-gradient(160deg,rgba(176,122,34,.10),var(--panel));border:1px solid var(--panel-line);border-radius:16px;padding:22px 24px;margin:20px 0}
+  .tellback h3{font-size:1.12rem;color:var(--gold-deep);margin-bottom:12px}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:.9rem;color:var(--muted);margin:8px 0 2px}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .sw{width:14px;height:14px;border-radius:4px;display:inline-block}
+  .verdict{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+  .verdict .col{background:var(--bg2);border:1px solid var(--hair);border-radius:14px;padding:16px 18px}
+  .verdict .col h4{font-family:"Noto Serif TC",serif;font-size:1rem;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--hair)}
+  .verdict .col.f h4{color:var(--rose)}.verdict .col.t h4{color:#5e7d3a}
+  .verdict li{margin-bottom:6px;font-size:.94rem;list-style:none;padding-left:20px;position:relative}
+  .verdict li::before{position:absolute;left:0}
+  .verdict .f li::before{content:"✗";color:var(--rose)}
+  .verdict .t li::before{content:"✓";color:#5e7d3a}
+  @media(max-width:600px){.verdict{grid-template-columns:1fr}.bub{max-width:94%}}
+</style>
+</head><body>
+
+<div class="top wrap">
+  <img src="logo.png" alt="欣妙在陪你">
+  <div class="badge">第 2 堂 ・ 糾錯實戰</div>
+  <h1>看它一次「講得很有自信的錯」</h1>
+  <p>同一個問題，走一遍完整對話 ——<br>妳會看到它怎麼編，也看到怎麼三步戳破它 🔍</p>
+</div>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>這一頁不用妳做什麼，先<strong>看一遍</strong>就好。</p>
+    <p style="margin-top:10px">我拿一個我們這行真的會被問到的問題去問 AI。它給了一個<strong>看起來超專業</strong>的答案 —— 有期刊、有人數、有百分比。<strong>但裡面藏了地雷。</strong>我們一步一步把它挖出來。</p>
+  </div>
+
+  <h2>// 場景・我問了它一個真問題</h2>
+  <div class="chat">
+    <div class="win"><i></i><i></i><i></i></div>
+    <div class="bub me"><span class="who">妳</span>孕期做會陰按摩，真的能降低生產時撕裂嗎？請幫我查，附上來源，如果是你自己推論的請標「推測」。</div>
+    <div class="bub ai bad"><span class="who">CLAUDE</span>可以的！<span class="fake">根據 2019 年發表在《英國婦產科期刊》、一份追蹤 3,200 位初產婦的隨機對照試驗，從孕期第 34 週開始每天做會陰按摩，可以把三度／四度撕裂的機率降低 47%。</span>
+
+會陰按摩能增加組織彈性、讓產道更容易伸展。建議每天 5–10 分鐘。
+
+來源：<span class="fake">https://www.bjog-journal.org/perineal-massage-2019</span></div>
+    <p class="muted">👀 讀起來是不是很順、很可信？期刊名、年份、人數、百分比、連結全都有。<b>正因為這樣，它最危險。</b></p>
+  </div>
+
+  <h2>// 三步戳破它</h2>
+
+  <div class="step">
+    <div class="h"><div class="n">1</div><h3>點那個連結進去 —— 真的點</h3></div>
+    <p>把它給的那條來源連結，複製、貼到瀏覽器打開。</p>
+    <div class="chat" style="margin-top:12px">
+      <div class="bub ai" style="max-width:100%;text-align:center;color:var(--muted)"><span class="who">瀏覽器</span>🚫 找不到這個網頁　This page could not be found（404）</div>
+    </div>
+    <div class="why">💥 <b>連結是空的 → 這條就是它編的。</b>一個查得到的真研究，連結會真的打得開。打不開，那句話就不能用。</div>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">2</div><h3>挑一個數字，問回去</h3></div>
+    <div class="chat" style="margin-top:6px">
+      <div class="win"><i></i><i></i><i></i></div>
+      <div class="bub me"><span class="who">妳</span>你剛剛說的「3,200 人、降低 47%、2019 年」，是哪一份研究、哪一年、誰做的？如果你其實不確定，請直接說「我不確定」，不要補一個聽起來合理的答案。</div>
+      <div class="bub ai"><span class="who">CLAUDE</span>謝謝妳追問 —— 我必須誠實說：<span class="real">我沒辦法確認那個 3,200 人、47%、2019 年的具體來源，那些數字很可能是我自己補上的，不該當成事實。</span>
+
+比較可靠的說法是：<span class="real">確實有系統性回顧（Cochrane，Beckmann & Stock）支持孕期會陰按摩能減少需要縫合的會陰傷害</span>，但確切的人數和百分比，要以妳親自點進原始文獻看到的為準。</div>
+    </div>
+    <div class="why">💡 看到差別了嗎？<b>被逼著標「我不確定」的時候，它就把剛剛那串精確數字收回去了。</b>那串數字從頭到尾不存在。</div>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">3</div><h3>換個方式，再問一次同一件事</h3></div>
+    <div class="chat" style="margin-top:6px">
+      <div class="win"><i></i><i></i><i></i></div>
+      <div class="bub me"><span class="who">妳</span>（開一個新對話）會陰按摩大概能降低多少比例的嚴重撕裂？</div>
+      <div class="bub ai"><span class="who">CLAUDE</span>研究顯示大約可降低 <span class="fake">32%</span> 左右……</div>
+    </div>
+    <div class="why">🎯 第一次說 <b>47%</b>，這次說 <b>32%</b>。<b>同一個問題、兩個數字 → 那一塊就是不能用的。</b>真的有定論的事，它兩次會講一樣。</div>
+  </div>
+
+  <h2>// 拆給妳看：哪些真、哪些編</h2>
+  <div class="tellback">
+    <h3>同一個答案，其實是兩種東西混在一起</h3>
+    <div class="legend">
+      <span><i class="sw" style="background:rgba(196,115,90,.35)"></i>它編的（幻覺）</span>
+      <span><i class="sw" style="background:rgba(126,163,90,.35)"></i>真的、站得住的</span>
+    </div>
+    <div class="verdict">
+      <div class="col f">
+        <h4>它編的</h4>
+        <ul>
+          <li>「2019 年《英國婦產科期刊》」</li>
+          <li>「3,200 位初產婦」</li>
+          <li>「降低 47%」（後來又變 32%）</li>
+          <li>那條打不開的連結</li>
+        </ul>
+      </div>
+      <div class="col t">
+        <h4>真的方向</h4>
+        <ul>
+          <li>會陰按摩能增加組織彈性</li>
+          <li>有 Cochrane 系統性回顧支持這個方向</li>
+          <li>它承認不確定、願意收回</li>
+        </ul>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:14px">所以它不是「整個都在騙妳」—— 是<b>真的東西裡，摻了幾顆很像真的假數字</b>。難就難在這裡。</p>
+  </div>
+
+  <div class="warn">
+    <b>妳的責任線在哪</b><br>
+    寫給自己看的筆記 —— 錯了沒關係，之後再查。<br>
+    <b>要放進公開貼文、要講給客戶聽的數字和研究 —— 一定要自己點進來源看過。</b><br><br>
+    它是一個很聰明、但會虛張聲勢的助理。<b>妳還是那個要簽名負責的人。</b> 💛
+  </div>
+
+  <div class="tip">
+    <b>換妳試一次。</b>拿一個妳這週真的被問倒過的問題去問 AI，然後照上面三步走一遍：<br>
+    ① 點一個連結　② 挑一個數字問回去　③ 換句再問一次。<br>
+    抓到它一次「講得很有自信的錯」，妳就永遠不會再全盤照收了。
+  </div>
+
+  <div class="nav">
+    <a href="s2-lesson2.html">← 回第 2 堂</a>
+    <a href="index.html">課程介紹</a>
+    <a href="s2-setup.html">課前準備</a>
+    <a href="s2-lesson1.html">第 1 堂</a>
+    <a class="on" href="catch-errors.html">糾錯範例</a>
+  </div>
+</div>
+
+<footer>
+  <img src="logo.png" alt="欣妙在陪你">
+  真愛 AI 陪跑課 ・ 第二梯　|　它很聰明，但要簽名負責的人是妳
+</footer>
+</body></html>
