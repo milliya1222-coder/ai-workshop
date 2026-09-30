@@ -1,0 +1,186 @@
+<!doctype html><html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>手機遙控妳的桌機・Remote Control｜真愛 AI 陪跑課</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lesson-v2.css">
+<style>
+  .diagram{background:var(--panel);border:1px solid var(--hair);border-radius:16px;padding:22px 18px;margin:16px 0;text-align:center;backdrop-filter:blur(8px)}
+  .flow{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+  .flow .box{background:var(--bg2);border:1px solid var(--panel-line);border-radius:14px;padding:12px;min-width:82px}
+  .flow .box .ico{font-size:1.8rem;display:block;line-height:1.1}
+  .flow .box .lb{font-size:.78rem;color:var(--text);margin-top:4px;display:block}
+  .flow .box .sub{font-size:.64rem;color:var(--muted);display:block}
+  .flow .arr{color:var(--gold);font-size:1.3rem;font-weight:700}
+  .cap{font-size:.84rem;color:var(--muted);margin-top:12px}
+  .stage{display:flex;gap:18px;align-items:flex-start;margin:16px 0}
+  .stage .art{flex:0 0 auto}
+  .stage .txt{flex:1;min-width:0}
+  @media(max-width:560px){.stage{flex-direction:column;align-items:center}.stage .txt{width:100%}}
+  .num-badge{display:inline-flex;width:30px;height:30px;border-radius:9px;background:var(--grad);color:#FFF8EE;font-family:"Space Mono",monospace;font-weight:700;align-items:center;justify-content:center;font-size:1rem;margin-right:8px;vertical-align:middle}
+  /* 終端機（沿用 lesson-v2 的 .term 深色，另加內容樣式） */
+  .term{max-width:340px}
+  .term .p{color:#F2BCA8}.term .o{color:#8a7fb0}.term .u{color:#EDE6E2}
+  .qr{width:118px;height:118px;margin:10px auto 0;border-radius:10px;padding:9px;background:#EDE6E2;
+    background-image:linear-gradient(90deg,#241C30 25%,transparent 0 50%,#241C30 0 62%,transparent 0),linear-gradient(#241C30 25%,transparent 0 50%,#241C30 0 62%,transparent 0);
+    background-size:16px 16px;position:relative}
+  .qr::after{content:"⌂";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:#241C30;background:#EDE6E2;width:32px;height:32px;margin:auto;border-radius:8px}
+  .qr-lbl{font-size:.7rem;color:#8a7fb0;text-align:center;margin-top:6px;font-family:"Space Mono",monospace}
+  /* 手機外框 */
+  .phone{width:198px;background:#FFFBF4;border:7px solid #E4D3B8;border-radius:28px;padding:12px 11px 16px;box-shadow:0 18px 40px -22px rgba(90,64,48,.5)}
+  .phone .notch{width:56px;height:5px;background:#E4D3B8;border-radius:99px;margin:0 auto 11px}
+  .phone .apptop{display:flex;align-items:center;gap:7px;font-size:.72rem;color:var(--rose);font-family:"Space Mono",monospace;margin-bottom:10px}
+  .phone .apptop .rose{width:16px;height:16px;border-radius:5px;background:var(--grad)}
+  .msg{border-radius:12px;padding:8px 11px;font-size:.78rem;margin-bottom:7px;line-height:1.5}
+  .msg .who{display:block;font-size:.58rem;color:var(--muted);margin-bottom:2px;letter-spacing:.04em}
+  .msg.me{background:var(--rose-wash);border:1px solid rgba(196,115,90,.3);color:var(--text);margin-left:22px}
+  .msg.ai{background:var(--bg);border:1px solid var(--hair);color:var(--text);margin-right:22px}
+  .msg.note{background:rgba(176,122,34,.12);border:1px solid rgba(176,122,34,.28);color:var(--gold-deep);text-align:center;font-size:.72rem}
+  .sidebar{background:var(--bg);border:1px solid var(--hair);border-radius:10px;padding:8px 10px;font-size:.74rem;color:var(--text)}
+  .sidebar .row2{display:flex;align-items:center;gap:7px;padding:4px 0}
+  .sidebar .on{color:var(--rose);font-weight:600}
+  .shot-note{font-size:.72rem;color:var(--muted);text-align:center;margin-top:6px;font-style:italic}
+</style>
+</head><body>
+
+<div class="top wrap">
+  <img src="logo.png" alt="欣妙在陪你">
+  <div class="badge">加碼 ・ 手機遙控</div>
+  <h1>手機遙控妳的桌機<br>Remote Control</h1>
+  <p>電腦在家開著跑，妳人在外面 ——<br>用手機接上同一個對話，繼續請它做事 📱</p>
+</div>
+
+<div class="wrap">
+
+  <div class="intro">
+    <p>這是<strong>把桌機正在做的工作，接到手機上繼續</strong>。妳在電腦開好，出門後用手機接上<strong>同一個對話</strong> —— 真正動手的，永遠是妳家那台電腦。</p>
+  </div>
+
+  <div class="warn">
+    <b>🎒 先備好（大多在第 4 堂做過）</b><br>
+    ・桌機裝好 <b>Claude Code</b>（就是第 4 堂那個）<br>
+    ・手機裝 <b>Claude App</b>，登入<b>同一個帳號</b><br>
+    ・方案是 <b>Pro / Max</b><br>
+    ・遙控時，<b>桌機要醒著、Claude Code 要一直開著</b>（助理得待在工作室裡 🌿）
+  </div>
+
+  <h2>// 先看懂一張圖</h2>
+  <div class="diagram">
+    <div class="flow">
+      <div class="box"><span class="ico">📱</span><span class="lb">妳的手機</span><span class="sub">人在外面</span></div>
+      <span class="arr">→</span>
+      <div class="box"><span class="ico">☁️</span><span class="lb">安全通道</span><span class="sub">加密同步</span></div>
+      <span class="arr">→</span>
+      <div class="box"><span class="ico">💻</span><span class="lb">家裡桌機</span><span class="sub">Claude 動手</span></div>
+      <span class="arr">→</span>
+      <div class="box"><span class="ico">🌷</span><span class="lb">成品</span><span class="sub">回到手機</span></div>
+    </div>
+    <p class="cap"><b>桌機＝工作室，Claude＝助理，手機＝對講機。</b>妳在外面出一張嘴，動手的是家裡那台電腦。</p>
+  </div>
+
+  <h2>// 跟著做，四步就接上</h2>
+
+  <div class="step">
+    <div class="h"><div class="n">1</div><h3>桌機打一句 <code class="inl">/remote-control</code></h3></div>
+    <div class="stage">
+      <div class="art">
+        <div class="term">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <div><span class="ln">你的電腦 &gt;</span> <span class="cmd">/remote-control</span></div>
+          <div class="o" style="margin-top:6px">Enable Remote Control? (y/n)</div>
+          <div><span class="u">y</span></div>
+          <div class="o" style="margin-top:6px">✓ 已開啟遠端遙控，掃描下方 QR：</div>
+          <div class="qr"></div>
+          <div class="qr-lbl">▢ QR code</div>
+        </div>
+        <p class="shot-note">（示意圖）</p>
+      </div>
+      <div class="txt">
+        <p>在桌面版 Claude Code 的對話框，直接打 <code class="inl">/remote-control</code> 按 Enter。</p>
+        <p style="margin-top:8px">第一次它會問 <b>Enable Remote Control?</b> → 打 <b>y</b> 按 Enter。</p>
+        <p style="margin-top:8px">接著會跑出一個 <b>QR code</b>（和一串網址）—— 這就是連進妳工作室的<b>鑰匙 🔑</b>。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">2</div><h3>手機掃那個 QR</h3></div>
+    <div class="stage">
+      <div class="art">
+        <div class="phone">
+          <div class="notch"></div>
+          <div class="apptop">📷 相機</div>
+          <div class="qr" style="margin-top:10px"></div>
+          <div class="msg note" style="margin-top:12px">🔗 開啟 Claude 連結？</div>
+        </div>
+        <p class="shot-note">（示意圖）</p>
+      </div>
+      <div class="txt">
+        <p>用手機<b>相機</b>對著電腦螢幕上的 QR 掃一下 → 點開跳出來的連結。</p>
+        <p style="margin-top:8px" class="muted">也可以：打開<b>手機 Claude App</b> → 進 <b>Code</b> 分頁 → 清單裡會出現妳桌機那個對話（旁邊有<b>綠點 🟢</b>代表在線）→ 點它。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">3</div><h3>手機跟桌機變成「同一個對話」</h3></div>
+    <div class="stage">
+      <div class="art">
+        <div class="phone">
+          <div class="notch"></div>
+          <div class="apptop"><span class="rose"></span> Claude Code ・🟢 已連線</div>
+          <div class="msg me"><span class="who">妳（手機）</span>把剛剛那篇貼文改得再溫暖一點，最後加一句邀請</div>
+          <div class="msg ai"><span class="who">Claude（在妳電腦上）</span>好，我改好了，這是新版本…</div>
+        </div>
+        <p class="shot-note">（示意圖）</p>
+      </div>
+      <div class="txt">
+        <p>接上後，<b>妳在手機打字＝在電腦上工作</b>。看到 <b>綠點 🟢＋妳電腦的名字</b>，就代表真的接通了。</p>
+        <p style="margin-top:8px">它動手前一樣會<b>問妳、要同意才做</b> —— 跟坐在電腦前一樣安全。</p>
+        <p style="margin-top:8px" class="muted">手機還能<b>拍照片、傳檔案</b>給它；桌機睡著或斷網，醒來會<b>自動重連</b>。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="h"><div class="n">4</div><h3>做完，收起手機去忙別的</h3></div>
+    <p>跑比較久的任務，它做完會<b>推播通知</b>妳，成品也看得到。妳不用一直盯著 🌿</p>
+  </div>
+
+  <h2>// 什麼適合手機交代、什麼留桌機</h2>
+  <div class="tip"><b>📱 手機交代超好用</b><br>
+  🟢 跑流程：「整理這次的錄音重點」　🟢 寫東西：「把這個感觸寫成三版貼文」　🟢 查東西：「我上次那篇寫到哪」</div>
+  <div class="warn"><b>💻 這幾件留桌機</b><br>
+  ⚠️ 需要<b>妳本人點的授權彈窗</b> → 有些門只有妳能開，留到回電腦<br>
+  ⚠️ 桌機<b>沒醒著／Claude Code 沒開</b> → 手機就連不上（助理不在工作室）</div>
+
+  <h2>// 會不會危險？會不會很難？</h2>
+  <div class="step"><ul>
+    <li><b>別人會連進來嗎？</b>那把 QR 鑰匙是<b>妳自己的</b>，別給別人就好，全程加密。</li>
+    <li><b>要另外花錢嗎？</b>含在妳的 <b>Pro／Max</b> 方案裡，沒有額外費用。</li>
+    <li><b>怕弄壞。</b>它動手前都會問妳，想停就停，<b>妳不會弄壞任何東西</b>。</li>
+  </ul></div>
+
+  <div class="hw">
+    <h3>🎒 想玩的小練習</h3>
+    <p>桌機開著 Claude Code，打 <code class="inl">/remote-control</code>，用手機接上一次，交代它做一件小事 —— 整理個東西、寫句貼文都行。</p>
+    <p style="margin-top:8px">接上了、或卡住了，<b>都拍給我看</b> 🌷 我們一起解。</p>
+  </div>
+
+  <div class="help">
+    <h3>妳的工作室一直在家裡等妳 💛</h3>
+    <p>從今天起，<b>妳人在哪，妳的使命就能在哪往前一步。</b></p>
+    <p style="margin-top:12px">私訊我 LINE：<a href="https://line.me/ti/p/~milliyatsai">milliyatsai</a></p>
+  </div>
+
+  <div class="nav">
+    <a href="index.html">課程介紹</a><a href="s2-lesson4.html">← 回第 4 堂</a>
+    <a class="on" href="s2-remote.html">手機遙控</a>
+  </div>
+</div>
+
+<footer>
+  <img src="logo.png" alt="欣妙在陪你">
+  真愛 AI 陪跑課 ・ 第二梯　|　人在哪，使命就能在哪往前一步
+</footer>
+</body></html>
