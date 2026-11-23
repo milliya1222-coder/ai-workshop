@@ -152,6 +152,20 @@
   .ex-note{text-align:center;color:var(--muted);font-size:.94rem;margin-top:20px;line-height:1.8}
   .ex-note b{color:var(--accent);font-weight:500}
   @media(max-width:600px){.ex{grid-template-columns:1fr}}
+  /* 範例作品 showcase */
+  .show{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:22px}
+  .show .s{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);
+    display:flex;flex-direction:column;transition:transform .25s ease,box-shadow .25s ease}
+  .show .s:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .show .s img{width:100%;height:148px;object-fit:cover;object-position:top;display:block;border-bottom:1px solid var(--line)}
+  .show .s .cap{padding:13px 16px;font-size:.88rem;color:var(--muted)}
+  .show .s .cap b{display:block;color:var(--text);font-family:"Noto Serif TC",serif;font-weight:600;font-size:1.02rem;margin-bottom:2px}
+  .show a.play{background:var(--dark);color:#F7F1E8;align-items:center;justify-content:center;text-align:center;padding:22px;text-decoration:none;gap:7px}
+  .show a.play .mo{font-size:30px}
+  .show a.play b{font-family:"Noto Serif TC",serif;font-size:1.04rem}
+  .show a.play .d{font-size:.82rem;color:#E6D8C5}
+  .show a.play .go{margin-top:8px;font-size:.86rem;color:var(--tan);border:1px solid rgba(217,188,148,.45);border-radius:999px;padding:7px 18px}
+  @media(max-width:600px){.show{grid-template-columns:1fr}.show .s img{height:auto}}
 
   /* ───── reveal ───── */
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
@@ -246,7 +260,12 @@
         <p style="color:#F6E7D8;font-size:.98rem;line-height:1.75">系統、App、線上課這類，屬於進階的<br><b style="color:#FBF5EC">Claude Code &amp; AI 深度陪跑</b> —— 先聊聊妳想做什麼，我們一起設計。</p>
       </div>
     </div>
-    <p class="ex-note reveal">不確定自己要哪個也沒關係 —— <b>第 0 堂需求盤點，我們一起把它挑出來。</b></p>
+    <div class="show reveal">
+      <div class="s"><img src="ex-database.png" alt="個案知識庫・第二大腦 範例畫面"><div class="cap"><b>第二大腦</b>個案知識庫（資料庫）</div></div>
+      <div class="s"><img src="ex-miaorike.png" alt="妙日課・日課 app 範例畫面"><div class="cap"><b>妙日課</b>每日練習 app</div></div>
+      <a class="s play" href="demo-cards.html"><span class="mo">🌕</span><b>滿月牌卡</b><span class="d">抽卡 app</span><span class="go">▶ 玩玩看</span></a>
+    </div>
+    <p class="ex-note reveal" style="margin-top:16px">這些都是<b>真的做出來的範例</b>（示範畫面為匿名示意）—— 點「玩玩看」可以真的抽一張 🌙<br>不確定自己要哪個也沒關係，<b>第 0 堂需求盤點，我們一起把它挑出來。</b></p>
   </section>
 
   <section>
