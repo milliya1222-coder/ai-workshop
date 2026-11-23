@@ -97,7 +97,16 @@
   .quote .by{display:flex;align-items:center;gap:12px;margin-top:16px;padding-left:30px;color:var(--accent);
     font-size:.96rem;font-weight:500;font-family:"Noto Serif TC",serif}
   .quote .by::before{content:"";width:28px;height:2px;background:var(--tan)}
-  .works{color:var(--muted);font-size:.96rem;text-align:center;margin-top:18px;line-height:1.85}
+  .works{color:var(--muted);font-size:.96rem;text-align:center;margin-top:22px;line-height:1.85}
+  /* testimonial grid */
+  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow-sm);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .qcard:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .qcard p{font-size:1rem;line-height:1.85;color:var(--text)}
+  .qcard .by{display:flex;align-items:center;gap:9px;margin-top:12px;color:var(--accent);font-size:.9rem;font-weight:500;font-family:"Noto Serif TC",serif}
+  .qcard .by::before{content:"";width:18px;height:2px;background:var(--tan)}
+  @media(max-width:600px){.quotes{grid-template-columns:1fr}}
 
   /* ───── price ───── */
   .price-row{display:flex;gap:18px;align-items:stretch;margin:6px 0}
@@ -195,7 +204,15 @@
       <p>前面好長的停頓與休息，走得很不輕鬆，現在想起來，這份長長的沉澱是種醞釀。我剛剛用 AI 做了瑜伽課程的滿月牌卡，也成功上架 GitHub。覺得自己 50 了，原來也可以完成這些。</p>
       <span class="by">宥妤</span>
     </div>
-    <p class="works reveal">團體梯的姊妹，有人做出報名頁＋表單、有人上線香草網站、有人在網頁上做互動牌卡 ——<br>她們來的時候，沒有一個人寫過程式。</p>
+    <div class="quotes">
+      <div class="qcard reveal"><p>「我真的心想事成，把預約功能完成了 —— 原來真的不難。」</p><span class="by">精靈</span></div>
+      <div class="qcard reveal"><p>「變得很有行動力，覺得無所不能，沒有難事。」</p><span class="by">Chenti</span></div>
+      <div class="qcard reveal"><p>「開始後就會發現一切都不難 —— 難的，是未知的恐懼。」</p><span class="by">柔懿</span></div>
+      <div class="qcard reveal"><p>「跟 AI 互動的過程，我才更看見自己獨一無二、無法被取代的價值。」</p><span class="by">郁文</span></div>
+      <div class="qcard reveal"><p>「把腦中巨量的靈感，一步一步落地成一頁式網站、表單。」</p><span class="by">Hannah</span></div>
+      <div class="qcard reveal"><p>「原來品牌的創立，也可以用懷孕待產的心情，陪著它慢慢孵育出來。」</p><span class="by">一位學員</span></div>
+    </div>
+    <p class="works reveal">她們來的時候，沒有一個人寫過程式 ——<br>有人做出報名頁＋表單、有人上線香草網站、有人在網頁上做互動牌卡。</p>
   </section>
 
   <section>
