@@ -1,0 +1,148 @@
+<!doctype html><html lang="zh-Hant"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>滿月牌卡・每日一張｜示範作品</title>
+<meta name="theme-color" content="#2b2333">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#F3E9DF;--muted:#C9B9C7;--gold:#E6C78A;--rose:#E2A08A;--card:#FBF4E9;--card-ink:#3A2E36}
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{font-family:"Noto Sans TC",sans-serif;color:var(--ink);min-height:100vh;
+    background:radial-gradient(130% 90% at 50% -10%,#4a3550 0%,#352a42 38%,#271f30 100%);
+    display:flex;flex-direction:column;align-items:center;padding:34px 20px 40px;overflow-x:hidden;font-weight:300}
+  .stars{position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:radial-gradient(1.4px 1.4px at 20% 24%,rgba(255,245,230,.8),transparent),
+      radial-gradient(1.2px 1.2px at 72% 16%,rgba(255,245,230,.7),transparent),
+      radial-gradient(1.6px 1.6px at 44% 42%,rgba(255,245,230,.5),transparent),
+      radial-gradient(1.2px 1.2px at 86% 56%,rgba(255,245,230,.6),transparent),
+      radial-gradient(1.3px 1.3px at 12% 68%,rgba(255,245,230,.5),transparent)}
+  .wrap{position:relative;z-index:1;width:100%;max-width:380px;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .moon{font-size:34px;line-height:1}
+  h1{font-family:"Noto Serif TC",serif;font-weight:700;font-size:1.7rem;margin:10px 0 4px;letter-spacing:.04em}
+  .sub{color:var(--muted);font-size:.92rem;letter-spacing:.02em}
+  .date{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.22em;color:var(--gold);margin-top:14px;text-transform:uppercase}
+
+  .stage{perspective:1400px;width:258px;height:384px;margin:22px 0 6px}
+  .card3d{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.8,.2,1);cursor:pointer}
+  .card3d.flipped{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:22px;overflow:hidden;
+    box-shadow:0 30px 60px -24px rgba(0,0,0,.6),0 0 0 1px rgba(230,199,138,.3) inset}
+  /* back */
+  .back{background:linear-gradient(160deg,#3c2d4d,#2b2236);display:flex;align-items:center;justify-content:center}
+  .back .ring{width:150px;height:150px;border-radius:50%;border:1.5px solid rgba(230,199,138,.5);
+    display:flex;align-items:center;justify-content:center;position:relative}
+  .back .ring::before{content:"";position:absolute;inset:16px;border-radius:50%;border:1px solid rgba(230,199,138,.3)}
+  .back .ring .m{font-size:52px;filter:drop-shadow(0 0 10px rgba(230,199,138,.5))}
+  .back .hint{position:absolute;bottom:26px;left:0;right:0;color:var(--gold);font-size:.82rem;letter-spacing:.14em}
+  /* front */
+  .front{transform:rotateY(180deg);background:
+      radial-gradient(120% 80% at 50% 0%,#FFFBF4,#F3E6D3 70%);color:var(--card-ink);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px 26px;text-align:center}
+  .front .sym{font-size:56px;line-height:1;margin-bottom:8px}
+  .front .nm{font-family:"Noto Serif TC",serif;font-weight:700;font-size:1.6rem;letter-spacing:.08em;color:#8C3E20}
+  .front .ln{width:40px;height:2px;background:var(--rose);border-radius:2px;margin:14px 0}
+  .front .msg{font-size:1.04rem;line-height:1.95;color:#4A3B33;font-weight:400}
+  .front .no{position:absolute;top:14px;right:18px;font-family:"Space Mono",monospace;font-size:.7rem;color:#C09A6A}
+
+  .btns{display:flex;gap:12px;margin-top:22px;align-items:center}
+  .btn{border:none;cursor:pointer;font-family:inherit;font-size:1rem;font-weight:500;border-radius:999px;padding:14px 30px;
+    background:linear-gradient(120deg,#E6C78A,#E2A08A);color:#2b2233;box-shadow:0 14px 30px -14px rgba(230,199,138,.7);transition:transform .2s}
+  .btn:active{transform:scale(.96)}
+  .btn.ghost{background:transparent;border:1px solid rgba(230,199,138,.5);color:var(--gold);box-shadow:none;padding:13px 22px}
+  .fav{background:transparent;border:1px solid rgba(230,199,138,.5);color:var(--gold);border-radius:999px;width:50px;height:50px;
+    font-size:1.2rem;cursor:pointer;transition:transform .2s}
+  .fav.on{background:rgba(226,160,138,.2);color:var(--rose);border-color:var(--rose)}
+  .fav:active{transform:scale(.9)}
+  .note{color:var(--muted);font-size:.82rem;margin-top:18px;min-height:1.2em}
+  .foot{color:rgba(201,185,199,.7);font-size:.72rem;margin-top:26px;line-height:1.7;text-align:center}
+  .foot b{color:var(--gold);font-weight:500}
+  .foot a{color:var(--rose);text-decoration:none}
+  @media(prefers-reduced-motion:reduce){.card3d{transition:none}}
+</style>
+</head><body>
+<div class="stars"></div>
+<div class="wrap">
+  <div class="moon">🌕</div>
+  <h1>滿月牌卡</h1>
+  <div class="sub">靜下來，深呼吸一口，再抽一張給今天的妳</div>
+  <div class="date" id="date"></div>
+
+  <div class="stage">
+    <div class="card3d" id="card" onclick="flip()">
+      <div class="face back">
+        <div class="ring"><span class="m">🌙</span></div>
+        <div class="hint">輕觸翻牌</div>
+      </div>
+      <div class="face front">
+        <span class="no" id="no"></span>
+        <span class="sym" id="sym">🌸</span>
+        <span class="nm" id="nm">—</span>
+        <span class="ln"></span>
+        <span class="msg" id="msg">—</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="btns">
+    <button class="btn" id="draw" onclick="draw()">抽一張今天的牌</button>
+    <button class="fav" id="fav" onclick="toggleFav()" title="收藏">♡</button>
+  </div>
+  <div class="note" id="note">今天還沒抽牌 —— 輕觸上面那張，或按一下按鈕 ✨</div>
+
+  <div class="foot">
+    <b>這是一個「示範作品」</b> —— 用 Claude Code 做的抽卡 app，<br>會記住今天抽到的牌、能收藏、可以裝到手機主畫面。<br>
+    想做妳自己的 → <a href="coaching.html">一對一 AI 陪跑</a>
+  </div>
+</div>
+
+<script>
+  var DECK=[
+    {s:"🌙",n:"月亮",m:"妳不需要一直發光。盈與虧，都是完整的妳。"},
+    {s:"🌸",n:"子宮",m:"回到身體的中心，那裡一直知道答案。"},
+    {s:"🍃",n:"休息",m:"停下來，不是退步 —— 是正在醞釀。"},
+    {s:"🤍",n:"信任",m:"妳的身體，一定知道該怎麼做。"},
+    {s:"💧",n:"流動",m:"讓它過去，像水一樣，不抓著。"},
+    {s:"🪶",n:"界線",m:"溫柔地說「不」，也是一種愛。"},
+    {s:"🌾",n:"豐盛",m:"妳已經擁有的，比妳以為的多。"},
+    {s:"🕊",n:"臣服",m:"不是放棄，是鬆開那隻緊握的手。"},
+    {s:"🌳",n:"扎根",m:"先把腳站穩，再談飛翔。"},
+    {s:"🗣",n:"聲音",m:"妳的真心話，值得被好好說出來。"},
+    {s:"🍲",n:"滋養",m:"今天，先把自己好好餵飽。"},
+    {s:"🌱",n:"等待",m:"有些花，開在妳還看不見的時候。"},
+    {s:"🔥",n:"勇氣",m:"怕，還是去做了 —— 那就是勇敢。"},
+    {s:"🫶",n:"連結",m:"妳不孤單。伸出手，就有人接住。"},
+    {s:"✨",n:"妳的光",m:"活出妳自己的光，就已經足夠。"},
+    {s:"🏡",n:"回家",m:"最遠的那條路，是回到自己。"}
+  ];
+  var LS={get:function(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+  var card=document.getElementById('card'), curr=null, flipped=false;
+  function todayKey(){var d=new Date();return d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();}
+  function seedIndex(str){var h=0;for(var i=0;i<str.length;i++){h=(h*31+str.charCodeAt(i))>>>0;}return h%DECK.length;}
+  document.getElementById('date').textContent=todayKey().replace(/-/g,' / ');
+
+  function render(i,isDaily){
+    curr=i;var c=DECK[i];
+    document.getElementById('sym').textContent=c.s;
+    document.getElementById('nm').textContent=c.n;
+    document.getElementById('msg').textContent=c.m;
+    document.getElementById('no').textContent=String(i+1).padStart(2,'0')+' / '+DECK.length;
+    document.getElementById('note').textContent=isDaily?'這是今天屬於妳的牌 🌙 想再抽可以按「再抽一張」':'再抽到的牌，也是給妳的提醒 ✨';
+    document.getElementById('draw').textContent='再抽一張';
+    syncFav();
+  }
+  function flip(){ if(curr===null){draw();return;} flipped=!flipped; card.classList.toggle('flipped',flipped); }
+  function draw(){
+    var saved=LS.get('mooncard_'+todayKey());
+    var i;
+    if(saved==null){ i=seedIndex(todayKey()); LS.set('mooncard_'+todayKey(),i); render(i,true); }
+    else { do{ i=Math.floor(Math.random()*DECK.length); }while(DECK.length>1 && i===curr); render(i,false); }
+    if(!flipped){ flipped=true; card.classList.add('flipped'); }
+  }
+  function favKey(){return 'mooncard_favs';}
+  function syncFav(){ var f=LS.get(favKey())||[]; var on=f.indexOf(curr)>-1; var b=document.getElementById('fav'); b.classList.toggle('on',on); b.textContent=on?'♥':'♡'; }
+  function toggleFav(){ if(curr===null)return; var f=LS.get(favKey())||[]; var k=f.indexOf(curr); if(k>-1)f.splice(k,1); else f.push(curr); LS.set(favKey(),f); syncFav(); }
+
+  // restore today's draw if exists
+  var s=LS.get('mooncard_'+todayKey()); if(s!=null){ render(s,true); }
+</script>
+</body></html>
